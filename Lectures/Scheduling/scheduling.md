@@ -158,12 +158,16 @@ The average waiting time is now (6 + 0 + 3)/3 = 3 milliseconds. This reduction i
 
 As an example of SJF scheduling, consider the following set of processes, with the length of the CPU burst time (assume milliseconds for analysis if no time unit is given):​
 
+<div align=center>
+
 |Process| Burst Time| 
 |----|----|
 |P$_1$|6|
 |P$_2$|8|
 |P$_3$|7|
 |P$_4$|3|
+
+</div>
 
 Burst Time means estimated run time
 
@@ -209,11 +213,15 @@ The waiting time is 3 milliseconds for process P$_1$, 16 milliseconds for proces
 
 - Conisder the following set of processes arrives at the ready queue in the order shown (P$_1$, P$_2$,P$_3$), with the length of estimated run time or CPU burst
 
+<div align=center>
+
 |Process| Burst Time| 
 |----|----|
 |P$_1$|24|
 |P$_2$|3|
 |P$_3$|3|
+
+</div>
 
 - For analysis, assume time unit as ms and time quantum as 10ms
 

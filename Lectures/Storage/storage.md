@@ -89,36 +89,6 @@ math: true
 
 ---
 
-## Data Rates
-
-T2T  = Time to Transfer
-A$_d$  = Amount of data
-T$_s$  = Transfer speed
-
-$$
-    \begin{aligned}
-     T$_s$ &= \frac{A$_d$}{T2T}
-    \end{aligned}
-$$
-
-
-$$
-    \begin{aligned}
-     28.57MBps &= \frac{1\cdotA 10$^6$(GB)}{35s}
-    \end{aligned}
-$$
-
-T2T = 86.68s
-A$_d$ 134GB
-
-$$
-    \begin{aligned}
-     1546MBps &= \frac{134\cdot 10$_6$GB}{86.68s}
-    \end{aligned}
-$$
-
----
-
 ## PCIE Gen \#
 
 - 2.0 - 8b/10b encoding. ​
@@ -229,7 +199,7 @@ Five versions:​
 
     00000101 01100111 11010110 00011100 00101110 11100011 **10110010** 00111001 **00010100** 00010100 00010001 00010000 00100101 01101101 00100011 10000101 
 
-    </div
+    </div>
     
 2. Take the 7th byte and perform an AND operation with `0x0F` to clear out the high nibble. Then, OR it with `0x40` to set the version number to 4.
 
@@ -248,6 +218,7 @@ Five versions:​
 3. Next, take the 9th byte and perform an AND operation with `0x3F` and then OR it with `0x80`.
 
 <div align=center>
+
 00010100  = **00010100** & 00111111​
 
 10010100  = **00010100** |  10000000
@@ -281,8 +252,11 @@ Five versions:​
 <details>
 <summary>Answer</summary>
 
+<div align=center>
+
 AE21B4FC-6F72-4332-7A86-D209D1E0AF69​
 
+</div>
 </details>
 
 ---
