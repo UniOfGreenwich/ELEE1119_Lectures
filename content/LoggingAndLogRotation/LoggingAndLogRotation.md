@@ -47,7 +47,7 @@ Logging is the process of recording application actions and state to a secondary
 
 Gives you a visual history of everything that’s been happening in the heart of an operating system for example, this my Linux system.​
 
-![center](./figures/xorglog.png)
+![center](../../figures/xorglog.png)
 
 ---
 
@@ -67,7 +67,7 @@ Linux logs are pieces of data that Linux writes, related to what the server, ker
 
 They often come with other structured data, such as a hostname, being a valuable analysis  and troubleshooting tool for admins when they encounter performance issues. 
 
-![center](./figures/serilog.png)
+![center](../../figures/serilog.png)
 
 One of my pis at home that monitors the external and internal environment I am using a serilog which is for .NET​
 
@@ -75,7 +75,7 @@ One of my pis at home that monitors the external and internal environment I am u
 
 ## Var Log example
 
-![center](./figures/varlog.png)
+![center](../../figures/varlog.png)
 
 ---
 
@@ -85,7 +85,7 @@ One of my pis at home that monitors the external and internal environment I am u
 
 **User logging**: linked to the user space, those log entries are related to processes or services that may run on the host machine.​
 ​
-![center](./figures/loggingtypes.png)
+![center](../../figures/loggingtypes.png)
 
 ---
 
@@ -131,7 +131,7 @@ It is much more complicated than it sounds.​
 
 Logging must continue with out interruption while the logging process happens.​
 
-![bg right:40% 100%](./figures/literallog.png)
+![bg right:40% 100%](../../figures/literallog.png)
 
 ---
 
@@ -145,7 +145,7 @@ Rotate on file usage on the device, as in, it’s size
 du –h /path/to/file​
 ​```
 
-![bg right:50% 100% vertical](./figures/du-h.png)
+![bg right:50% 100% vertical](../../figures/du-h.png)
 
 Rotate on the number of lines in the file​
 
@@ -153,7 +153,7 @@ Rotate on the number of lines in the file​
 wc –l /path/to/file​
 ```
 
-![bg right:50% 100% vertical](./figures/wc-l.png)
+![bg right:50% 100% vertical](../../figures/wc-l.png)
 ​
 
 ---

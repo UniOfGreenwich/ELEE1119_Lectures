@@ -41,7 +41,7 @@ math: true
 ---
 ## Linux System: Diagrammatic View
 
-![center](./figures/linuxDiaView.png)
+![center](../../figures/linuxDiaView.png)
 
 ---
 
@@ -83,7 +83,7 @@ These libraries implement most of the functionalities of the operating system an
 
 `/lib/` - The important shared library files are kept in here. Mainly these are system libraries or low-level libraries. ​
 
-![bg right:60% 100%](./figures/linuxSystemLibraryLib.png)
+![bg right:60% 100%](../../figures/linuxSystemLibraryLib.png)
 
 
 The Linux kernel modules are kept under `/lib/modules/` and firmware drivers are under `/lib/firmware/`.​
@@ -106,7 +106,7 @@ The filesystem drivers are also under this directory. For instance, the FAT file
 - `/usr/lib32/` - 32-bit specific application libraries are found here.​
 - `/usr/lib64/` - 64-bit specific application libraries are found here.​
 ​
-![bg right:50% 100%](./figures/linuxSystemLibraryUsrLib64.png)
+![bg right:50% 100%](../../figures/linuxSystemLibraryUsrLib64.png)
 
 ---
 
@@ -118,7 +118,7 @@ Users can see a list of libraries needed by an executable by running the `"ldd"`
 
 `brave` – uses static libraries that are built in to the executable ​
 
-![bg right:50% 100%](./figures/linuxldd.png)
+![bg right:50% 100%](../../figures/linuxldd.png)
 
 ---
 
@@ -131,7 +131,7 @@ The system utilities consist of various system interrupts and system calls which
 The control can be transferred using system calls.​
 
 System call is an interface between a process and the operating system​
-![bg right:50% 100%](./figures/systemUtility.png)
+![bg right:50% 100%](../../figures/systemUtility.png)
 
 <!--
 System libraries are special functions or programs using which application programs or system utilities accesses Kernel's features.​​
@@ -244,7 +244,7 @@ Exec() Any process may call exec() at any time. The currently running program is
 
 > “Defines a standard operating system interface and environment, including a command interpreter (or "shell"), and common utility programs to support applications portability at the source code level.”​
 
-![bg right:55% 100%](./figures/psaux.png)
+![bg right:55% 100%](../../figures/psaux.png)
 
 ---
 
@@ -252,7 +252,7 @@ Exec() Any process may call exec() at any time. The currently running program is
 
 The application which user required to perform its task. example – office suites, VSCode, gcc, brave, etc​
 
-![bg right:50% 100%](./figures/userapplications.png)
+![bg right:50% 100%](../../figures/userapplications.png)
 
 ---
 
@@ -262,13 +262,13 @@ The resources of the system such as keyword, Monitor, Printer etc with which a u
 
 [https://linux-hardware.org/​](https://linux-hardware.org/​)
 
-![bg right:50% 100%](./figures/hardwarecheck.png)
+![bg right:50% 100%](../../figures/hardwarecheck.png)
 
 ---
 
 ## Boot Process
 
-![](./figures/allbootprocess.png)
+![](../../figures/allbootprocess.png)
 
 <!--
 BIOS Stage​
@@ -280,7 +280,7 @@ Kernel Stage
 
 ## BIOS Stage
 
-![](./figures/bootstage.png)
+![](../../figures/bootstage.png)
 
 <!--
 When the machine is powered on BIOS is the first one to be called to verify if the hardware is present in the machine and if it is functioning.​
@@ -292,7 +292,7 @@ After a successful test, BIOS checks the MBR (Master Boot Record) in the hard di
 ---
 
 ## Bootloader Stage
-![](./figures/bootloader.png)
+![](../../figures/bootloader.png)
 <!--
 The boot loader will present the user with a list of menu entries, each of which corresponds to different operating system​
 
@@ -319,7 +319,7 @@ This is required to prepare the real root filesystem to be mounted by the Linux 
 
 ## Kernel Stage
 
-![](./figures/kernelstage.png)
+![](../../figures/kernelstage.png)
 
 <!--
 In the kernel stage of the Linux boot sequence, the Linux kernel based on the result of linuxrc can then mount the real root file system​
@@ -338,7 +338,7 @@ So the init process will load other system daemons depending upon the configurat
 
 ## Boot Process Log
 
-![bg right:75%](./figures/bootlogprocesslog.png)
+![bg right:75%](../../figures/bootlogprocesslog.png)
 
 <!--
 The Framebuffer Console — The Linux Kernel documentation​ https://www.kernel.org/doc/html/latest/fb/fbcon.html
@@ -357,7 +357,7 @@ aliasing, and any feature made available by the underlying graphics card are als
 
 ## Kernel Log
 
-![bg right:75%](./figures/kernellog.png)
+![bg right:75%](../../figures/kernellog.png)
 
 <!--
 For example : ​
@@ -369,7 +369,7 @@ Memory type range registers ( MTRRs) are a set of processor supplementary capabi
 ## Systemmd Log
 
 
-![bg right:70%](./figures/systemmd.png)
+![bg right:70%](../../figures/systemmd.png)
 
 <!--
 The “DESKTOP BUS” (dbus)  -> Out of Memory (OOM) killer is called by kernel to free some memory​
@@ -379,7 +379,7 @@ The “DESKTOP BUS” (dbus)  -> Out of Memory (OOM) killer is called by kernel 
 
 ## File System
 
-![center](./figures/filesystem.png)
+![center](../../figures/filesystem.png)
 
 ---
 

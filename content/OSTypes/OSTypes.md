@@ -41,7 +41,7 @@ math: true
 
 ## Types of OS
 
-![](./figures/typesOfOS.png)
+![](../../figures/typesOfOS.png)
 
 ---
 
@@ -99,7 +99,7 @@ A real time operating system time interval to process and respond to inputs is v
 
 **RTLinux**: is a hard RTOS. It runs the Linux operating system as a full preemptive process. As a result, it is useful in controlling robots, data acquisition systems, manufacturing plants.​
 
-![](./figures/RTOS2.png)
+![](../../figures/RTOS2.png)
 
 <!--
 VX  Also, in the past, it was used in Phoneix Mars lander, Boeing 787, Honda Robot ASIMO etc.
@@ -125,7 +125,7 @@ Includes software and associated protocols to communicate with other autonomous 
 
 It allows devices like a disk, printers, etc., shared between computers. The individual machines that are part of the Network have their operating system.​
 
-![center](./figures/networkOS.png)
+![center](../../figures/networkOS.png)
 
 ---
 
@@ -139,13 +139,13 @@ It allows devices like a disk, printers, etc., shared between computers. The ind
 
 ## OS - Market Share
 
-![center](./figures/OSMarketShare.png)​
+![center](../../figures/OSMarketShare.png)​
 
 ---
 
 ## Linux Distros
 
-![center](./figures/LinuxDistros.png)
+![center](../../figures/LinuxDistros.png)
 
 ---
 
@@ -153,13 +153,13 @@ It allows devices like a disk, printers, etc., shared between computers. The ind
 
 Comes in two paradigms, imperative (nomarl) and declarative (abnormal)
 
-![center](./figures/linusOSLogos.png)
+![center](../../figures/linusOSLogos.png)
 
 ---
 
 ## Programming & Configuation Paradigms
 
-![center](./figures/impDecParadigms.png)
+![center](../../figures/impDecParadigms.png)
 
 
 ---
@@ -304,7 +304,7 @@ This is fine, but:​
 
 ## Mutable vs Immutable Flow
 
-![](./figures/mutimmut.png)
+![](../../figures/mutimmut.png)
 
 ---
 
@@ -351,13 +351,13 @@ The form {x, y, ..., z}: e where x, y, etc. are the names of the expected argume
 
 ## Atomic vs Non-Atomic
 
-![center](./figures/atomicNonAtomic.png)
+![center](../../figures/atomicNonAtomic.png)
 
 ---
 
 ## Mozilla Firefox Runtime Dependency Hell
 
-![bg right:70% 100% ](./figures/firefoxDependencyHell.png)
+![bg right:70% 100% ](../../figures/firefoxDependencyHell.png)
 ​
 
 ---
@@ -367,7 +367,7 @@ The form {x, y, ..., z}: e where x, y, etc. are the names of the expected argume
 
 Even with state-of-the-art best practices, you can still end up in Dependency Hell when adding new dependencies, because there is an issue for pip first reported in 2013 to implement dependency resolution and was only partially resolved in 2020.​
 
-![bg right:60% 100%](./figures/pip.png)
+![bg right:60% 100%](../../figures/pip.png)
 
 ---
 

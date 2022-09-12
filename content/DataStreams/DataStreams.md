@@ -65,7 +65,7 @@ math: true
 - Standard Error​
   - typically used by programs to output error messages or diagnostics ​
 
-![bg right:50% 100%](./figures/datastreams.png)​
+![bg right:50% 100%](../../figures/datastreams.png)​
 
 <!-- 
 stdin and stdout: unless redirected 
@@ -116,7 +116,7 @@ stderr stream is independent to stdout and therefore can be redirected separatel
 
 `ls` does the same thing if its output is being **redirected**, `>`.
 
-![center](./figures/lsRedirection.png)
+![center](../../figures/lsRedirection.png)
 
 ---
 
@@ -126,8 +126,8 @@ The first line of the script echoes text to the terminal window, via the `stdout
 
 After creating the executable, we can see that both streams of output, `stdout` and `stderr`, have been displayed in the terminal window.​
 
-![bg right:50% 100% vertical](./figures/errorsh.png)
-![bg right:50% 90% vertical](./figures/errorshoutput.png)
+![bg right:50% 100% vertical](../../figures/errorsh.png)
+![bg right:50% 90% vertical](../../figures/errorshoutput.png)
 
 ---
 
@@ -136,7 +136,7 @@ After creating the executable, we can see that both streams of output, `stdout` 
 
 Can we redirect these messages from `error.sh`
 
-![center](./figures/errorshredirectionstdout.png)
+![center](../../figures/errorshredirectionstdout.png)
 
 `>` redirects `stdout` but not `stderr` as the proceeding line shows when the redirected output `cat stdout.txt`
 
@@ -150,7 +150,7 @@ Infact the `>` symbol works with `stdout` by default. You can use one of the num
 
 - To explicity redirect `stderr` use this redirection instruction, `2>`
 
-![bg right:50% 100%](./figures/numericredirect.png)
+![bg right:50% 100%](../../figures/numericredirect.png)
 
 ---
 
@@ -158,7 +158,7 @@ Infact the `>` symbol works with `stdout` by default. You can use one of the num
 
 Because both `stdout` and `stderr` are redirected to files there is no visible output in the terminal window. We are returned to the command line prompt as though nothing has occurred.​
 
-![bg right:50% 100%](./figures/errorshredirectionsbothseperatefiles.png)
+![bg right:50% 100%](../../figures/errorshredirectionsbothseperatefiles.png)
 
 ---
 
@@ -166,4 +166,4 @@ Because both `stdout` and `stderr` are redirected to files there is no visible o
 
 `2>&1`: This uses the `&>` redirect instruction. This instruction allows you to tell the shell to make one stream got to the same destination as another stream. In this case, we’re saying “redirect stream `2`, `stderr`, to the same destination that stream `1`, `stdout`, is being redirected to.”​
 
-![bg right:50% 100%](./figures/errorshredirectionsbothsamefile.png)
+![bg right:50% 100%](../../figures/errorshredirectionsbothsamefile.png)

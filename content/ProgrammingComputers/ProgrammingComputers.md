@@ -41,7 +41,7 @@ math: true
 
 ---
 
-![bg center 45%](./figures/assemble_avengers.png)
+![bg center 45%](../../figures/assemble_avengers.png)
 
 ---
 
@@ -197,7 +197,7 @@ public class startup class​
 
 ## Compiling Code
 
-![center:110%](./figures/compiler_stages.png)
+![center:110%](../../figures/compiler_stages.png)
 
 ---
 
@@ -261,7 +261,7 @@ Syntax analysis is based on the rules based on the specific programming language
 </td>
 <td>
 
-![center 60%](./figures/parse_tree.png)
+![center 60%](../../figures/parse_tree.png)
 
 </td>
 </tr>

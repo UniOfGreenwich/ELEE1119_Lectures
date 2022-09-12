@@ -63,7 +63,7 @@ math: true
 
 - SATA M.2
 
-![bg right:50% 50%](./figures/SSDs.png)
+![bg right:50% 50%](../../figures/SSDs.png)
 
 ---
 
@@ -73,7 +73,7 @@ math: true
 
 - Nov-Volatile Memory Express M.2 (NVME)
 - 
-![bg left:50% 50%](./figures/SATAmdot2.png)
+![bg left:50% 50%](../../figures/SATAmdot2.png)
 
 ---
 
@@ -99,7 +99,7 @@ math: true
 
 15.754Gb$^{-s}$ and 1.54% overhead.
 
-​![bg right:50% 100%](./figures/PCIESpeeds.png)
+​![bg right:50% 100%](../../figures/PCIESpeeds.png)
 
 ---
 
@@ -109,7 +109,7 @@ math: true
 
 ## Linux File System Structure
 
-![bg right:50% 100%](./figures/linuxFileStructure.png)
+![bg right:50% 100%](../../figures/linuxFileStructure.png)
 
 
 The file system requires an API to access the function calls to interact with file system components like files and directories. 
@@ -123,7 +123,7 @@ The first two parts of the given file system are called a **Linux virtual file s
 
 ## Types of Linux File Systems
 
-![center](./figures/linuxFileSystemTypes.png)
+![center](../../figures/linuxFileSystemTypes.png)
 
 ---
 
@@ -166,7 +166,7 @@ Primarily used for Windows and Linux systems. Can't natively write to partition 
 
 - nvme0n1 means first disk detected on the nvme port​
 
-![center](./figures/lsblk.png)
+![center](../../figures/lsblk.png)
 
 ---
 
@@ -277,13 +277,13 @@ AE21B4FC-6F72-4332-7A86-D209D1E0AF69​
 
 ## Superblock Information
 
-![](./figures/supeblocks.png)
+![](../../figures/supeblocks.png)
 
 ---
 
 ## File, Inode, Address_Space
 
-![w:800 center](./figures/fileinodeaddresssspace.png)
+![w:800 center](../../figures/fileinodeaddresssspace.png)
 ```c
 struct address_space_operations{​
     int (*writepage)(struct page *page, struct writeback_control *wbc);​
@@ -303,4 +303,4 @@ struct address_space_operations{​
 
 Tracing system calls and signals
 
-![bg right:70% 85% center](./figures/strace.png)
+![bg right:70% 85% center](../../figures/strace.png)

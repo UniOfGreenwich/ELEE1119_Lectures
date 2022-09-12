@@ -41,7 +41,7 @@ math: true
 ---
 ## Level 3: Kernel
 
-![90% ](./figures/kernel_meme.png)
+![90% ](../../figures/kernel_meme.png)
 
 ---
 ## Kernel...
@@ -54,7 +54,7 @@ math: true
 
  - To determine who has access to the executive at any given time and for how long.​
 
-![ bg contain right opacity:.9 ](./figures/kernel_assisstances.png)
+![ bg contain right opacity:.9 ](../../figures/kernel_assisstances.png)
 
 ---
 
@@ -64,13 +64,13 @@ If implemented properly the Kernel is invisible to the user, working in its own 
 
 The Kernel is **software​**
 
-![ bg right:50% opacity:.9 ](./figures/kernel.png)
+![ bg right:50% opacity:.9 ](../../figures/kernel.png)
 
 ---
 
 ##
 
-![ bg contain ](./figures/kernel_types.png)
+![ bg contain ](../../figures/kernel_types.png)
 
 ---
 
@@ -188,7 +188,7 @@ __initramfs_size:
 
 There is no access protection between the various kernel subsystems and where public functions can be directly called between various subsystems.
 
-![center](./figures/monolithicKernel.png)
+![center](../../figures/monolithicKernel.png)
 
 <!-- 
 
@@ -203,7 +203,7 @@ This, of course, depends on the particular kernel implementation and the kernel'
 
 Large parts of the kernel are protected from each-other, usually running as services in user space. Because significant parts of the kernel are now running in user mode, the remaining code that runs in kernel mode is significantly smaller, hence micro-kernel term.
 
-![center](./figures/microKernel.png)
+![center](../../figures/microKernel.png)
 
 <!--
 This architecture imposes a modular approach to the kernel and offers memory protection between services but at a cost of performance.
@@ -250,7 +250,7 @@ The kernel is responsible of setting up a mapping that creates a virtual address
 A typical implementation for user and kernel spaces is one where the virtual address space is shared between user processes and the kernel.
 
 
-![bg right:60% 100%](./figures/32bitVirAddrSpace.png)
+![bg right:60% 100%](../../figures/32bitVirAddrSpace.png)
 
 <!--
 In this case kernel space is located at the top of the address space, while user space at the bottom. 
@@ -266,7 +266,7 @@ In order to prevent the user processes from accessing kernel space, the kernel c
  - The scalability of the approach is limited to very specific systems 
 
 
-![center](./figures/asmp.png)
+![center](../../figures/asmp.png)
 
 <!--
 
@@ -282,7 +282,7 @@ Runs on any of the existing processors, just as user processes. This approach is
 
 In order to support SMP the kernel must implement synchronization primitives (e.g. spin locks) to guarantee that only one processor is executing a critical section.
 
-![center](./figures/smp.png)
+![center](../../figures/smp.png)
 
 <!--
 
@@ -323,7 +323,7 @@ Each subsystem may maintain a -next tree where developers can submit patches for
 ## Overview of Linux Kernel
 ### Linux source code layout
 
-![center](./figures/linuxSourceFolderView.png)
+![center](../../figures/linuxSourceFolderView.png)
 
 
 <!--
@@ -375,7 +375,7 @@ virt - home of the KVM (Kernel Virtual Machine) hypervisor
 
 ### Linux kernel architecture
 
-![center](./figures/linuxKernelArch.png)
+![center](../../figures/linuxKernelArch.png)
 
 
 ---

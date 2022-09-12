@@ -63,7 +63,7 @@ math: true
 
 - The CU then generates appropriate control signals to direct single processing element (PE) to operate on single data stream (DS) i.e., one operation at a time​
 ​
-![bg right:40% 100%](./figures/sisd.png)
+![bg right:40% 100%](../../figures/sisd.png)
 
 ---
 
@@ -76,7 +76,7 @@ math: true
 - Instructions can be executed sequentially, such as by ​
 pipelining, or in parallel by multiple functional units.​
 
-​![bg right:40% 100%](./figures/simd.png)
+​![bg right:40% 100%](../../figures/simd.png)
 
 ---
 
@@ -92,7 +92,7 @@ pipelining, or in parallel by multiple functional units.​
 
 - Examples include the Space Shuttle flight control computer​
 
-![bg right:40% 100%](./figures/misd.png)
+![bg right:40% 100%](../../figures/misd.png)
 
 ---
 
@@ -106,7 +106,7 @@ pipelining, or in parallel by multiple functional units.​
 
 - As of 2006, all the top 10 and most of the TOP500​supercomputers are based on a MIMD architecture​
 ​
-![bg right:40% 100%](./figures/mimd.png)
+![bg right:40% 100%](../../figures/mimd.png)
 
 ---
 
@@ -230,7 +230,7 @@ Now do it so that Smax can have a maximum value 4….​
 
 - For example, if 90% of the program can be parallelized, the theoretical maximum speedup using parallel computing would be 10 times no matter how many processors are used​
 
-![bg right:50% 100%](./figures/amdahlslaw.png)
+![bg right:50% 100%](../../figures/amdahlslaw.png)
 
 ---
 
@@ -257,7 +257,7 @@ $p$ is the percentage of th execution workload of the whole task concerning the 
 Evolution according to Gustafson’s Law of the theoretical speedup in ​latency of the execution of a program ​as a function of the number of ​
 processors executing it, for different ​values of p.​
 
-![bg right:50% 100%](./figures/gustafsonslaw.png)
+![bg right:50% 100%](../../figures/gustafsonslaw.png)
 
 ---
 
@@ -345,7 +345,7 @@ your terminal it will not be killed by OS. ​
 
 [?]: the service state cannont be determined 
 
-![bg right:50% 90%](./figures/daemonsstatus.png)
+![bg right:50% 90%](../../figures/daemonsstatus.png)
 
 ---
 
