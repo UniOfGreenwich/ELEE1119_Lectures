@@ -2,7 +2,7 @@ name: deploy-content
 concurrency: deploy-content
 on:
   push:
-    branches: [ master ]
+    branches: [ main ]
 
 jobs:
   build:
