@@ -106,7 +106,7 @@ stderr stream is independent to stdout and therefore can be redirected separatel
 
 ## `ls` stdout and piped `|`
 
-![center](figures/ls.png)
+![center](../../figures/ls.png)
 
 ​The `ls` command behaves differently if its output (stdout) is being **piped**, `|`, into another command. It is ls that switches to a single column output, it isn’t a conversion performed by `cat`. ​
 

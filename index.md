@@ -2,7 +2,7 @@
 
 [Data Streams](./content/DataStreams/DataStreams.html)
 
-[Exploring Linux based OSs](./content/ExploringLinuxBasedOSs/ExploringLinuxBasedOSshtml)
+[Exploring Linux based OSs](./content/ExploringLinuxBasedOSs/ExploringLinuxBasedOSs.html)
 
 [Kernel OS Linux](./content/kernelOSLinux/kernelOSLinux.html)
 
