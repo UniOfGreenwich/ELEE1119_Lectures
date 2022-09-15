@@ -28,7 +28,7 @@ marp: true
 math: true
 ---
 
-# LData Streams
+# Data Streams
 
     Course Code: ELEE1119
 
