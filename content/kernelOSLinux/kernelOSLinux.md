@@ -39,7 +39,7 @@ math: true
     Module Leader: Seb Blair BEng(H) PGCAP MIET MIHEEM FHEA
 
 ---
-## Level 3: Kernel
+## Kernel
 
 ![90% ](../../figures/kernel_meme.png)
 
@@ -135,7 +135,7 @@ User space and kernel space may refer specifically to **memory protection** or t
 
 In the typical operating system architecture (see the figure below) the operating system kernel is responsible for access and sharing the hardware in a secure and fair manner with multiple applications.
 
-![center](figures/typical_os_arch.png)
+![center](../../figures/typical_os_arch.png)
 
 ---
 
