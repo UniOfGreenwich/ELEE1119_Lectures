@@ -1,3 +1,5 @@
+[Labs (mdBook)](https://compeng0001.github.io/ELEE1119_Labs/)
+
 [Module Introduction](./content/ModuleIntroduction/moduleIntroduction.html)
 
 [Data Streams](./content/DataStreams/DataStreams.html)
