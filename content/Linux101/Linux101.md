@@ -170,7 +170,7 @@ What's a Linux distribution? To keep it simple for now:
 **Cons**
 
 - Hardware support  
-- Not as widespreadd 
+- Not as widespread 
 - Package management difficult 
 - Steep learning curve 
 - Smaller software collection 
