@@ -271,7 +271,7 @@ What's a Linux distribution? To keep it simple for now:
 ---
 <div align=center>
 
-# Software/Pacakge Manager
+# Software/Package Manager
 
 </div>
 
