@@ -115,7 +115,7 @@ What's a Linux distribution? To keep it simple for now:
 - Ubiquitous on the Desktop                       
 - Much used in Enterprise                         
 - Lots of software written for it                 
-- Familiarity with the UI\footnote{User Interface}
+- Familiarity with the UI(User Interface)
 - Games                                           
 - Comes pre-installed
 
