@@ -466,7 +466,7 @@ If there's time left in this session, go to the above website and test a distrib
 
 ---
 
-## Why is this important at CCCU?
+## Why is this important at UoG?
 There are many reasons why we use Linux in teaching and research, it's...
 - ... **educational**, just by using it, you can learn so much
 - ... **open (libre)**, anyone can have a look at how it works, and change it to suit them better

@@ -21,5 +21,3 @@
 [Version Control System](./content/VersionControlSystems/versionControlSystem.html)
 
 [Linux101](./content/Linux101/Linux101.html)
-
-[VersionControlSystems](./content/VersionControlSystems/versionControlSystem.html)
