@@ -90,9 +90,9 @@ math: true
 
 - GitHub: Version Control System host
 
-![bg right:50% 50% vertical](./figures/git.png)
+![bg right:50% 50% vertical](../../figures/git.png)
 
-![bg right:50% 50% vertical](./figures/githublogo.png)
+![bg right:50% 50% vertical](../../figures/githublogo.png)
 
 ---
 
@@ -109,7 +109,7 @@ math: true
   - Non-linear development
   - Detailed log information
 
-![bg right:40% 60%](./figures/git.png)
+![bg right:40% 60%](../../figures/git.png)
 
 --- 
 
@@ -120,7 +120,7 @@ math: true
   - Can act as a project manager
   - Hosts Git repositories
   - Secure with keys
-![bg right:40% 50%](./figures/githublogo.png)
+![bg right:40% 50%](../../figures/githublogo.png)
 
 ---
 
@@ -142,7 +142,7 @@ All commands are prepended with `git`
 
 ## Git - Branching
 
-![horizontal](./figures/gitBranching.png)
+![horizontal](../../figures/gitBranching.png)
 
  - **Main**: The default development branch. Whenever you create a Git repository, a branch named "master" is created, and becomes the active branch. 
 
@@ -176,14 +176,14 @@ As part of the version control features there is the **Staging Area**. ​
 
 This is feature enables the developer to move files independently of each other  `git add <filename>` to the repository. Of course you can do this all in one go with `git commit -a​`
 
-![](./figures/gitStagingArea.png)
+![](../../figures/gitStagingArea.png)
 
 --- 
 
 
 ## Git Flow Diagram
 
-![](./figures/gitFlowDiagram.png)
+![](../../figures/gitFlowDiagram.png)
 
 ---
 
@@ -210,5 +210,5 @@ This is feature enables the developer to move files independently of each other 
 [https://learngitbranching.js.org/​](https://learngitbranching.js.org/​)
 
 
-![](./figures/gitlearningbranch.png)
+![](../../figures/gitlearningbranch.png)
 
