@@ -207,7 +207,7 @@ This is feature enables the developer to move files independently of each other 
 
 ## Learning Git
 
-[https://learngitbranching.js.org/​](https://learngitbranching.js.org/​)
+[https://learngitbranching.js.org/​](https://learngitbranching.js.org/)
 
 
 ![](../../figures/gitlearningbranch.png)
