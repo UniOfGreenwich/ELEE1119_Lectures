@@ -53,9 +53,6 @@ math: true
 1. We will compare a number of programming languages and how they compile to machine code.​
 
 ---
-## Menti
-
----
 
 ## What is programming?
 
