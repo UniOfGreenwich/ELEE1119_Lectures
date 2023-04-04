@@ -359,7 +359,7 @@ Remember from term 1 that shell commands can be run in the foreground or backgro
 Key things to rememebr:
 
 - White space matters
--  numeric comparison; `1-lt`, `-gt`,`-eq`
+-  numeric comparison; `-lt`, `-gt`,`-eq`
 -  String comparsion; `==`, `!=`
 -  `[$something!= $somethingelse]` is wrong 
 -  `[ $something!= $somethingelse ]` is correct 
