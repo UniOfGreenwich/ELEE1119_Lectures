@@ -362,7 +362,7 @@ Key things to rememebr:
 -  numeric comparison; `-lt`, `-gt`,`-eq`
 -  String comparsion; `==`, `!=`
 -  `[$something!= $somethingelse]` is wrong 
--  `[ $something!= $somethingelse ]` is correct 
+-  `[ $something != $somethingelse ]` is correct 
 
 ---
 ## What are Version Control Systems (VCS)
