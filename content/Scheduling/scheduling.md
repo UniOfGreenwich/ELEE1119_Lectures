@@ -104,7 +104,7 @@ Some well known strategies/policies: ​
       Process 2 (P2)->Estimated Run Time: 3 ​
 
       Process  3 (P3)->Estimated Run Time: 3 ​
-![center](./figures/FCFSAnalysis1.png)
+![center](../../figures/FCFSAnalysis1.png)
 
 - For analysis,  let’s assume unit as “milliseconds”.​
 
@@ -115,7 +115,7 @@ Some well known strategies/policies: ​
 
 ## Introduction to Scheduling Process Behaviour
 
-![center](./figures/processBehaviour.png)
+![center](../../figures/processBehaviour.png)
 
 Bursts of CPU usage alternate with periods of waiting for I/O. ​
 
@@ -129,7 +129,7 @@ Bursts of CPU usage alternate with periods of waiting for I/O. ​
 
 If the processes arrive in the order P$_1$, P$_2$, P$_3$ and are served in FCFS order, we get the result shown in the following **Gantt chart**, which is a bar chart that illustrates a particular schedule, including the start and finish times of each of  the participating processes:​
 
-![center](./figures/FCFSAnalysis2.png)
+![center](../../figures/FCFSAnalysis2.png)
 
 The waiting time is 0 milliseconds for process P$_1$, 24 milliseconds for process P$_2$, and 27 milliseconds for process P$_3$. Thus, the average waiting time is (0+ 24 + 27)/3 = 17 milliseconds.
 
@@ -139,7 +139,7 @@ The waiting time is 0 milliseconds for process P$_1$, 24 milliseconds for proces
 
 If the processes arrive in the order P$_2$, P$_3$, P$_1$, however, the results will be as shown in the following Gantt chart:​
 
-![center](./figures/FCFSAnalysis3.png)
+![center](../../figures/FCFSAnalysis3.png)
 
 
 The average waiting time is now (6 + 0 + 3)/3 = 3 milliseconds. This reduction is substantial. Thus, the average waiting time under an FCFS policy is generally not minimal and may vary substantially if the processes’ CPU burst times vary greatly.​
@@ -177,7 +177,7 @@ Burst Time means estimated run time
 
 Using SJF scheduling, we would schedule these processes according to the following Gantt chart:​
 
-![center](./figures/sjfWaitingTime.png)​
+![center](../../figures/sjfWaitingTime.png)​
 
 The waiting time is 3 milliseconds for process P$_1$, 16 milliseconds for process P$_2$, 9 milliseconds for process P$_3$, and 0 milliseconds for process P$_4$. Thus, the average waiting time is (3 + 16 + 9 + 0)/4 = 7 milliseconds. By comparison, if we were using the FCFS scheduling scheme, the average waiting time would be 10.25 milliseconds.​
 
@@ -235,13 +235,13 @@ The waiting time is 3 milliseconds for process P$_1$, 16 milliseconds for proces
 - Once each process has received 1 time quantum, the CPU is returned to process P$_1$ for an additional time quantum.
 - THe resulting RR schedule is as follows:
 
-![center](./figures/roundrobin.png)
+![center](../../figures/roundrobin.png)
 
 ---
 
 ## Waiting Time in RR
 
-![center](./figures/roundrobin.png)
+![center](../../figures/roundrobin.png)
 
 - Let’s calculate the average waiting time for this schedule. ​
 
@@ -265,7 +265,7 @@ The waiting time is 3 milliseconds for process P$_1$, 16 milliseconds for proces
 - Assume, for example. that we have only one process of 10 time units. If the quantum is 12 time units, the process finishes in less than 1 time quantum, with no overhead.
 - If the quantum is 6 time units, however, the process requires 2 quanta, resulting in  context switch.
 
-![bg right:50% 100%](./figures/contextSwitching.png)
+![bg right:50% 100%](../../figures/contextSwitching.png)
 
 ---
 
@@ -285,7 +285,7 @@ A multi-level queue scheduling technique partitions or divides the ready queue i
 
 The processes get permanently assigned to one queue, usually based on some property of the process, such as the size of the memory, process priority and/or type of process. 
 
-![center](./figures/mulitQueueSchedule.png)
+![center](../../figures/mulitQueueSchedule.png)
 
 ---
 
@@ -300,7 +300,7 @@ i- To keep track of the state of all the processes, the OS maintains a table kno
 ---
 ## Processes
 
-![center](./figures/processes.png)
+![center](../../figures/processes.png)
 
 
 ---
@@ -319,7 +319,7 @@ i- To keep track of the state of all the processes, the OS maintains a table kno
 
 ## Calculating Processes NICEness
 
-![bg right:50% 100%](./figures/processNICE.png)
+![bg right:50% 100%](../../figures/processNICE.png)
 
 
 - 140 priorities
