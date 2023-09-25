@@ -177,36 +177,6 @@ Clock rate is 1/cycle
 -->
 ---
 
-## Comparing Computer Performance Using Execution Time
-
-
-To compare the performance of two CPUs “A”, ”B” running a given specific program
-
-<div style="font-size:22px">
-
-$$ Performance_A=\frac{1}{ExecutionTime_A}$$
-$$Perfromance_B=\frac{1}{ExecutionTime_B}$$
-
-</div>
-Machine A is n times faster than Machine B means (or slower ? If n > 1):
-
-<div style="font-size:22px">
-<p>
-</p>
-
-$$SpeedUp = n => \frac{Performance_A}{Performance_A}=\frac{ExecutionTime_A}{ExecutionTime_B}$$
-</div>
-
-For example:
-
-<div style="font-size:22px">
-
-$$10x≡10=\frac{10_{CPU_B}}{1_{CPU_A}}$$
-
-</div>
-
----
-
 ## CPU Execution Time Pt1
 
 A program is compromised of a number of instructions executed:
@@ -244,13 +214,48 @@ $$CPU_T = \frac{Instructions}{Program} \cdot \frac{Cycles}{Instruction}\cdot\fra
 
 </div>
 
-So if the Instructions is 1 Billion, 1000MHz, and execution time of 3 seconds what is the CPI?
+So if the Instructions is 100,  CPI  is 2.5, Clock cycle is 1400MHz what is the Execution Time:
+
+<details>
+<summary>Answer</summary>
+
+$$178ns = 100 \cdot 2.5 \cdot \Bigl(\frac{1}{1.4 \cdot 10^9}\Bigr)$$
+
+</details>
+
+</div>
+
+---
+
+## Comparing Computer Performance Using Execution Time
+
+
+To compare the performance of two CPUs “A”, ”B” running a given specific program
 
 <div style="font-size:22px">
 
-$$ 3 = \frac{3}{(1\cdot 10^9) \cdot \frac{1}{1\cdot 10^9}}$$
+$$ Performance_A=\frac{1}{ExecutionTime_A}$$
+$$Perfromance_B=\frac{1}{ExecutionTime_B}$$
 
 </div>
+Machine A is n times faster than Machine B means (or slower ? If n > 1):
+
+<div style="font-size:22px">
+<p>
+</p>
+
+$$SpeedUp = n => \frac{Performance_A}{Performance_A}=\frac{ExecutionTime_A}{ExecutionTime_B}$$
+</div>
+
+For example:
+
+<div style="font-size:22px">
+
+$$10x≡10=\frac{10_{CPU_B}}{1_{CPU_A}}$$
+
+</div>
+
+---
 
 Now suppose we reduce the CPI to 1.2 through architectural improvement, what is the new execution time?
 
@@ -273,20 +278,7 @@ $$2.5 faster \equiv \frac{3}{1.2}$$
 
 ## CPU Execution Time For a Bash Script
 
-<div style="font-size:22px">
 
-$$CPU_T = \frac{Instructions}{Program} \cdot \frac{Cycles}{Instruction}\cdot\frac{Seconds}{Cycle}$$
-
-</div>
-
-So if the Instructions is 100,  CPI  is 2.5, Clock cycle is 1400MHz what is the Execution Time:
-
-<details>
-<summary>Answer</summary>
-
-$$178ns = 100 \cdot 2.5 \cdot (1.4 \cdot 10^9)$$
-
-</details>
 
 ---
 
