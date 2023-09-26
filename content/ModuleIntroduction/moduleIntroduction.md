@@ -78,7 +78,7 @@ Remember this is a 30 credit module!
    2. GitHub repository and Team project
    3. Dates: Officially released first week of term 2.
    4. Weighting: 60%
-   5. Previous Submissions [2015 to 2019](https://www.youtube.com/channel/UCUCG3PqKw9yKWqGBTlN1Kuw/videos) and [2021 to 2022](https://www.youtube.com/watch?v=HJBah1AWvD8)
+   5. Previous Submissions [2015 to 2019](https://www.youtube.com/channel/UCUCG3PqKw9yKWqGBTlN1Kuw/videos), [2020-2021](https://www.youtube.com/watch?v=TzM0bBgHse8), [2021-2022](https://www.youtube.com/watch?v=HJBah1AWvD8) and [2022-2023](https://www.youtube.com/watch?v=4kElpZ-1YdI)
 2. Exam
    1. 2 hour Unseen closed book exam.
    2. Weighting: 40%
