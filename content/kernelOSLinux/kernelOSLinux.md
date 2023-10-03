@@ -80,7 +80,7 @@ The Kernel is **software​**
 - it's Free and Open-Source
 - monolithic
 - modular
-- currently at version 5.19 in development
+- currently at version 5.20 in development
 
 ---
 
@@ -233,7 +233,7 @@ The address space term is an overload term that can have different meanings in d
 
  - The physical address space refers to the way the RAM and device memories are visible on the memory bus.
 
- - The physical address space refers to the way the RAM and device memories are visible on the memory bus. 
+ - The virtual address space (or sometimes just address space) refers to the way the CPU sees the memory when the virtual memory module is activated. The kernel is responsible of setting up a mapping that creates a virtual address space in which areas of this space are mapped to certain physical memory areas
    - process (address) space [the "memory view" of processes. It is a continuous area that starts at zero]
    - kernel (address) space.
 
