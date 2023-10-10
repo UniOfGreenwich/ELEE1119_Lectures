@@ -124,6 +124,8 @@ Users can see a list of libraries needed by an executable by running the `"ldd"`
 
 ## System Utility 1
 
+<div style="font-size:27px">
+
 System Utility programs are responsible to do specialized, individual level tasks.​
 
 The system utilities consist of various system interrupts and system calls which are to transfer the control for the user mode to the kernel mode containing the kernel and shell for further execution of the commands. ​
@@ -132,6 +134,8 @@ The control can be transferred using system calls.​
 
 System call is an interface between a process and the operating system​
 ![bg right:50% 100%](../../figures/systemUtility.png)
+
+</div>
 
 <!--
 System libraries are special functions or programs using which application programs or system utilities accesses Kernel's features.​​
@@ -238,6 +242,8 @@ Exec() Any process may call exec() at any time. The currently running program is
 
 ## System Utility 7
 
+<div style="font-size:27px">
+
 `ps` is a system utility program for snapshotting of the current processes.​
 ​
 **ISO/IEC 9945-1:2000**​
@@ -245,6 +251,8 @@ Exec() Any process may call exec() at any time. The currently running program is
 > “Defines a standard operating system interface and environment, including a command interpreter (or "shell"), and common utility programs to support applications portability at the source code level.”​
 
 ![bg right:55% 100%](../../figures/psaux.png)
+
+</div>
 
 ---
 
@@ -345,11 +353,9 @@ The Framebuffer Console — The Linux Kernel documentation​ https://www.kernel
 
 ​What are the features of fbcon? The framebuffer console supports high resolutions,   ​
 varying font types, ​
-display rotation, p​
-rimitive multihead, etc. ​
-Theoretically, multi-colored fonts, ​
-blending, ​
-aliasing, and any feature made available by the underlying graphics card are also possible.​
+display rotation, 
+p​rimitive multihead, etc. ​
+Theoretically, multi-colored fonts, ​blending, ​aliasing, and any feature made available by the underlying graphics card are also possible.​
 
 -->
 
