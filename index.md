@@ -1,4 +1,4 @@
-|[Labs (mdBook)](https://teachingmaterial.github.io/ELEE1119_Exercises/)|[Module Introduction](./content/ModuleIntroduction/moduleIntroduction.html)||
+|[Labs (mdBook)](https://teachingmaterial.github.io/ELEE1119_Exercises/)|[Module Introduction](./content/ModuleIntroduction/moduleIntroduction.html)|[Assignment 1]()|
 |---|---|---|
 |[OS Types](./content/OSTypes/OSTypes.html)|[Kernel OS Linux](./content/kernelOSLinux/kernelOSLinux.html)|[Exploring Linux based OSs](./content/ExploringLinuxBasedOSs/ExploringLinuxBasedOSs.html)|
 |[Intro C](./content/Intro_C/Intro_C_Lecture.html)|[Programming Computers](./content/ProgrammingComputers/ProgrammingComputers.html)|[ProgramsProcessThreads](./content/ProgramsProcessesThreads/ProgramsProcessesThreads.html)|
