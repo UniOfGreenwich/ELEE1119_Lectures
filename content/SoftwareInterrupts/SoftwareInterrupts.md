@@ -1,6 +1,6 @@
 ---
-title: Introduction To Module
-description: Introduction To Module ppt
+title: Software Interrupts
+description: Software Interrupts ppt
 class: gaia
 _class:
   - lead
@@ -135,16 +135,22 @@ $ ps -ax
 ```sh
  3812 tty1     Ss+    0:00 /sbin/mingetty tty1
 ```
+<!--
+S = Sleeping. Usually waiting for an event to occur, such as a signal or input to become available.
 
+s = The process is a session leader
+
++ = The process is in the foreground process group
+-->
 ---
 
 ## Process: `init` again...
 
-- The `getty` processes **wait** for activity at the terminal, 
+- The `mingetty` processes **wait** for activity at the terminal, 
   - prompt the user with the login prompt, 
   - then passes control to the login program, 
   - which sets up the user environment, and starts a shell. 
-  - When the user shell **exits**, init starts another `getty` **process**.
+  - When the user shell **exits**, init starts another `mingetty` **process**.
 
 - The ability to start new processes and to wait for them to finish is fundamental to the system. 
 
