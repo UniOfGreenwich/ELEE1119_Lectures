@@ -217,6 +217,8 @@ do
         u) username=${OPTARG};;
         a) age=${OPTARG};;
         f) fullname=${OPTARG};;
+        ?) echo "Not a recongnised option: ${flag}\n"
+           exit 1;; # this is will catch illegal options
     esac
 done
 echo "Username: $username" echo "Age: $age" echo "Full Name: $fullname"
