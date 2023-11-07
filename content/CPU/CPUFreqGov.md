@@ -43,11 +43,11 @@ math: true
 
 ## Crystal Oscillator -  Base Clock
 
-- 100 million times a second – cycle is 10ns​
+- 100 million times a second – cycle is $10ns$​
 
 - Base clock, tempo, is multiplied by a frequency multiplier to increase the rate of instructions executed​
 
-- Multiplying by 35 we get 3.5Ghz, which 0.3ns per cycle​
+- Multiplying by 35 we get 3.5Ghz, which $0.3ns$ per cycle​
   
 ![bg right 99%](../../figures/cystal_frequency.png)
 
@@ -77,25 +77,52 @@ $T = \frac{1}{f}$
 <details>
 <summary>Answer</summary>
 
+<div style="font-size: 25px">
+
 $$
 \begin{equation*}
-    
     238.1ps \leftarrow 2.381 \cdot 10^{-10} = \frac{1}{4.2 \cdot 10^9} \equiv \frac{1}{4.2GHz}
 \end{equation*}
 $$
 
+</div>
+
 </details>
 
-1. or ARM Cortex-A72 @ 1.5GHz
+
+2. So how fast is the Intel i9-14900kf @ 9.1GHz?
 
 <details>
 <summary>Answer</summary>
+
+
+<div style="font-size: 25px">
+
+$$
+\begin{equation*}
+    109.9ps \leftarrow 1.09 \cdot 10^{-10} = \frac{1}{9.1\cdot 10^9} \equiv \frac{1}{9.1GHz}
+\end{equation*}
+$$
+
+</div>
+
+</details>
+
+3. or ARM Cortex-A72 @ 1.5GHz
+
+<details>
+<summary>Answer</summary>
+
+
+<div style="font-size: 25px">
 
 $$
 \begin{equation*}
     666.7ps \leftarrow 6.6667 \cdot 10^{-10} = \frac{1}{1.5 \cdot 10^9} \equiv \frac{1}{1.5GHz}
 \end{equation*}
 $$
+
+</div>
 
 </details>
 
@@ -105,7 +132,7 @@ $$
 ## Frequency Locations
 
 ```sh
-/sys/devices/system/cpu/cpu#/cpuFreq/scaling_cur_freq
+/sys/devices/system/cpu/cpu*/cpuFreq/scaling_cur_freq
 /sys/devices/system/cpu/cpuFreq/scaling_cur_freq
 /sys/devices/system/cpu/*
 ```
