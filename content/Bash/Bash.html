@@ -342,6 +342,8 @@ table{
         u) username=<span class="hljs-variable">${OPTARG}</span>;;
         a) age=<span class="hljs-variable">${OPTARG}</span>;;
         f) fullname=<span class="hljs-variable">${OPTARG}</span>;;
+        ?) <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;Not a recongnised option: <span class="hljs-variable">${flag}</span>\n&quot;</span>
+           <span class="hljs-built_in">exit</span> 1;; <span class="hljs-comment"># this is will catch illegal options</span>
     <span class="hljs-keyword">esac</span>
 <span class="hljs-keyword">done</span>
 <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;Username: <span class="hljs-variable">$username</span>&quot;</span> <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;Age: <span class="hljs-variable">$age</span>&quot;</span> <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;Full Name: <span class="hljs-variable">$fullname</span>&quot;</span>
