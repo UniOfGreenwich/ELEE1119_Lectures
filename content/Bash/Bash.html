@@ -137,7 +137,7 @@ table{
 ;" data-size="16:9">
 <h2>Task 1.</h2>
 <p>The <code>#!</code> tells to the kernel which interpreter is to be used to run the commands present in the file. If you run a script without specifying the interpreter, the shell will spawn another instance of itself and try to run the commands in the script.</p>
-<pre is="marp-pre" data-auto-scaling="downscale-only"><code>$ nano script.sh
+<pre is="marp-pre" data-auto-scaling="downscale-only"><code>$ vim script.sh
 </code></pre>
 <pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-sh"><span class="hljs-meta">#! /usr/bin/env cat</span>
 VAR1=Hello
@@ -264,13 +264,17 @@ table{
   font-size: 18 px;
 }
 ;" data-size="16:9">
-<h2>Lab 2</h2>
+<h2>Task 2</h2>
 <pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-sh"><span class="hljs-meta">#! /usr/bin/env bash</span>
 
-<span class="hljs-keyword">if</span> [ <span class="hljs-variable">$#</span> -lt 2 ]   -- <span class="hljs-variable">$#</span> is used <span class="hljs-keyword">for</span> number of arguments
+<span class="hljs-keyword">if</span> [ <span class="hljs-variable">$#</span> -lt 2 ]   <span class="hljs-comment"># $# is used for number of arguments</span>
 <span class="hljs-keyword">then</span>
   <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;Usage: <span class="hljs-variable">$0</span> arg1 arg2&quot;</span>
   <span class="hljs-built_in">exit</span>
+<span class="hljs-keyword">else</span>
+  <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;\$0= <span class="hljs-variable">$0</span>&quot;</span>
+  <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;\$1= <span class="hljs-variable">$1</span>&quot;</span>
+  <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;\$2= <span class="hljs-variable">$2</span>&quot;</span>
 <span class="hljs-keyword">fi</span>
 
 </code></pre>
@@ -329,7 +333,7 @@ table{
   font-size: 18 px;
 }
 ;" data-size="16:9">
-<h2>Lab 3.</h2>
+<h2>Task 3.</h2>
 <pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-sh"><span class="hljs-meta">#! /usr/bin/env bash</span>
 
 <span class="hljs-keyword">while</span> <span class="hljs-built_in">getopts</span> u:a:f: flag
@@ -521,7 +525,8 @@ until [ <span class="hljs-variable">$counter</span> -gt 10 ]
 table{
   font-size: 18 px;
 }
-" class="gaia" data-marpit-pagination="16" data-marpit-pagination-total="16" style="" data-size="16:9" data-marpit-advanced-background="pseudo" data-marpit-advanced-background-split="right"></section></foreignObject></svg></div><div class="bespoke-marp-note" data-index="1" tabindex="0"><p>The above is actually a fork bomb. It operates by creating a function called ':', which calls itself twice, once in the foreground and once in the background. The function executes repeatedly and in doing so, consumes all the system resources resulting in a system crash.</p></div><div class="bespoke-marp-note" data-index="12" tabindex="0"><p>- p means prompt
+" class="gaia" data-marpit-pagination="16" data-marpit-pagination-total="16" style="" data-size="16:9" data-marpit-advanced-background="pseudo" data-marpit-advanced-background-split="right"></section></foreignObject></svg></div><div class="bespoke-marp-note" data-index="1" tabindex="0"><p>The above is actually a fork bomb. It operates by creating a function called ':', which calls itself twice, once in the foreground and once in the background. The function executes repeatedly and in doing so, consumes all the system resources resulting in a system crash.</p></div><div class="bespoke-marp-note" data-index="2" tabindex="0"><p>- file --mime-type file.ext
+ - xxd image.png | head</p></div><div class="bespoke-marp-note" data-index="12" tabindex="0"><p>- p means prompt
 - s means sensitive
 - t timeout in seconds
 - a array</p></div><script>/*!! License: https://unpkg.com/@marp-team/marp-cli@2.1.4/lib/bespoke.js.LICENSE.txt */
