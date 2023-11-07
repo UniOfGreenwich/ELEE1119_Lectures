@@ -63,6 +63,11 @@ math: true
 - `#!` is encoded to the **bytes 23 21** which is the **magic number** of an executable script. 
   - A magic number is a sequence of bytes at the beginning of a file that allows to identify which is the type of a file, for example, a png file will always begin by the **bytes 89 50 4E 47**
 
+<!--
+ - file --mime-type file.ext
+ - xxd image.png | head
+ -->
+
 ---
 
 ## More on `#!`
@@ -84,7 +89,7 @@ math: true
 The `#!` tells to the kernel which interpreter is to be used to run the commands present in the file. If you run a script without specifying the interpreter, the shell will spawn another instance of itself and try to run the commands in the script. 
 
 ```
-$ nano script.sh
+$ vim script.sh
 ```
 
 ```sh
@@ -155,15 +160,19 @@ $ chmod +x script.sh && ./script.sh
 - `"$*"` Does the same thing but creates spaces between each argument
 ---
 
-## Lab 2
+## Task 2
 
 ```sh
 #! /usr/bin/env bash
 
-if [ $# -lt 2 ]   -- $# is used for number of arguments
+if [ $# -lt 2 ]   # $# is used for number of arguments
 then
   echo "Usage: $0 arg1 arg2"
   exit
+else
+  echo "\$0= $0"
+  echo "\$1= $1"
+  echo "\$2= $2"
 fi
 
 ```
@@ -197,7 +206,7 @@ echo "Username: $username" echo "Age: $age" echo "Full Name: $fullname"
 ```
 
 ---
-## Lab 3.
+## Task 3.
 
 ```sh
 #! /usr/bin/env bash
