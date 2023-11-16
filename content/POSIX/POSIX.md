@@ -25,13 +25,13 @@ math: true
 
 # POSIX
 
-    Course Code: U10814
+    Module Code: ELEE1119
 
-    Course Name: Networking and Operating Systems
+    Module Name: Advanced Computer Engineering
 
-    Credits: 20
+    Credits: 30
 
-    Module Leaders: Dr Alexios Louridas and Mr Seb Blair 
+    Module Leaders: Seb Blair BEng(H) PGCAP MIET MIHEEM FHEA
     
 ---
 
