@@ -47,7 +47,7 @@ $128=32 \cdot log_2(16)$
 
 - 128 bit numbers
 
-![h:300 center](https://arctype.com/blog/content/images/size/w1000/2021/01/Screen-Shot-2021-01-18-at-11.01.25-AM.png)
+![h:300 center](../../figures/uuidv1.png)
 
 <div align=center>
 
