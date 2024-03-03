@@ -155,8 +155,9 @@ And the total number of ways to generate r UUIDs is n^r since each of the r UUID
      - $122192928000000000ns$
      - Current date time since 00:00:00:00 01 January 1970
 
-$1799684520607795200ns = 1677491592607795200  + 122192928000000000$
-  -  48-bit MAC address of the host machine
+$$139285730270000000 = 17092802070000000 + 122192928000000000$$
+
+  - 48-bit MAC address of the host machine
 
 <!--
 Gregorian Calendar 15/10/1582
@@ -192,56 +193,136 @@ Unix 01/01/1970
 ---
 
 ## UUID 1: Time format
+
+<div style="font-size:27px">
+
 |Name| Bytes|Hex|Bits|Comments|
 |---|----|----|----|---|
 |time_low|4|8|32|integer giving the low 32-bits of time|
-|time_high|2|4|16|integer giving the middle 16-bits of time|
-|time_hi_version|2|4|16|4-bits representing the "version" and the followinghigh 12 bits of time|
-|clock_seq_hi_and_res clock_seq_low|	2|	4|	16|	1 to 3-bit "variant" in the most significant bits, followed by the 13 to 15-bit clock sequence|
+|time_mid|2|4|16|integer giving the middle 16-bits of time|
+|time_hi+version|2|4|16| 16 bits of time high with bits 6-7 multiplexed with version number|
+|clock_seq_hi_and_res clock_seq_low|2|4|16|1 to 3-bit "variant" in the most significant bits, followed by the 13 to 15-bit clock sequence|
+
+</div>
 
 ---
-
 ## Example
-```sh
-$ date +"%s.%N" | awk -F "." '{print "(nano seconds = )", (($1*1000000000)+122192928000000000+$2)}'
-> (nano seconds = ) 1799602340604762112
-```
-- Time Low = 04762112 -> 0048AA00
-  ```sh
-   $ printf "%016X" 04762112 | awk -F "%" '{print $1}'
-   > 000000000048AA00
-  ```
-- Time High = 0fe0 -> 0F29
-- Time High+Version = 1179 -> 049B
-- Clock_seq = is random bits say a number between 1000-9999 and replace the MSB with the variant number 0x10xx. 
-- 0048AA00-0F29-049B-25D9-[MAC|random 48-bits]
 
- 
+1. Current$^*$ timestamp in Unix Epoch Time (ns)  = $1709280207346745902$ .
+
+2. Divide the timestamp by 100 to convert it to 100-nanosecond intervals:
+
+<div align=center>
+                           
+$17092802073467459 = \frac{1709280207346745902}{100}$
+</div>
+
+3. Add the number of 100-nanosecond intervals between the UUID epoch (1582-10-15) and the Unix epoch (1970-01-01): 
+
+<div align=center>
+
+$139285730273467459 = 17092802073467459 + 122192928000000000$
+</div>
+
+<div style="font-size:20px">
+
+$^*$ at the time of making the slide
+</div>
+
 ---
+
+## Example Continued...
+
+Breaking down the UUID components as follows:
+
+4. Time Low (32 bits): The first 32 bits of the timestamp in hexadecimal:
+
+    ```
+    $ printf "0x%08X\n" 1392857302
+    > 0x530550D6
+    ```
+
+5. Time Mid (16 bits): The next 16 bits of the timestamp in hexadecimal:
+    ```
+    $ printf "0x%04X\n" 7346
+    > 0x1CB2
+    ```
+
+6. Time High and Version (16 bits): The next 16 bits of the timestamp ($7459$) with the version (1) in hexadecimal: $0x1D24 = 0x1D23+1$
+
+    ```
+    $ printf "%04X\n" <<< echo $((7459+1))
+    > 0x1D24
+    ```
+
+---
+
+## Example Continued....
+
+7. Clock Sequence (14 bits), in truth this can be 14 random bits so: 
+   
+   ```
+   $ printf "%04X\n" <<< echo $((RANDOM % 16384))
+   > 21FF
+   ```
+
+8. Node (48 bits): A randomly generated 48-bit value or MAC address if you must:
+   
+   ```
+   $ dd if=/dev/urandom bs=1 count=6 2>/dev/null | od -An -tx1 | tr -d ' \n'
+   > 2876c5202c7f
+   ```
+
+9. Put it all togehter:
+
+   - timeLow - timeMid - timeHigh+version - clockSeq - Node
+  
+   - `530550D6-1CB2-1D24-21FF-2876C5202C7F`
+
+
+   
+   
+
+<!--
+16384 because 2^14
+-->
+
+---
+
 ## UUID 2
+
 - Distributed Computing Environment (DCE)
+
 - combination of:
-  -  Current time and date.
-  -  The local identifier replaces the lower 32 bits of the timestamp.48-bit MAC address of the host machine
-       -  Domain Name or Hostname
-          ```sh
-          $ id -u; id -g; whoami;
-          ```
-  -  MacAddress or random generated Hex
+
+  - Current time and date.
+
+  - The local identifier replaces the lower 32 bits of the timestamp.48-bit M1392857302AC address of the host machine
+
+    - Domain Name or Hostname
+      
       ```sh
-      cat -A /dev/urandom | less
+      $ id -u; id -g; whoami;
       ```
+
+    - MacAddress or random generated Hex ->  ```sh1392857302```
 ---
 ## UUID 3
 
 - namespace could be website, DNS information, plain text, etc
 - the namespace value is hashed using the `md5hash` alogrithm
+- GNU Coreutils implements this using `md5sum`
+
+  ```
+  $ md5sum <<< "Test"
+  > 2205e48de5f93c784733ffcca841d2b5  -
+  ```
 
 ![](https://www.simplilearn.com/ice9/free_resources_article_thumb/md5_1-MD5_Algorithm.PNG)
 
+<!--md5sum needs to be stripped of whitespace and `-` -->
 
 ---
-
 
 ## MD5 Algorithm
 
@@ -277,13 +358,13 @@ Each of the sub-blocks are denoted as M[0] -> M[15].
 1. Generate 128 random bits:
 
 ```sh
-dd if=/dev/random count=16 bs=1 2> /dev/null | xxd -ps
-> 567D61C2EE3B23914141110256D2385
+$ dd if=/dev/random count=16 bs=1 2> /dev/null | xxd -ps
+> 7c1e598398eb691f3f4be4123c3ce9a7
 ```
 
 <div align=center>
 
-00000101 01100111 11010110 00011100 00101110 11100011 **10110010** 00111001 **00010100** 00010100 00010001 00010000 00100101 01101101 00100011 10000101 
+[0]0111110 00001111 00101100 11000001 11001100 01110101 **10110100** 100011111 **00111111** 01001011 11100100 00010010 00111100 00111100 11101001 10100111
 
 </div>
     
@@ -291,14 +372,16 @@ dd if=/dev/random count=16 bs=1 2> /dev/null | xxd -ps
 
 <div align=center>
 
-00000010  = **10110010** & 00001111​ (0x0f)
+00000100  = **10110100** & 00001111​ (0x0f)
 
-01000010  = **00000010** |  01000000 (0x40)
+01000100  = **00000100** |  01000000 (0x40)
 
 </div>
 
 
 <!--
+
+
 Command
 - dd == data defintion
 arguments 
@@ -313,24 +396,26 @@ Command
 
 ---
 
-## UUID4 Example 
+## UUID4 Example
 
-3. Next, take the 9th byte and perform an AND operation with `0x3F` and then OR it with `0x80`.
+3. Next, take the 9th byte (**00111111**) and perform an AND operation with `0x3F` and then OR it with `0x80`.
 
 <div align=center>
 
-00010100  = **00010100** & 00111111​ (0x3f)
+00111111​  = **00111111​** & 00111111​ (0x3f)
 
-10010100  = **00010100** |  10000000 (0x80)
+100111111  = **00111111​** |  10000000 (0x80)
 
 </div>
 
-4. Convert the 128 bits to hexadecimal representation and insert the hyphens to achieve the canonical text representation.​
+
+1. Convert the 128 bits to hexadecimal representation and insert the hyphens to achieve the canonical text representation.​
 
 <div align=center>
 
-567D61C2-EE30-4299-4141-110256D2385​
+Before:  7C1E5983-98EB-691F-3f4B-E4123C3CE9A7
 
+After:   7C1E5983-98EB-**44**1F-**CF**4B-E4123C3CE9A7
 </div>
 
 ---
@@ -365,7 +450,17 @@ After: AE21B4FC-6F72-**43**32-**BA**86-D209D1E0AF69
 
 ## UUID 5
 
-- namespace could be website, DNS information, plain text, etc
-- the namespace value is hashed using the `sha1sum` alogrithm
+<div style="font-size:22px">
 
-![bg right:50% 100%](../../figures/sha1sum.png)
+- namespace could be a website, DNS information, plain text, etc
+- the namespace value is hashed using the `sha1` alogrithm
+- GNU Coreutils implements this using `sha1sum`
+
+  ```
+  $ sha1sum "Test"
+  > 1c68ea370b40c06fcaf7f26c8b1dba9d9caf5dea  -
+  ```
+
+![bg right:40% 100%](../../figures/sha1sum.png)
+
+<!--sha1sum generates more characters than needed so we must trim, usually from right hand side-->
