@@ -266,7 +266,6 @@ Basic Rust naming conventions are described in [RFC 430](https://github.com/rust
 
 ---
 
-
 ## Rust Syntax
 
 <div style="font-size:22px">
