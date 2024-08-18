@@ -9,9 +9,14 @@ style: |
     #img-right{
       float: right;
     }
-    table{
-      font-size: 18 px;
-    }
+    table {
+        border-collapse: collapse;
+    
+      }
+    table, th,tr, td {
+         border: none!important; 
+          vertical-align: middle;
+      }
 size: 16:9
 paginate: true
 _paginate: false
@@ -70,15 +75,31 @@ Concepts will be introduced in lectures. There is a strong emphasis on taught pr
 
 ---
 
-## Assessments 
-Remember this is a 30 credit module!
+## Assessment Portfolio (100%) 
 
-1. Project 
-   1. A computer engineering project assessed by a pre-recorded video and Viva.
-   2. GitHub repository and Team project
-   3. Dates: Officially released first week of term 2.
-   4. Weighting: 60%
-   5. Previous Submissions [2015 to 2019](https://www.youtube.com/channel/UCUCG3PqKw9yKWqGBTlN1Kuw/videos), [2020-2021](https://www.youtube.com/watch?v=TzM0bBgHse8), [2021-2022](https://www.youtube.com/watch?v=HJBah1AWvD8) and [2022-2023](https://www.youtube.com/watch?v=4kElpZ-1YdI)
-2. Exam
-   1. 2 hour Unseen closed book exam.
-   2. Weighting: 40%
+Remember this is a 30 credit module, just as important as individual project.
+<table>
+<tr>
+<td>
+
+- Three part Team Project
+  1. Specification
+  2. System Build
+  3. Project Viva 
+
+- Dates: Officially released week 8.
+
+</td>
+<td>
+
+- Previous Submissions:
+  -  [2015 to 2019](https://www.youtube.com/channel/UCUCG3PqKw9yKWqGBTlN1Kuw/videos),
+  -  [2020-2021](https://www.youtube.com/watch?v=TzM0bBgHse8), 
+  -  [2021-2022](https://www.youtube.com/watch?v=HJBah1AWvD8)
+  -  [2022-2023](https://www.youtube.com/watch?v=4kElpZ-1YdI),
+  -  [2023-2024 (Team 0)](https://www.youtube.com/watch?v=lD17i18koeo),
+  -  [2023-2024 (Team 1)](https://www.youtube.com/watch?v=2bO4xLcN6Lk)
+
+</td>
+</tr>
+</table>
