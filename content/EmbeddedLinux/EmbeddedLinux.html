@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="en-US"><head><title>Introduction to Rust</title><meta property="og:title" content="Introduction to Rust"><meta name="description" content="Introduction to Rust slides"><meta property="og:description" content="Introduction to Rust slides"><meta charset="UTF-8"><meta name="viewport" content="width=device-width,height=device-height,initial-scale=1.0"><meta name="apple-mobile-web-app-capable" content="yes"><meta http-equiv="X-UA-Compatible" content="ie=edge"><meta property="og:type" content="website"><meta name="twitter:card" content="summary"><style>@media screen{body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>button,body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>button,body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container button,body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container button{appearance:none;background-color:initial;border:0;color:inherit;cursor:pointer;font-size:inherit;opacity:.8;outline:none;padding:0;transition:opacity .2s linear;-webkit-tap-highlight-color:transparent}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>button:disabled,body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>button:disabled,body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container button:disabled,body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container button:disabled{cursor:not-allowed;opacity:.15!important}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>button:hover,body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>button:hover,body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container button:hover,body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container button:hover{opacity:1}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>button:hover:active,body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>button:hover:active,body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container button:hover:active,body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container button:hover:active{opacity:.6}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>button:hover:not(:disabled),body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>button:hover:not(:disabled),body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container button:hover:not(:disabled),body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container button:hover:not(:disabled){transition:none}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=prev],body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=prev],body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container button.bespoke-marp-presenter-info-page-prev{background:#0000 url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48cGF0aCBmaWxsPSJub25lIiBzdHJva2U9IiNmZmYiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgc3Ryb2tlLXdpZHRoPSI1IiBkPSJNNjggOTAgMjggNTBsNDAtNDAiLz48L3N2Zz4=") no-repeat 50%;background-size:contain;overflow:hidden;text-indent:100%;white-space:nowrap}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=next],body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=next],body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container button.bespoke-marp-presenter-info-page-next{background:#0000 url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48cGF0aCBmaWxsPSJub25lIiBzdHJva2U9IiNmZmYiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgc3Ryb2tlLXdpZHRoPSI1IiBkPSJtMzIgOTAgNDAtNDAtNDAtNDAiLz48L3N2Zz4=") no-repeat 50%;background-size:contain;overflow:hidden;text-indent:100%;white-space:nowrap}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=fullscreen],body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=fullscreen]{background:#0000 url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48ZGVmcz48c3R5bGU+LmF7ZmlsbDpub25lO3N0cm9rZTojZmZmO3N0cm9rZS1saW5lY2FwOnJvdW5kO3N0cm9rZS1saW5lam9pbjpyb3VuZDtzdHJva2Utd2lkdGg6NXB4fTwvc3R5bGU+PC9kZWZzPjxyZWN0IHdpZHRoPSI4MCIgaGVpZ2h0PSI2MCIgeD0iMTAiIHk9IjIwIiBjbGFzcz0iYSIgcng9IjUuNjciLz48cGF0aCBkPSJNNDAgNzBIMjBWNTBtMjAgMEwyMCA3MG00MC00MGgyMHYyMG0tMjAgMCAyMC0yMCIgY2xhc3M9ImEiLz48L3N2Zz4=") no-repeat 50%;background-size:contain;overflow:hidden;text-indent:100%;white-space:nowrap}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>button.exit[data-bespoke-marp-osc=fullscreen],body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>button.exit[data-bespoke-marp-osc=fullscreen]{background-image:url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48ZGVmcz48c3R5bGU+LmF7ZmlsbDpub25lO3N0cm9rZTojZmZmO3N0cm9rZS1saW5lY2FwOnJvdW5kO3N0cm9rZS1saW5lam9pbjpyb3VuZDtzdHJva2Utd2lkdGg6NXB4fTwvc3R5bGU+PC9kZWZzPjxyZWN0IHdpZHRoPSI4MCIgaGVpZ2h0PSI2MCIgeD0iMTAiIHk9IjIwIiBjbGFzcz0iYSIgcng9IjUuNjciLz48cGF0aCBkPSJNMjAgNTBoMjB2MjBtLTIwIDAgMjAtMjBtNDAgMEg2MFYzMG0yMCAwTDYwIDUwIiBjbGFzcz0iYSIvPjwvc3ZnPg==")}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=presenter],body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=presenter]{background:#0000 url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48cGF0aCBmaWxsPSJub25lIiBzdHJva2U9IiNmZmYiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgc3Ryb2tlLXdpZHRoPSI1IiBkPSJNODcuOCA0Ny41Qzg5IDUwIDg3LjcgNTIgODUgNTJIMzVhOC43IDguNyAwIDAgMS03LjItNC41bC0xNS42LTMxQzExIDE0IDEyLjIgMTIgMTUgMTJoNTBhOC44IDguOCAwIDAgMSA3LjIgNC41ek02MCA1MnYzNm0tMTAgMGgyME00NSA0MmgyMCIvPjwvc3ZnPg==") no-repeat 50%;background-size:contain;overflow:hidden;text-indent:100%;white-space:nowrap}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container button.bespoke-marp-presenter-note-bigger{background:#0000 url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48cGF0aCBzdHJva2U9IiNmZmYiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgc3Ryb2tlLXdpZHRoPSI1IiBkPSJNMTIgNTBoODBNNTIgOTBWMTAiLz48L3N2Zz4=") no-repeat 50%;background-size:contain;overflow:hidden;text-indent:100%;white-space:nowrap}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container button.bespoke-marp-presenter-note-smaller{background:#0000 url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48cGF0aCBmaWxsPSJub25lIiBzdHJva2U9IiNmZmYiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgc3Ryb2tlLXdpZHRoPSI1IiBkPSJNMTIgNTBoODAiLz48L3N2Zz4=") no-repeat 50%;background-size:contain;overflow:hidden;text-indent:100%;white-space:nowrap}}@keyframes __bespoke_marp_transition_reduced_outgoing__{0%{opacity:1}to{opacity:0}}@keyframes __bespoke_marp_transition_reduced_incoming__{0%{mix-blend-mode:plus-lighter;opacity:0}to{mix-blend-mode:plus-lighter;opacity:1}}.bespoke-marp-note,.bespoke-marp-osc,.bespoke-progress-parent{display:none;transition:none}@media screen{::view-transition-group(*){animation-duration:var(--marp-bespoke-transition-animation-duration,.5s);animation-timing-function:ease}::view-transition-new(*),::view-transition-old(*){animation-delay:0s;animation-direction:var(--marp-bespoke-transition-animation-direction,normal);animation-duration:var(--marp-bespoke-transition-animation-duration,.5s);animation-fill-mode:both;animation-name:var(--marp-bespoke-transition-animation-name,var(--marp-bespoke-transition-animation-name-fallback,__bespoke_marp_transition_no_animation__));mix-blend-mode:normal}::view-transition-old(*){--marp-bespoke-transition-animation-name-fallback:__bespoke_marp_transition_reduced_outgoing__;animation-timing-function:ease}::view-transition-new(*){--marp-bespoke-transition-animation-name-fallback:__bespoke_marp_transition_reduced_incoming__;animation-timing-function:ease}::view-transition-new(root),::view-transition-old(root){animation-timing-function:linear}::view-transition-new(__bespoke_marp_transition_osc__),::view-transition-old(__bespoke_marp_transition_osc__){animation-duration:0s!important;animation-name:__bespoke_marp_transition_osc__!important}::view-transition-new(__bespoke_marp_transition_osc__){opacity:0!important}.bespoke-marp-transition-warming-up::view-transition-group(*),.bespoke-marp-transition-warming-up::view-transition-new(*),.bespoke-marp-transition-warming-up::view-transition-old(*){animation-play-state:paused!important}body,html{height:100%;margin:0}body{background:#000;overflow:hidden}svg.bespoke-marp-slide{content-visibility:hidden;opacity:0;pointer-events:none;z-index:-1}svg.bespoke-marp-slide:not(.bespoke-marp-active) *{view-transition-name:none!important}svg.bespoke-marp-slide.bespoke-marp-active{content-visibility:visible;opacity:1;pointer-events:auto;z-index:0}svg.bespoke-marp-slide.bespoke-marp-active.bespoke-marp-active-ready *{animation-name:__bespoke_marp__!important}@supports not (content-visibility:hidden){svg.bespoke-marp-slide[data-bespoke-marp-load=hideable]{display:none}svg.bespoke-marp-slide[data-bespoke-marp-load=hideable].bespoke-marp-active{display:block}}}@media screen and (prefers-reduced-motion:reduce){svg.bespoke-marp-slide *{view-transition-name:none!important}}@media screen{[data-bespoke-marp-fragment=inactive]{visibility:hidden}body[data-bespoke-view=""] .bespoke-marp-parent,body[data-bespoke-view=next] .bespoke-marp-parent{inset:0;position:absolute}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc,body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc{background:#000000a6;border-radius:7px;bottom:50px;color:#fff;contain:paint;display:block;font-family:Helvetica,Arial,sans-serif;font-size:16px;left:50%;line-height:0;opacity:1;padding:12px;position:absolute;touch-action:manipulation;transform:translateX(-50%);transition:opacity .2s linear;-webkit-user-select:none;user-select:none;white-space:nowrap;will-change:transform;z-index:1;view-transition-name:__bespoke_marp_transition_osc__}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>*,body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>*{margin-left:6px}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>:first-child,body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>:first-child{margin-left:0}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>span,body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>span{opacity:.8}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>span[data-bespoke-marp-osc=page],body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>span[data-bespoke-marp-osc=page]{display:inline-block;min-width:140px;text-align:center}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=fullscreen],body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=next],body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=presenter],body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=prev],body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=fullscreen],body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=next],body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=presenter],body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=prev]{height:32px;line-height:32px;width:32px}body[data-bespoke-view=""] .bespoke-marp-parent.bespoke-marp-inactive,body[data-bespoke-view=next] .bespoke-marp-parent.bespoke-marp-inactive{cursor:none}body[data-bespoke-view=""] .bespoke-marp-parent.bespoke-marp-inactive>.bespoke-marp-osc,body[data-bespoke-view=next] .bespoke-marp-parent.bespoke-marp-inactive>.bespoke-marp-osc{opacity:0;pointer-events:none}body[data-bespoke-view=""] svg.bespoke-marp-slide,body[data-bespoke-view=next] svg.bespoke-marp-slide{height:100%;left:0;position:absolute;top:0;width:100%}body[data-bespoke-view=""] .bespoke-progress-parent{background:#222;display:flex;height:5px;width:100%}body[data-bespoke-view=""] .bespoke-progress-parent+.bespoke-marp-parent{top:5px}body[data-bespoke-view=""] .bespoke-progress-parent .bespoke-progress-bar{background:#0288d1;flex:0 0 0;transition:flex-basis .2s cubic-bezier(0,1,1,1)}body[data-bespoke-view=next]{background:#0000}body[data-bespoke-view=presenter]{background:#161616}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container{display:grid;font-family:Helvetica,Arial,sans-serif;grid-template:"current dragbar next" minmax(140px,1fr) "current dragbar note" 2fr "info    dragbar note" 3em;grid-template-columns:minmax(3px,var(--bespoke-marp-presenter-split-ratio,66%)) 0 minmax(3px,1fr);height:100%;left:0;position:absolute;top:0;width:100%}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-parent{grid-area:current;overflow:hidden;position:relative}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-parent svg.bespoke-marp-slide{height:calc(100% - 40px);left:20px;pointer-events:none;position:absolute;top:20px;-webkit-user-select:none;user-select:none;width:calc(100% - 40px)}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-parent svg.bespoke-marp-slide.bespoke-marp-active{filter:drop-shadow(0 3px 10px rgba(0,0,0,.5))}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-dragbar-container{background:#0288d1;cursor:col-resize;grid-area:dragbar;margin-left:-3px;opacity:0;position:relative;transition:opacity .4s linear .1s;width:6px;z-index:10}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-dragbar-container:hover{opacity:1}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-dragbar-container.active{opacity:1;transition-delay:0s}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-next-container{background:#222;cursor:pointer;display:none;grid-area:next;overflow:hidden;position:relative}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-next-container.active{display:block}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-next-container iframe.bespoke-marp-presenter-next{background:#0000;border:0;display:block;filter:drop-shadow(0 3px 10px rgba(0,0,0,.5));height:calc(100% - 40px);left:20px;pointer-events:none;position:absolute;top:20px;-webkit-user-select:none;user-select:none;width:calc(100% - 40px)}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container{background:#222;color:#eee;grid-area:note;position:relative;z-index:1}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container button{height:1.5em;line-height:1.5em;width:1.5em}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container .bespoke-marp-presenter-note-wrapper{display:block;inset:0;position:absolute}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container .bespoke-marp-presenter-note-buttons{background:#000000a6;border-radius:4px;bottom:0;display:flex;gap:4px;margin:12px;opacity:0;padding:6px;pointer-events:none;position:absolute;right:0;transition:opacity .2s linear}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container .bespoke-marp-presenter-note-buttons:focus-within,body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container .bespoke-marp-presenter-note-wrapper:focus-within+.bespoke-marp-presenter-note-buttons,body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container:hover .bespoke-marp-presenter-note-buttons{opacity:1;pointer-events:auto}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container .bespoke-marp-note{box-sizing:border-box;font-size:calc(1.1em*var(--bespoke-marp-note-font-scale, 1));height:calc(100% - 40px);margin:20px;overflow:auto;padding-right:3px;white-space:pre-wrap;width:calc(100% - 40px);word-wrap:break-word;scrollbar-color:#eeeeee80 #0000;scrollbar-width:thin}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container .bespoke-marp-note::-webkit-scrollbar{width:6px}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container .bespoke-marp-note::-webkit-scrollbar-track{background:#0000}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container .bespoke-marp-note::-webkit-scrollbar-thumb{background:#eeeeee80;border-radius:6px}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container .bespoke-marp-note:empty{pointer-events:none}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container .bespoke-marp-note.active{display:block}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container .bespoke-marp-note p:first-child{margin-top:0}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container .bespoke-marp-note p:last-child{margin-bottom:0}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container{align-items:center;box-sizing:border-box;color:#eee;display:flex;flex-wrap:nowrap;grid-area:info;justify-content:center;overflow:hidden;padding:0 10px}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container .bespoke-marp-presenter-info-page,body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container .bespoke-marp-presenter-info-time,body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container .bespoke-marp-presenter-info-timer{box-sizing:border-box;display:block;padding:0 10px;white-space:nowrap;width:100%}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container button{height:1.5em;line-height:1.5em;width:1.5em}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container .bespoke-marp-presenter-info-page{order:2;text-align:center}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container .bespoke-marp-presenter-info-page .bespoke-marp-presenter-info-page-text{display:inline-block;min-width:120px;text-align:center}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container .bespoke-marp-presenter-info-time{color:#999;order:1;text-align:left}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container .bespoke-marp-presenter-info-timer{color:#999;order:3;text-align:right}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container .bespoke-marp-presenter-info-timer:hover{cursor:pointer}}@media print{.bespoke-marp-presenter-info-container,.bespoke-marp-presenter-next-container,.bespoke-marp-presenter-note-container{display:none}}</style><style>div#\:\$p > svg > foreignObject > section{width:1280px;height:720px;box-sizing:border-box;overflow:hidden;position:relative;scroll-snap-align:center center;-webkit-text-size-adjust:100%;text-size-adjust:100%}div#\:\$p > svg > foreignObject > section::after{bottom:0;content:attr(data-marpit-pagination);padding:inherit;pointer-events:none;position:absolute;right:0}div#\:\$p > svg > foreignObject > section:not([data-marpit-pagination])::after{display:none}div#\:\$p > svg > foreignObject > section :is(h1, marp-h1){font-size:2em;margin:0.67em 0}div#\:\$p > svg > foreignObject > section video::-webkit-media-controls{will-change:transform}@page {size:1280px 720px;margin:0}@media print{html, body{background-color:#fff;margin:0;page-break-inside:avoid;break-inside:avoid-page}div#\:\$p > svg > foreignObject > section{page-break-before:always;break-before:page}div#\:\$p > svg > foreignObject > section, div#\:\$p > svg > foreignObject > section *{-webkit-print-color-adjust:exact!important;animation-delay:0s!important;animation-duration:0s!important;color-adjust:exact!important;transition:none!important}div#\:\$p > svg[data-marpit-svg]{display:block;height:100vh;width:100vw}}div#\:\$p > svg > foreignObject > :where(section){container-type:size}div#\:\$p > svg > foreignObject > section img[data-marp-twemoji]{background:transparent;height:1em;margin:0 .05em 0 .1em;vertical-align:-.1em;width:1em}/*!
+<!DOCTYPE html><html lang="en-US"><head><title>Embedded Linux</title><meta property="og:title" content="Embedded Linux"><meta name="description" content="Embedded Linux Slides"><meta property="og:description" content="Embedded Linux Slides"><meta charset="UTF-8"><meta name="viewport" content="width=device-width,height=device-height,initial-scale=1.0"><meta name="apple-mobile-web-app-capable" content="yes"><meta http-equiv="X-UA-Compatible" content="ie=edge"><meta property="og:type" content="website"><meta name="twitter:card" content="summary"><style>@media screen{body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>button,body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>button,body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container button,body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container button{appearance:none;background-color:initial;border:0;color:inherit;cursor:pointer;font-size:inherit;opacity:.8;outline:none;padding:0;transition:opacity .2s linear;-webkit-tap-highlight-color:transparent}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>button:disabled,body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>button:disabled,body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container button:disabled,body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container button:disabled{cursor:not-allowed;opacity:.15!important}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>button:hover,body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>button:hover,body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container button:hover,body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container button:hover{opacity:1}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>button:hover:active,body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>button:hover:active,body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container button:hover:active,body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container button:hover:active{opacity:.6}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>button:hover:not(:disabled),body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>button:hover:not(:disabled),body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container button:hover:not(:disabled),body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container button:hover:not(:disabled){transition:none}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=prev],body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=prev],body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container button.bespoke-marp-presenter-info-page-prev{background:#0000 url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48cGF0aCBmaWxsPSJub25lIiBzdHJva2U9IiNmZmYiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgc3Ryb2tlLXdpZHRoPSI1IiBkPSJNNjggOTAgMjggNTBsNDAtNDAiLz48L3N2Zz4=") no-repeat 50%;background-size:contain;overflow:hidden;text-indent:100%;white-space:nowrap}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=next],body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=next],body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container button.bespoke-marp-presenter-info-page-next{background:#0000 url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48cGF0aCBmaWxsPSJub25lIiBzdHJva2U9IiNmZmYiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgc3Ryb2tlLXdpZHRoPSI1IiBkPSJtMzIgOTAgNDAtNDAtNDAtNDAiLz48L3N2Zz4=") no-repeat 50%;background-size:contain;overflow:hidden;text-indent:100%;white-space:nowrap}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=fullscreen],body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=fullscreen]{background:#0000 url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48ZGVmcz48c3R5bGU+LmF7ZmlsbDpub25lO3N0cm9rZTojZmZmO3N0cm9rZS1saW5lY2FwOnJvdW5kO3N0cm9rZS1saW5lam9pbjpyb3VuZDtzdHJva2Utd2lkdGg6NXB4fTwvc3R5bGU+PC9kZWZzPjxyZWN0IHdpZHRoPSI4MCIgaGVpZ2h0PSI2MCIgeD0iMTAiIHk9IjIwIiBjbGFzcz0iYSIgcng9IjUuNjciLz48cGF0aCBkPSJNNDAgNzBIMjBWNTBtMjAgMEwyMCA3MG00MC00MGgyMHYyMG0tMjAgMCAyMC0yMCIgY2xhc3M9ImEiLz48L3N2Zz4=") no-repeat 50%;background-size:contain;overflow:hidden;text-indent:100%;white-space:nowrap}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>button.exit[data-bespoke-marp-osc=fullscreen],body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>button.exit[data-bespoke-marp-osc=fullscreen]{background-image:url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48ZGVmcz48c3R5bGU+LmF7ZmlsbDpub25lO3N0cm9rZTojZmZmO3N0cm9rZS1saW5lY2FwOnJvdW5kO3N0cm9rZS1saW5lam9pbjpyb3VuZDtzdHJva2Utd2lkdGg6NXB4fTwvc3R5bGU+PC9kZWZzPjxyZWN0IHdpZHRoPSI4MCIgaGVpZ2h0PSI2MCIgeD0iMTAiIHk9IjIwIiBjbGFzcz0iYSIgcng9IjUuNjciLz48cGF0aCBkPSJNMjAgNTBoMjB2MjBtLTIwIDAgMjAtMjBtNDAgMEg2MFYzMG0yMCAwTDYwIDUwIiBjbGFzcz0iYSIvPjwvc3ZnPg==")}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=presenter],body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=presenter]{background:#0000 url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48cGF0aCBmaWxsPSJub25lIiBzdHJva2U9IiNmZmYiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgc3Ryb2tlLXdpZHRoPSI1IiBkPSJNODcuOCA0Ny41Qzg5IDUwIDg3LjcgNTIgODUgNTJIMzVhOC43IDguNyAwIDAgMS03LjItNC41bC0xNS42LTMxQzExIDE0IDEyLjIgMTIgMTUgMTJoNTBhOC44IDguOCAwIDAgMSA3LjIgNC41ek02MCA1MnYzNm0tMTAgMGgyME00NSA0MmgyMCIvPjwvc3ZnPg==") no-repeat 50%;background-size:contain;overflow:hidden;text-indent:100%;white-space:nowrap}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container button.bespoke-marp-presenter-note-bigger{background:#0000 url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48cGF0aCBzdHJva2U9IiNmZmYiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgc3Ryb2tlLXdpZHRoPSI1IiBkPSJNMTIgNTBoODBNNTIgOTBWMTAiLz48L3N2Zz4=") no-repeat 50%;background-size:contain;overflow:hidden;text-indent:100%;white-space:nowrap}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container button.bespoke-marp-presenter-note-smaller{background:#0000 url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48cGF0aCBmaWxsPSJub25lIiBzdHJva2U9IiNmZmYiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgc3Ryb2tlLXdpZHRoPSI1IiBkPSJNMTIgNTBoODAiLz48L3N2Zz4=") no-repeat 50%;background-size:contain;overflow:hidden;text-indent:100%;white-space:nowrap}}@keyframes __bespoke_marp_transition_reduced_outgoing__{0%{opacity:1}to{opacity:0}}@keyframes __bespoke_marp_transition_reduced_incoming__{0%{mix-blend-mode:plus-lighter;opacity:0}to{mix-blend-mode:plus-lighter;opacity:1}}.bespoke-marp-note,.bespoke-marp-osc,.bespoke-progress-parent{display:none;transition:none}@media screen{::view-transition-group(*){animation-duration:var(--marp-bespoke-transition-animation-duration,.5s);animation-timing-function:ease}::view-transition-new(*),::view-transition-old(*){animation-delay:0s;animation-direction:var(--marp-bespoke-transition-animation-direction,normal);animation-duration:var(--marp-bespoke-transition-animation-duration,.5s);animation-fill-mode:both;animation-name:var(--marp-bespoke-transition-animation-name,var(--marp-bespoke-transition-animation-name-fallback,__bespoke_marp_transition_no_animation__));mix-blend-mode:normal}::view-transition-old(*){--marp-bespoke-transition-animation-name-fallback:__bespoke_marp_transition_reduced_outgoing__;animation-timing-function:ease}::view-transition-new(*){--marp-bespoke-transition-animation-name-fallback:__bespoke_marp_transition_reduced_incoming__;animation-timing-function:ease}::view-transition-new(root),::view-transition-old(root){animation-timing-function:linear}::view-transition-new(__bespoke_marp_transition_osc__),::view-transition-old(__bespoke_marp_transition_osc__){animation-duration:0s!important;animation-name:__bespoke_marp_transition_osc__!important}::view-transition-new(__bespoke_marp_transition_osc__){opacity:0!important}.bespoke-marp-transition-warming-up::view-transition-group(*),.bespoke-marp-transition-warming-up::view-transition-new(*),.bespoke-marp-transition-warming-up::view-transition-old(*){animation-play-state:paused!important}body,html{height:100%;margin:0}body{background:#000;overflow:hidden}svg.bespoke-marp-slide{content-visibility:hidden;opacity:0;pointer-events:none;z-index:-1}svg.bespoke-marp-slide:not(.bespoke-marp-active) *{view-transition-name:none!important}svg.bespoke-marp-slide.bespoke-marp-active{content-visibility:visible;opacity:1;pointer-events:auto;z-index:0}svg.bespoke-marp-slide.bespoke-marp-active.bespoke-marp-active-ready *{animation-name:__bespoke_marp__!important}@supports not (content-visibility:hidden){svg.bespoke-marp-slide[data-bespoke-marp-load=hideable]{display:none}svg.bespoke-marp-slide[data-bespoke-marp-load=hideable].bespoke-marp-active{display:block}}}@media screen and (prefers-reduced-motion:reduce){svg.bespoke-marp-slide *{view-transition-name:none!important}}@media screen{[data-bespoke-marp-fragment=inactive]{visibility:hidden}body[data-bespoke-view=""] .bespoke-marp-parent,body[data-bespoke-view=next] .bespoke-marp-parent{inset:0;position:absolute}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc,body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc{background:#000000a6;border-radius:7px;bottom:50px;color:#fff;contain:paint;display:block;font-family:Helvetica,Arial,sans-serif;font-size:16px;left:50%;line-height:0;opacity:1;padding:12px;position:absolute;touch-action:manipulation;transform:translateX(-50%);transition:opacity .2s linear;-webkit-user-select:none;user-select:none;white-space:nowrap;will-change:transform;z-index:1;view-transition-name:__bespoke_marp_transition_osc__}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>*,body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>*{margin-left:6px}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>:first-child,body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>:first-child{margin-left:0}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>span,body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>span{opacity:.8}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>span[data-bespoke-marp-osc=page],body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>span[data-bespoke-marp-osc=page]{display:inline-block;min-width:140px;text-align:center}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=fullscreen],body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=next],body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=presenter],body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=prev],body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=fullscreen],body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=next],body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=presenter],body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=prev]{height:32px;line-height:32px;width:32px}body[data-bespoke-view=""] .bespoke-marp-parent.bespoke-marp-inactive,body[data-bespoke-view=next] .bespoke-marp-parent.bespoke-marp-inactive{cursor:none}body[data-bespoke-view=""] .bespoke-marp-parent.bespoke-marp-inactive>.bespoke-marp-osc,body[data-bespoke-view=next] .bespoke-marp-parent.bespoke-marp-inactive>.bespoke-marp-osc{opacity:0;pointer-events:none}body[data-bespoke-view=""] svg.bespoke-marp-slide,body[data-bespoke-view=next] svg.bespoke-marp-slide{height:100%;left:0;position:absolute;top:0;width:100%}body[data-bespoke-view=""] .bespoke-progress-parent{background:#222;display:flex;height:5px;width:100%}body[data-bespoke-view=""] .bespoke-progress-parent+.bespoke-marp-parent{top:5px}body[data-bespoke-view=""] .bespoke-progress-parent .bespoke-progress-bar{background:#0288d1;flex:0 0 0;transition:flex-basis .2s cubic-bezier(0,1,1,1)}body[data-bespoke-view=next]{background:#0000}body[data-bespoke-view=presenter]{background:#161616}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container{display:grid;font-family:Helvetica,Arial,sans-serif;grid-template:"current dragbar next" minmax(140px,1fr) "current dragbar note" 2fr "info    dragbar note" 3em;grid-template-columns:minmax(3px,var(--bespoke-marp-presenter-split-ratio,66%)) 0 minmax(3px,1fr);height:100%;left:0;position:absolute;top:0;width:100%}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-parent{grid-area:current;overflow:hidden;position:relative}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-parent svg.bespoke-marp-slide{height:calc(100% - 40px);left:20px;pointer-events:none;position:absolute;top:20px;-webkit-user-select:none;user-select:none;width:calc(100% - 40px)}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-parent svg.bespoke-marp-slide.bespoke-marp-active{filter:drop-shadow(0 3px 10px rgba(0,0,0,.5))}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-dragbar-container{background:#0288d1;cursor:col-resize;grid-area:dragbar;margin-left:-3px;opacity:0;position:relative;transition:opacity .4s linear .1s;width:6px;z-index:10}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-dragbar-container:hover{opacity:1}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-dragbar-container.active{opacity:1;transition-delay:0s}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-next-container{background:#222;cursor:pointer;display:none;grid-area:next;overflow:hidden;position:relative}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-next-container.active{display:block}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-next-container iframe.bespoke-marp-presenter-next{background:#0000;border:0;display:block;filter:drop-shadow(0 3px 10px rgba(0,0,0,.5));height:calc(100% - 40px);left:20px;pointer-events:none;position:absolute;top:20px;-webkit-user-select:none;user-select:none;width:calc(100% - 40px)}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container{background:#222;color:#eee;grid-area:note;position:relative;z-index:1}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container button{height:1.5em;line-height:1.5em;width:1.5em}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container .bespoke-marp-presenter-note-wrapper{display:block;inset:0;position:absolute}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container .bespoke-marp-presenter-note-buttons{background:#000000a6;border-radius:4px;bottom:0;display:flex;gap:4px;margin:12px;opacity:0;padding:6px;pointer-events:none;position:absolute;right:0;transition:opacity .2s linear}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container .bespoke-marp-presenter-note-buttons:focus-within,body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container .bespoke-marp-presenter-note-wrapper:focus-within+.bespoke-marp-presenter-note-buttons,body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container:hover .bespoke-marp-presenter-note-buttons{opacity:1;pointer-events:auto}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container .bespoke-marp-note{box-sizing:border-box;font-size:calc(1.1em*var(--bespoke-marp-note-font-scale, 1));height:calc(100% - 40px);margin:20px;overflow:auto;padding-right:3px;white-space:pre-wrap;width:calc(100% - 40px);word-wrap:break-word;scrollbar-color:#eeeeee80 #0000;scrollbar-width:thin}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container .bespoke-marp-note::-webkit-scrollbar{width:6px}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container .bespoke-marp-note::-webkit-scrollbar-track{background:#0000}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container .bespoke-marp-note::-webkit-scrollbar-thumb{background:#eeeeee80;border-radius:6px}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container .bespoke-marp-note:empty{pointer-events:none}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container .bespoke-marp-note.active{display:block}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container .bespoke-marp-note p:first-child{margin-top:0}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container .bespoke-marp-note p:last-child{margin-bottom:0}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container{align-items:center;box-sizing:border-box;color:#eee;display:flex;flex-wrap:nowrap;grid-area:info;justify-content:center;overflow:hidden;padding:0 10px}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container .bespoke-marp-presenter-info-page,body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container .bespoke-marp-presenter-info-time,body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container .bespoke-marp-presenter-info-timer{box-sizing:border-box;display:block;padding:0 10px;white-space:nowrap;width:100%}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container button{height:1.5em;line-height:1.5em;width:1.5em}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container .bespoke-marp-presenter-info-page{order:2;text-align:center}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container .bespoke-marp-presenter-info-page .bespoke-marp-presenter-info-page-text{display:inline-block;min-width:120px;text-align:center}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container .bespoke-marp-presenter-info-time{color:#999;order:1;text-align:left}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container .bespoke-marp-presenter-info-timer{color:#999;order:3;text-align:right}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container .bespoke-marp-presenter-info-timer:hover{cursor:pointer}}@media print{.bespoke-marp-presenter-info-container,.bespoke-marp-presenter-next-container,.bespoke-marp-presenter-note-container{display:none}}</style><style>div#\:\$p > svg > foreignObject > section{width:1280px;height:720px;box-sizing:border-box;overflow:hidden;position:relative;scroll-snap-align:center center;-webkit-text-size-adjust:100%;text-size-adjust:100%}div#\:\$p > svg > foreignObject > section::after{bottom:0;content:attr(data-marpit-pagination);padding:inherit;pointer-events:none;position:absolute;right:0}div#\:\$p > svg > foreignObject > section:not([data-marpit-pagination])::after{display:none}div#\:\$p > svg > foreignObject > section :is(h1, marp-h1){font-size:2em;margin:0.67em 0}div#\:\$p > svg > foreignObject > section video::-webkit-media-controls{will-change:transform}@page {size:1280px 720px;margin:0}@media print{html, body{background-color:#fff;margin:0;page-break-inside:avoid;break-inside:avoid-page}div#\:\$p > svg > foreignObject > section{page-break-before:always;break-before:page}div#\:\$p > svg > foreignObject > section, div#\:\$p > svg > foreignObject > section *{-webkit-print-color-adjust:exact!important;animation-delay:0s!important;animation-duration:0s!important;color-adjust:exact!important;transition:none!important}div#\:\$p > svg[data-marpit-svg]{display:block;height:100vh;width:100vw}}div#\:\$p > svg > foreignObject > :where(section){container-type:size}div#\:\$p > svg > foreignObject > section mjx-container[jax="SVG"]{direction:ltr}div#\:\$p > svg > foreignObject > section mjx-container[jax="SVG"] > svg{overflow:visible;min-height:1px;min-width:1px}div#\:\$p > svg > foreignObject > section mjx-container[jax="SVG"] > svg a{fill:blue;stroke:blue}div#\:\$p > svg > foreignObject > section mjx-container[jax="SVG"][display="true"]{display:block;text-align:center;margin:1em 0}div#\:\$p > svg > foreignObject > section mjx-container[jax="SVG"][display="true"][width="full"]{display:flex}div#\:\$p > svg > foreignObject > section mjx-container[jax="SVG"][justify="left"]{text-align:left}div#\:\$p > svg > foreignObject > section mjx-container[jax="SVG"][justify="right"]{text-align:right}div#\:\$p > svg > foreignObject > section g[data-mml-node="merror"] > g{fill:red;stroke:red}div#\:\$p > svg > foreignObject > section g[data-mml-node="merror"] > rect[data-background]{fill:yellow;stroke:none}div#\:\$p > svg > foreignObject > section g[data-mml-node="mtable"] > line[data-line], div#\:\$p > svg > foreignObject > section svg[data-table] > g > line[data-line]{stroke-width:70px;fill:none}div#\:\$p > svg > foreignObject > section g[data-mml-node="mtable"] > rect[data-frame], div#\:\$p > svg > foreignObject > section svg[data-table] > g > rect[data-frame]{stroke-width:70px;fill:none}div#\:\$p > svg > foreignObject > section g[data-mml-node="mtable"] > .mjx-dashed, div#\:\$p > svg > foreignObject > section svg[data-table] > g > .mjx-dashed{stroke-dasharray:140}div#\:\$p > svg > foreignObject > section g[data-mml-node="mtable"] > .mjx-dotted, div#\:\$p > svg > foreignObject > section svg[data-table] > g > .mjx-dotted{stroke-linecap:round;stroke-dasharray:0,140}div#\:\$p > svg > foreignObject > section g[data-mml-node="mtable"] > g > svg{overflow:visible}div#\:\$p > svg > foreignObject > section [jax="SVG"] mjx-tool{display:inline-block;position:relative;width:0;height:0}div#\:\$p > svg > foreignObject > section [jax="SVG"] mjx-tool > mjx-tip{position:absolute;top:0;left:0}div#\:\$p > svg > foreignObject > section mjx-tool > mjx-tip{display:inline-block;padding:.2em;border:1px solid #888;font-size:70%;background-color:#F8F8F8;color:black;box-shadow:2px 2px 5px #AAAAAA}div#\:\$p > svg > foreignObject > section g[data-mml-node="maction"][data-toggle]{cursor:pointer}div#\:\$p > svg > foreignObject > section mjx-status{display:block;position:fixed;left:1em;bottom:1em;min-width:25%;padding:.2em .4em;border:1px solid #888;font-size:90%;background-color:#F8F8F8;color:black}div#\:\$p > svg > foreignObject > section foreignObject[data-mjx-xml]{font-family:initial;line-height:normal;overflow:visible}div#\:\$p > svg > foreignObject > section mjx-container[jax="SVG"] path[data-c], div#\:\$p > svg > foreignObject > section mjx-container[jax="SVG"] use[data-c]{stroke-width:3}@media print{div#\:\$p > svg > foreignObject > section mjx-container[jax=SVG] path[data-c],div#\:\$p > svg > foreignObject > section mjx-container[jax=SVG] use[data-c]{stroke-width:0}}div#\:\$p > svg > foreignObject > section img[data-marp-twemoji]{background:transparent;height:1em;margin:0 .05em 0 .1em;vertical-align:-.1em;width:1em}/*!
  * Marp default theme.
  *
  * @theme default
@@ -39,7 +39,7 @@ table, th,tr, td {
   vertical-align: middle;
 }
 ;" data-size="16:9">
-<h1 id="introduction-to-rust">Introduction to Rust</h1>
+<h1 id="embedded-linux">Embedded Linux</h1>
 <pre is="marp-pre" data-auto-scaling="downscale-only"><code>Course Code: ELEE1119
 
 Course Name: Advanced Computer Engineering
@@ -49,7 +49,7 @@ Credits: 30
 Module Leader: Seb Blair BEng(H) PGCAP MIET MIHEEM FHEA
 </code></pre>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section data-class="gaia" data-paginate="true" data-style="#img-right{
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="2" data-class="gaia" data-paginate="true" data-style="#img-right{
   float: right;
 }
 img[alt~=&quot;center&quot;] {
@@ -79,64 +79,30 @@ table, th,tr, td {
   border: none!important;
   vertical-align: middle;
 }
-;--marpit-advanced-background-split:30%;" data-marpit-pagination-total="17" data-size="16:9" data-marpit-advanced-background="background" data-marpit-advanced-background-split="right"><div data-marpit-advanced-background-container="true" data-marpit-advanced-background-direction="vertical"><figure style="background-image:url(&quot;./figures/rust_logo.png&quot;);background-size:90%;"></figure><figure style="background-image:url(&quot;./figures/rust_mascot.png&quot;);background-size:50%;"></figure></div></section></foreignObject><foreignObject width="70%" height="720"><section id="2" data-class="gaia" data-paginate="true" data-style="#img-right{
-  float: right;
-}
-img[alt~=&quot;center&quot;] {
-  display: block;
-  margin: 0 auto;
-}
-table {
-  border-collapse: collapse;
-  font-size: 22px;
-}
-table, th,tr, td {
-  border: none!important;
-  vertical-align: middle;
-}
-" lang="en-US" class="gaia" data-marpit-pagination="2" style="--class:gaia;--paginate:true;--style:#img-right{
-  float: right;
-}
-img[alt~=&quot;center&quot;] {
-  display: block;
-  margin: 0 auto;
-}
-table {
-  border-collapse: collapse;
-  font-size: 22px;
-}
-table, th,tr, td {
-  border: none!important;
-  vertical-align: middle;
-}
-;--marpit-advanced-background-split:30%;" data-marpit-pagination-total="17" data-size="16:9" data-marpit-advanced-background="content" data-marpit-advanced-background-split="right">
-<h2 id="rust">Rust</h2>
-<p>Building tools, to writing web apps, working on servers, and creating embedded systems etc</p>
-<pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-rust"><span class="hljs-keyword">fn</span> <span class="hljs-title function_">fibonacci</span>(n: <span class="hljs-type">u32</span>) <span class="hljs-punctuation">-&gt;</span> <span class="hljs-type">u32</span> {
-    <span class="hljs-keyword">match</span> n {
-        <span class="hljs-number">0</span> =&gt; <span class="hljs-number">0</span>,
-        <span class="hljs-number">1</span> =&gt; <span class="hljs-number">1</span>,
-        _ =&gt; <span class="hljs-title function_ invoke__">fibonacci</span>(n - <span class="hljs-number">1</span>) + <span class="hljs-title function_ invoke__">fibonacci</span>(n - <span class="hljs-number">2</span>),
-    }
-}
-</code></pre>
+;" data-marpit-pagination-total="11" data-size="16:9">
+<h2 id="what-is-embedded-linux">What is Embedded Linux?</h2>
+<ul>
+<li>
+<p>The system</p>
+<ul>
+<li>Intuitively, an embedded Linux system simply denotes an embedded system running on the Linux kernel. Let us focus on the remaining two pieces.</li>
+</ul>
+</li>
+<li>
+<p>The Linux Kernel</p>
+<ul>
+<li>Linus never shipped an “embedded version” of the Linux kernel. If you are an embedded developer, you may not require a tailored kernel for your system and might rely on an official release instead.</li>
+</ul>
+</li>
+<li>
+<p>The Distro</p>
+<ul>
+<li>Umbrella term usually comprising software packages, services and a development framework on top of the OS itself</li>
+</ul>
+</li>
+</ul>
 </section>
-</foreignObject><foreignObject width="1280" height="720" data-marpit-advanced-background="pseudo"><section data-class="gaia" data-paginate="true" data-style="#img-right{
-  float: right;
-}
-img[alt~=&quot;center&quot;] {
-  display: block;
-  margin: 0 auto;
-}
-table {
-  border-collapse: collapse;
-  font-size: 22px;
-}
-table, th,tr, td {
-  border: none!important;
-  vertical-align: middle;
-}
-" lang="en-US" class="gaia" data-marpit-pagination="2" style="" data-marpit-pagination-total="17" data-size="16:9" data-marpit-advanced-background="pseudo" data-marpit-advanced-background-split="right"></section></foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="3" data-class="gaia" data-paginate="true" data-style="#img-right{
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="3" data-class="gaia" data-paginate="true" data-style="#img-right{
   float: right;
 }
 img[alt~=&quot;center&quot;] {
@@ -166,30 +132,22 @@ table, th,tr, td {
   border: none!important;
   vertical-align: middle;
 }
-;" data-marpit-pagination-total="17" data-size="16:9">
-<h2 id="rust-features">Rust features</h2>
-<div style="font-size:26px" >
+;" data-marpit-pagination-total="11" data-size="16:9">
+<h2 id="why-embedded-linux">Why Embedded Linux?</h2>
 <ul>
 <li>
-<p><strong>Type safe</strong>: The compiler assures that no operation will be applied to a variable of a wrong type.</p>
+<p>Hardware support</p>
 </li>
 <li>
-<p><strong>Memory safe</strong>: Rust pointers (known as references) always refer to valid memory.</p>
+<p>Networking</p>
 </li>
 <li>
-<p><strong>Data race free</strong>: Rust's borrow checker guarantees thread-safety by ensuring that multiple parts of a program can't mutate the same value at the same time.</p>
+<p>Modularity</p>
 </li>
 <li>
-<p><strong>Zero-cost abstractions</strong>: Rust allows the use of high-level concepts, like iteration, interfaces, and functional programming, with minimal to no performance costs. The abstractions perform as well, as if you wrote the underlying code by hand.</p>
-</li>
-<li>
-<p><strong>Minimal runtime</strong>: Rust has a minimal and optional runtime. The language also has no garbage collector to manage memory efficiently. In this way, Rust is most similar to languages like C and C++.</p>
-</li>
-<li>
-<p><strong>Targets bare metal</strong>: Rust can target embedded and &quot;bare metal&quot; programming, making it suitable to write an operating system kernel or device drivers.</p>
+<p>Commercial support</p>
 </li>
 </ul>
-</div>
 </section>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="4" data-class="gaia" data-paginate="true" data-style="#img-right{
   float: right;
@@ -221,31 +179,19 @@ table, th,tr, td {
   border: none!important;
   vertical-align: middle;
 }
-;" data-marpit-pagination-total="17" data-size="16:9">
-<h2 id="unique-features-of-rust">Unique features of Rust</h2>
+;" data-marpit-pagination-total="11" data-size="16:9">
+<h2 id="hardware-support">Hardware Support</h2>
 <ul>
-<li>Collection of Features called <strong>Rust Module System</strong>
-<ul>
-<li>Crates</li>
-<li>Modules</li>
-<li>Paths</li>
-</ul>
+<li>
+<p>Linux runs on 32 and 64-bit ARM, x86, MIPS, and PowerPC architectures.</p>
+</li>
+<li>
+<p>Whereas a 32-bit processor is capable of storing <mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: 0;" xmlns="http://www.w3.org/2000/svg" width="2.919ex" height="1.887ex" role="img" focusable="false" viewBox="0 -833.9 1290.1 833.9"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="msup"><g data-mml-node="mn"><path data-c="32" d="M109 429Q82 429 66 447T50 491Q50 562 103 614T235 666Q326 666 387 610T449 465Q449 422 429 383T381 315T301 241Q265 210 201 149L142 93L218 92Q375 92 385 97Q392 99 409 186V189H449V186Q448 183 436 95T421 3V0H50V19V31Q50 38 56 46T86 81Q115 113 136 137Q145 147 170 174T204 211T233 244T261 278T284 308T305 340T320 369T333 401T340 431T343 464Q343 527 309 573T212 619Q179 619 154 602T119 569T109 550Q109 549 114 549Q132 549 151 535T170 489Q170 464 154 447T109 429Z"></path></g><g data-mml-node="TeXAtom" transform="translate(533,363) scale(0.707)" data-mjx-texclass="ORD"><g data-mml-node="mn"><path data-c="33" d="M127 463Q100 463 85 480T69 524Q69 579 117 622T233 665Q268 665 277 664Q351 652 390 611T430 522Q430 470 396 421T302 350L299 348Q299 347 308 345T337 336T375 315Q457 262 457 175Q457 96 395 37T238 -22Q158 -22 100 21T42 130Q42 158 60 175T105 193Q133 193 151 175T169 130Q169 119 166 110T159 94T148 82T136 74T126 70T118 67L114 66Q165 21 238 21Q293 21 321 74Q338 107 338 175V195Q338 290 274 322Q259 328 213 329L171 330L168 332Q166 335 166 348Q166 366 174 366Q202 366 232 371Q266 376 294 413T322 525V533Q322 590 287 612Q265 626 240 626Q208 626 181 615T143 592T132 580H135Q138 579 143 578T153 573T165 566T175 555T183 540T186 520Q186 498 172 481T127 463Z"></path><path data-c="32" d="M109 429Q82 429 66 447T50 491Q50 562 103 614T235 666Q326 666 387 610T449 465Q449 422 429 383T381 315T301 241Q265 210 201 149L142 93L218 92Q375 92 385 97Q392 99 409 186V189H449V186Q448 183 436 95T421 3V0H50V19V31Q50 38 56 46T86 81Q115 113 136 137Q145 147 170 174T204 211T233 244T261 278T284 308T305 340T320 369T333 401T340 431T343 464Q343 527 309 573T212 619Q179 619 154 602T119 569T109 550Q109 549 114 549Q132 549 151 535T170 489Q170 464 154 447T109 429Z" transform="translate(500,0)"></path></g></g></g></g></g></svg></mjx-container> values, a 64-bit processor can store more memory addresses.</p>
+</li>
+<li>
+<p>Processors below 32-bit aren’t capable of running Linux, ruling out traditional embedded systems.</p>
 </li>
 </ul>
-<pre is="marp-pre" data-auto-scaling="downscale-only"><code>my_library  // crate
-├── src
-│   ├── lib.rs
-│   ├── models
-│   │   ├── mod.rs // module
-│   │   ├── user.rs // module
-│   │   └── product.rs // module
-│   └── utils
-│       ├── mod.rs // module
-│       └── math.rs // module
-└── Cargo.toml // config
-</code></pre>
-<pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-rust">crate::utils::math::add <span class="hljs-comment">// path</span>
-</code></pre>
 </section>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="5" data-class="gaia" data-paginate="true" data-style="#img-right{
   float: right;
@@ -277,24 +223,8 @@ table, th,tr, td {
   border: none!important;
   vertical-align: middle;
 }
-;" data-marpit-pagination-total="17" data-size="16:9">
-<h2 id="crate">Crate</h2>
-<ul>
-<li><strong>Crates:</strong>
-<ul>
-<li>A crate is a compilation unit. It's the smallest piece of code the Rust compiler can run.</li>
-<li>The code in a crate is compiled together to create a binary executable or a library.</li>
-<li>Only crates are compiled as reusable units.</li>
-<li>A crate contains a hierarchy of Rust modules with an implicit, unnamed top-level module.</li>
-</ul>
-</li>
-</ul>
-<pre is="marp-pre" data-auto-scaling="downscale-only"><code>my_library  // crate
-├── src
-│   ├── lib.rs
-│   ├── models
-...
-</code></pre>
+;" data-marpit-pagination-total="11" data-size="16:9">
+<h2 id="networking">Networking</h2>
 </section>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="6" data-class="gaia" data-paginate="true" data-style="#img-right{
   float: right;
@@ -326,30 +256,8 @@ table, th,tr, td {
   border: none!important;
   vertical-align: middle;
 }
-;" data-marpit-pagination-total="17" data-size="16:9">
-<h2 id="modules">Modules</h2>
-<ul>
-<li><strong>Modules:</strong>
-<ul>
-<li>Used to split code into logical units.</li>
-<li>A module is a collection of items such as <code>functions</code>, <code>structs</code>, <code>traits</code>, <code>implementation blocks</code>, and even other modules.</li>
-<li>Help manage visibility between different parts of the code, allowing you to specify which items are public (accessible outside the module) and which are private (accessible only within the module)</li>
-</ul>
-</li>
-</ul>
-<div style="font-size:22px">
-<pre is="marp-pre" data-auto-scaling="downscale-only"><code>my_library  // crate
-├── src
-│   ├── lib.rs
-│   ├── models
-│   │   ├── mod.rs // module
-...
-</code></pre>
-</div>
-<pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-rust"><span class="hljs-comment">// models/mod.rs</span>
-<span class="hljs-keyword">mod</span> user;
-<span class="hljs-keyword">mod</span> product;
-</code></pre>
+;" data-marpit-pagination-total="11" data-size="16:9">
+<h2 id="modularity">Modularity</h2>
 </section>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="7" data-class="gaia" data-paginate="true" data-style="#img-right{
   float: right;
@@ -381,30 +289,8 @@ table, th,tr, td {
   border: none!important;
   vertical-align: middle;
 }
-;" data-marpit-pagination-total="17" data-size="16:9">
-<h2 id="paths">Paths</h2>
-<ul>
-<li>Are used to refer to items in modules.</li>
-<li>They allow you to name items and bring them into scope with the use keyword.</li>
-<li>For example, if you have an <code>Asparagus</code> type in the <code>garden</code> <code>vegetables</code> module, you would refer to it as <code>crate::garden::vegetables::Asparagus</code></li>
-</ul>
-<div style="font-size:22px">
-<pre is="marp-pre" data-auto-scaling="downscale-only"><code>my_library  // crate
-├── src
-│   ├── lib.rs
-│   ├── models
-│   │   ├── mod.rs // module
-│   │   ├── user.rs // module
-│   │   └── product.rs // module
-│   └── utils
-│       ├── mod.rs // module
-│       └── math.rs // module
-└── Cargo.toml // config
-</code></pre>
-<pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-rust"><span class="hljs-comment">// models/user.rs</span>
-<span class="hljs-keyword">use</span> crate::utils::math::add;
-</code></pre>
-</div>
+;" data-marpit-pagination-total="11" data-size="16:9">
+<h2 id="commercial-support">Commercial Support</h2>
 </section>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="8" data-class="gaia" data-paginate="true" data-style="#img-right{
   float: right;
@@ -436,16 +322,56 @@ table, th,tr, td {
   border: none!important;
   vertical-align: middle;
 }
-;" data-marpit-pagination-total="17" data-size="16:9">
-<h2 id="rust-crates-and-libraries">Rust Crates and Libraries</h2>
-<ul>
-<li>
-<p>Rust Standard Library <code>std</code> contains reusable code for fundamental definitions and operations in Rust programs.</p>
-</li>
-<li>
-<p>There are tens of thousands of libraries and third-party crates available to use in Rust programs most of which can be accessed through Rust's third-party crate repository <a href="https://crates.io/">crates.io</a></p>
-</li>
-</ul>
+;" data-marpit-pagination-total="11" data-size="16:9">
+<h2 id="risc-arm-x86">RISC, ARM, x86</h2>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>RISC-V</th>
+<th>ARM</th>
+<th>x86</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Origin</strong></td>
+<td>RISC-V International</td>
+<td>Arm Ltd.</td>
+<td>Intel and AMD</td>
+</tr>
+<tr>
+<td><strong>Instruction Set</strong></td>
+<td>RISC</td>
+<td>RISC</td>
+<td>CISC</td>
+</tr>
+<tr>
+<td><strong>Byte Order</strong></td>
+<td>Typically little-endian (user-configurable)</td>
+<td>Typically bi-endian (user-configurable)</td>
+<td>Little-endian</td>
+</tr>
+<tr>
+<td><strong>Applications</strong></td>
+<td>Embedded systems, IoT devices, custom solutions</td>
+<td>Mobile devices, embedded systems, servers</td>
+<td>Desktops, laptops, servers, workstations</td>
+</tr>
+<tr>
+<td><strong>Licensing Model</strong></td>
+<td>Open-source, royalty-free licensing</td>
+<td>ARM licenses its designs to manufacturers</td>
+<td>Intel and AMD produce their own chips</td>
+</tr>
+<tr>
+<td><strong>Ecosystem</strong></td>
+<td>Developing ecosystem, open-source initiatives</td>
+<td>Large ecosystem, extensive third-party support</td>
+<td>Large software and hardware ecosystem</td>
+</tr>
+</tbody>
+</table>
 </section>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="9" data-class="gaia" data-paginate="true" data-style="#img-right{
   float: right;
@@ -477,35 +403,10 @@ table, th,tr, td {
   border: none!important;
   vertical-align: middle;
 }
-;" data-marpit-pagination-total="17" data-size="16:9">
-<h2 id="some-crates-we-will-use">Some crates we will use:</h2>
-<div style="font-size:25px">
-<ul>
-<li>
-<p><a href="https://doc.rust-lang.org/std/"><code>std</code></a> - The Rust standard library. In the Rust exercises, you'll notice the following modules:</p>
-<ul>
-<li><code>std::collections</code> - Definitions for collection types, such as HashMap.</li>
-<li><code>std::env</code> - Functions for working with your environment.</li>
-<li><code>std::fmt</code> - Functionality to control output format.</li>
-<li><code>std::fs</code> - Functions for working with the file system.</li>
-<li><code>std::io</code> - Definitions and functionality for working with input/output.</li>
-<li><code>std::path</code> - Definitions and functions that support working with file system path data.</li>
-</ul>
-</li>
-<li>
-<p><a href="https://crates.io/crates/structopt"><code>structopt</code></a> - A third-party crate for easily parsing command-line arguments.</p>
-</li>
-<li>
-<p><a href="https://crates.io/crates/chrono"><code>chrono</code></a> - A third-party crate to handle date and time data.</p>
-</li>
-<li>
-<p><a href="https://crates.io/crates/regex"><code>regex</code></a> - A third-party crate to work with regular expressions.</p>
-</li>
-<li>
-<p><a href="https://crates.io/crates/serde"><code>serde</code></a> - A third-party crate of serialization and deserialization operations for Rust data structures.</p>
-</li>
-</ul>
-</div>
+;" data-marpit-pagination-total="11" data-size="16:9">
+<h2 id="memory">Memory</h2>
+<p>The memory configuration of the embedded system, which includes the types of memory used (such as SRAM, DRAM, or non-volatile memory), plays a crucial role in determining the memory start address.</p>
+<p>Based on ARM2+</p>
 </section>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="10" data-class="gaia" data-paginate="true" data-style="#img-right{
   float: right;
@@ -537,20 +438,10 @@ table, th,tr, td {
   border: none!important;
   vertical-align: middle;
 }
-;" data-marpit-pagination-total="17" data-size="16:9">
-<h2 id="create-and-manage-projects-with-cargo">Create and manage projects with Cargo</h2>
-<p>While it's possible to use the Rust compiler (<code>rustc</code>) directly to build crates, most projects use the Rust build tool and dependency manager called <code>Cargo</code>.</p>
-<p><code>Cargo</code> does lots of things for you, including:</p>
-<ul>
-<li>Create new project templates with the <code>cargo new</code> command.</li>
-<li>Build a project with the <code>cargo build</code> command.</li>
-<li>Build and run a project with the <code>cargo run</code> command.</li>
-<li>Test a project with the <code>cargo test</code> command.</li>
-<li>Check project types with the <code>cargo check</code> command.</li>
-<li>Build documentation for a project with the <code>cargo doc</code> command.</li>
-<li>Publish a library to crates.io with the <code>cargo publish</code> command.</li>
-<li>Add dependent crates to a project by adding the crate name to the <code>Cargo.toml</code> file.</li>
-</ul>
+;" data-marpit-pagination-total="11" data-size="16:9">
+<h2 id="system-archiecture">System Archiecture:</h2>
+<p>System Architecture: The architecture of the system-on-a-chip (SoC) can influence where memory starts. Some systems have all their memory directly addressable by the main processor2.<br />
+Application Requirements: The specific needs of the application that the embedded system is designed to run can dictate the memory architecture, including the start address. For example, if an application requires fast access to certain data, it might be placed at the beginning of the memory space2.</p>
 </section>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="11" data-class="gaia" data-paginate="true" data-style="#img-right{
   float: right;
@@ -582,450 +473,20 @@ table, th,tr, td {
   border: none!important;
   vertical-align: middle;
 }
-;" data-marpit-pagination-total="17" data-size="16:9">
-<h2 id="rust-naming-conventions-1">Rust Naming Conventions 1</h2>
-<p>Basic Rust naming conventions are described in <a href="https://github.com/rust-lang/rfcs/blob/master/text/0430-finalizing-naming-conventions.md">RFC 430</a>.</p>
-<table>
-<thead>
-<tr>
-<th>Item</th>
-<th>Convention</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Crates</td>
-<td><code>snake_case</code> (but prefer single word)</td>
-</tr>
-<tr>
-<td>Modules</td>
-<td><code>snake_case</code></td>
-</tr>
-<tr>
-<td>Types</td>
-<td><code>UpperCamelCase</code></td>
-</tr>
-<tr>
-<td>Traits</td>
-<td><code>UpperCamelCase</code></td>
-</tr>
-<tr>
-<td>Enum variants</td>
-<td><code>UpperCamelCase</code></td>
-</tr>
-<tr>
-<td>Functions</td>
-<td><code>snake_case</code></td>
-</tr>
-<tr>
-<td>Methods</td>
-<td><code>snake_case</code></td>
-</tr>
-<tr>
-<td>General constructors</td>
-<td><code>new</code> or <code>with_more_details</code></td>
-</tr>
-<tr>
-<td>Conversion constructors</td>
-<td><code>from_some_other_type</code></td>
-</tr>
-<tr>
-<td>Local variables</td>
-<td><code>snake_case</code></td>
-</tr>
-<tr>
-<td>Static variables</td>
-<td><code>SCREAMING_SNAKE_CASE</code></td>
-</tr>
-<tr>
-<td>Constant variables</td>
-<td><code>SCREAMING_SNAKE_CASE</code></td>
-</tr>
-<tr>
-<td>Type parameters</td>
-<td>concise <code>UpperCamelCase</code>, usually single uppercase letter: <code>T</code></td>
-</tr>
-<tr>
-<td>Lifetimes</td>
-<td>short, lowercase: <code>'a</code></td>
-</tr>
-</tbody>
-</table>
+;" data-marpit-pagination-total="11" data-size="16:9">
+<h2 id="processor-design">Processor Design:</h2>
+<p>Processor Design: The design of the processor within the embedded device can also affect the memory start address. Processors may have a direct addressing mode that specifies a certain range of addresses for memory access.</p>
+<p>For instance:</p>
+<p>Arm... 0x02000 (BeagleBone Black)</p>
+<p>Arm.... (RPI 5)</p>
+<p>Arm..... (Rock C4+)</p>
+<h2 id="communication-note">Communication note</h2>
+<p>The stop bit, as Chris notes, can be set to 1, 1.5 or 2 bits. If you're wondering how you can have 1.5 bits, the stop &quot;bit&quot; is really holding a signal state on the wire for a certain amount of bit time at the current transmission rate. So, it's possible to have a stop &quot;bit&quot; be 1.5 bit time, as it's actually not a data bit.</p>
+<p>As to why the stop bit was set to 1, that would be to slightly increase transmission speed. I.e. rather than setting a character using 11 bits' time, it sends the same character in 10 bits's time or 10/11 the same time, or 11/10 (10%) times faster.</p>
+<p>page 247 <a href="../../../BeagleBoneBlack/ARM_Technical_Document.pdf"></a></p>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="12" data-class="gaia" data-paginate="true" data-style="#img-right{
-  float: right;
-}
-img[alt~=&quot;center&quot;] {
-  display: block;
-  margin: 0 auto;
-}
-table {
-  border-collapse: collapse;
-  font-size: 22px;
-}
-table, th,tr, td {
-  border: none!important;
-  vertical-align: middle;
-}
-" lang="en-US" class="gaia" data-marpit-pagination="12" style="--class:gaia;--paginate:true;--style:#img-right{
-  float: right;
-}
-img[alt~=&quot;center&quot;] {
-  display: block;
-  margin: 0 auto;
-}
-table {
-  border-collapse: collapse;
-  font-size: 22px;
-}
-table, th,tr, td {
-  border: none!important;
-  vertical-align: middle;
-}
-;" data-marpit-pagination-total="17" data-size="16:9">
-<h2 id="rust-naming-conventions-2">Rust Naming Conventions 2</h2>
-<table>
-<thead>
-<tr>
-<th>Convention</th>
-<th>Example</th>
-<th>General Meaning</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>to_*()</code></td>
-<td><code>str::to_string()</code></td>
-<td>A conversion from one type to another that may have an allocation or computation cost. Usually a <em>Borrowed</em> type to <em>Owned</em> type.</td>
-</tr>
-<tr>
-<td><code>as_*()</code></td>
-<td><code>String::as_str()</code></td>
-<td>Convert an <em>Owned</em> type into a <em>Borrowed</em> type. It is usually cheap (maybe even zero-cost) to use this function.</td>
-</tr>
-<tr>
-<td><code>into_*()</code></td>
-<td><code>String::into_bytes()</code></td>
-<td>Consume a type <code>T</code> and convert it into an <em>Owned</em> type <code>U</code>.</td>
-</tr>
-<tr>
-<td><code>from_*()</code></td>
-<td><code>SocketAddr::from_str()</code></td>
-<td>Create an <em>Owned</em> type from an <em>Owned</em> or <em>Borrowed</em> type.</td>
-</tr>
-<tr>
-<td><code>*_mut()</code></td>
-<td><code>str::split_at_mut()</code></td>
-<td>Denotes a mutable reference.</td>
-</tr>
-<tr>
-<td><code>try_*()</code></td>
-<td><code>usize::try_from()</code></td>
-<td>Method will return a <code>Result</code> or <code>Option</code> type. Usually <code>Result</code>.</td>
-</tr>
-<tr>
-<td><code>with_*()</code></td>
-<td><code>Vec::with_capacity()</code></td>
-<td>A constructor that has one or more parameters used to configure the type.</td>
-</tr>
-</tbody>
-</table>
-</section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="13" data-class="gaia" data-paginate="true" data-style="#img-right{
-  float: right;
-}
-img[alt~=&quot;center&quot;] {
-  display: block;
-  margin: 0 auto;
-}
-table {
-  border-collapse: collapse;
-  font-size: 22px;
-}
-table, th,tr, td {
-  border: none!important;
-  vertical-align: middle;
-}
-" lang="en-US" class="gaia" data-marpit-pagination="13" style="--class:gaia;--paginate:true;--style:#img-right{
-  float: right;
-}
-img[alt~=&quot;center&quot;] {
-  display: block;
-  margin: 0 auto;
-}
-table {
-  border-collapse: collapse;
-  font-size: 22px;
-}
-table, th,tr, td {
-  border: none!important;
-  vertical-align: middle;
-}
-;" data-marpit-pagination-total="17" data-size="16:9">
-<h2 id="rust-syntax">Rust Syntax</h2>
-<div style="font-size:22px">
-<pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-rust"><span class="hljs-keyword">fn</span> <span class="hljs-title function_">main</span>(){
-    <span class="hljs-keyword">let</span> <span class="hljs-variable">an_integer</span> = <span class="hljs-number">1u32</span>;
-    <span class="hljs-keyword">let</span> <span class="hljs-variable">a_boolean</span> = <span class="hljs-literal">true</span>;
-    <span class="hljs-keyword">let</span> <span class="hljs-variable">unit</span> = ();
-
-    <span class="hljs-comment">// copy `an_integer` into `copied_integer`</span>
-    <span class="hljs-keyword">let</span> <span class="hljs-variable">copied_integer</span> = an_integer;
-
-    <span class="hljs-built_in">println!</span>(<span class="hljs-string">&quot;An integer: {:?}&quot;</span>, copied_integer);
-    <span class="hljs-built_in">println!</span>(<span class="hljs-string">&quot;A boolean: {:?}&quot;</span>, a_boolean);
-    <span class="hljs-built_in">println!</span>(<span class="hljs-string">&quot;Meet the unit value: {:?}&quot;</span>, unit);
-
-    <span class="hljs-comment">// The compiler warns about unused variable bindings; these warnings can</span>
-    <span class="hljs-comment">// be silenced by prefixing the variable name with an underscore</span>
-    <span class="hljs-keyword">let</span> <span class="hljs-variable">_unused_variable</span> = <span class="hljs-number">3u32</span>;
-
-    <span class="hljs-keyword">let</span> <span class="hljs-variable">noisy_unused_variable</span> = <span class="hljs-number">2u32</span>;
-    <span class="hljs-comment">// FIXME ^ Prefix with an underscore to suppress the warning</span>
-    <span class="hljs-comment">// Please note that warnings may not be shown in a browser</span>
-}
-</code></pre>
-<pre is="marp-pre" data-auto-scaling="downscale-only"><code>An integer: 1
-A boolean: true
-Meet the unit value: ()
-</code></pre>
-</div>
-</section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="14" data-class="gaia" data-paginate="true" data-style="#img-right{
-  float: right;
-}
-img[alt~=&quot;center&quot;] {
-  display: block;
-  margin: 0 auto;
-}
-table {
-  border-collapse: collapse;
-  font-size: 22px;
-}
-table, th,tr, td {
-  border: none!important;
-  vertical-align: middle;
-}
-" lang="en-US" class="gaia" data-marpit-pagination="14" style="--class:gaia;--paginate:true;--style:#img-right{
-  float: right;
-}
-img[alt~=&quot;center&quot;] {
-  display: block;
-  margin: 0 auto;
-}
-table {
-  border-collapse: collapse;
-  font-size: 22px;
-}
-table, th,tr, td {
-  border: none!important;
-  vertical-align: middle;
-}
-;" data-marpit-pagination-total="17" data-size="16:9">
-<h2 id="mutability">Mutability</h2>
-<p>Variable bindings are <strong>immutable</strong> by default, but this can be overridden using the <code>mut</code> modifier.</p>
-<div style="font-size:22px">
-<pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-rust"><span class="hljs-keyword">fn</span> <span class="hljs-title function_">main</span>() {
-    <span class="hljs-keyword">let</span> <span class="hljs-variable">_immutable_binding</span> = <span class="hljs-number">1</span>;
-    <span class="hljs-keyword">let</span> <span class="hljs-keyword">mut </span><span class="hljs-variable">mutable_binding</span> = <span class="hljs-number">1</span>;
-
-    <span class="hljs-built_in">println!</span>(<span class="hljs-string">&quot;Before mutation: {}&quot;</span>, mutable_binding);
-
-    <span class="hljs-comment">// Ok</span>
-    mutable_binding += <span class="hljs-number">1</span>;
-
-    <span class="hljs-built_in">println!</span>(<span class="hljs-string">&quot;After mutation: {}&quot;</span>, mutable_binding);
-
-    <span class="hljs-comment">// Error! Cannot assign a new value to an immutable variable</span>
-    _immutable_binding += <span class="hljs-number">1</span>;
-}
-</code></pre>
-</section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="15" data-class="gaia" data-paginate="true" data-style="#img-right{
-  float: right;
-}
-img[alt~=&quot;center&quot;] {
-  display: block;
-  margin: 0 auto;
-}
-table {
-  border-collapse: collapse;
-  font-size: 22px;
-}
-table, th,tr, td {
-  border: none!important;
-  vertical-align: middle;
-}
-" lang="en-US" class="gaia" data-marpit-pagination="15" style="--class:gaia;--paginate:true;--style:#img-right{
-  float: right;
-}
-img[alt~=&quot;center&quot;] {
-  display: block;
-  margin: 0 auto;
-}
-table {
-  border-collapse: collapse;
-  font-size: 22px;
-}
-table, th,tr, td {
-  border: none!important;
-  vertical-align: middle;
-}
-;" data-marpit-pagination-total="17" data-size="16:9">
-<h2 id="scope-and-shadowing">Scope and Shadowing</h2>
-<p>Variable bindings have a scope, and are constrained to live in a block. A block is a collection of statements enclosed by braces <code>{}</code>.</p>
-<details>
-<summary>Example 1</summary>
-<div style="font-size:22px">
-<pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-rust"><span class="hljs-keyword">fn</span> <span class="hljs-title function_">main</span>() {
-    <span class="hljs-comment">// This binding lives in the main function</span>
-    <span class="hljs-keyword">let</span> <span class="hljs-variable">long_lived_binding</span> = <span class="hljs-number">1</span>;
-
-    <span class="hljs-comment">// This is a block, and has a smaller scope than the main function</span>
-    {
-        <span class="hljs-comment">// This binding only exists in this block</span>
-        <span class="hljs-keyword">let</span> <span class="hljs-variable">short_lived_binding</span> = <span class="hljs-number">2</span>;
-
-        <span class="hljs-built_in">println!</span>(<span class="hljs-string">&quot;inner short: {}&quot;</span>, short_lived_binding);
-    }
-    <span class="hljs-comment">// End of the block</span>
-
-    <span class="hljs-comment">// Error! `short_lived_binding` doesn&#x27;t exist in this scope</span>
-    <span class="hljs-built_in">println!</span>(<span class="hljs-string">&quot;outer short: {}&quot;</span>, short_lived_binding);
-    <span class="hljs-comment">// FIXME ^ Comment out this line</span>
-
-    <span class="hljs-built_in">println!</span>(<span class="hljs-string">&quot;outer long: {}&quot;</span>, long_lived_binding);
-}
-</code></pre>
-</div>
-</details>
-<details>
-<summary>Example 2</summary>
-<div style="font-size:22px">
-<pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-rust"><span class="hljs-keyword">fn</span> <span class="hljs-title function_">main</span>() {
-    <span class="hljs-keyword">let</span> <span class="hljs-variable">shadowed_binding</span> = <span class="hljs-number">1</span>;
-
-    {
-        <span class="hljs-built_in">println!</span>(<span class="hljs-string">&quot;before being shadowed: {}&quot;</span>, shadowed_binding);
-
-        <span class="hljs-comment">// This binding *shadows* the outer one</span>
-        <span class="hljs-keyword">let</span> <span class="hljs-variable">shadowed_binding</span> = <span class="hljs-string">&quot;abc&quot;</span>;
-
-        <span class="hljs-built_in">println!</span>(<span class="hljs-string">&quot;shadowed in inner block: {}&quot;</span>, shadowed_binding);
-    }
-    <span class="hljs-built_in">println!</span>(<span class="hljs-string">&quot;outside inner block: {}&quot;</span>, shadowed_binding);
-
-    <span class="hljs-comment">// This binding *shadows* the previous binding</span>
-    <span class="hljs-keyword">let</span> <span class="hljs-variable">shadowed_binding</span> = <span class="hljs-number">2</span>;
-    <span class="hljs-built_in">println!</span>(<span class="hljs-string">&quot;shadowed in outer block: {}&quot;</span>, shadowed_binding);
-}
-</code></pre>
-</div>
-</details>
-</section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="16" data-class="gaia" data-paginate="true" data-style="#img-right{
-  float: right;
-}
-img[alt~=&quot;center&quot;] {
-  display: block;
-  margin: 0 auto;
-}
-table {
-  border-collapse: collapse;
-  font-size: 22px;
-}
-table, th,tr, td {
-  border: none!important;
-  vertical-align: middle;
-}
-" lang="en-US" class="gaia" data-marpit-pagination="16" style="--class:gaia;--paginate:true;--style:#img-right{
-  float: right;
-}
-img[alt~=&quot;center&quot;] {
-  display: block;
-  margin: 0 auto;
-}
-table {
-  border-collapse: collapse;
-  font-size: 22px;
-}
-table, th,tr, td {
-  border: none!important;
-  vertical-align: middle;
-}
-;" data-marpit-pagination-total="17" data-size="16:9">
-<h2 id="freezing">Freezing</h2>
-<p>When data is bound by the same name immutably, it also <em>freezes</em>. Frozen data can't be modified until the immutable binding goes out of scope:</p>
-<pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-rust"><span class="hljs-keyword">fn</span> <span class="hljs-title function_">main</span>() {
-    <span class="hljs-keyword">let</span> <span class="hljs-keyword">mut </span><span class="hljs-variable">_mutable_integer</span> = <span class="hljs-number">7i32</span>;
-
-    {
-        <span class="hljs-comment">// Shadowing by immutable `_mutable_integer`</span>
-        <span class="hljs-keyword">let</span> <span class="hljs-variable">_mutable_integer</span> = _mutable_integer;
-
-        <span class="hljs-comment">// Error! `_mutable_integer` is frozen in this scope</span>
-        _mutable_integer = <span class="hljs-number">50</span>;
-        <span class="hljs-comment">// FIXME ^ Comment out this line</span>
-
-        <span class="hljs-comment">// `_mutable_integer` goes out of scope</span>
-    }
-
-    <span class="hljs-comment">// Ok! `_mutable_integer` is not frozen in this scope</span>
-    _mutable_integer = <span class="hljs-number">3</span>;
-}
-</code></pre>
-</section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="17" data-class="gaia" data-paginate="true" data-style="#img-right{
-  float: right;
-}
-img[alt~=&quot;center&quot;] {
-  display: block;
-  margin: 0 auto;
-}
-table {
-  border-collapse: collapse;
-  font-size: 22px;
-}
-table, th,tr, td {
-  border: none!important;
-  vertical-align: middle;
-}
-" lang="en-US" class="gaia" data-marpit-pagination="17" style="--class:gaia;--paginate:true;--style:#img-right{
-  float: right;
-}
-img[alt~=&quot;center&quot;] {
-  display: block;
-  margin: 0 auto;
-}
-table {
-  border-collapse: collapse;
-  font-size: 22px;
-}
-table, th,tr, td {
-  border: none!important;
-  vertical-align: middle;
-}
-;" data-marpit-pagination-total="17" data-size="16:9">
-<h2 id="freezing-with-const">Freezing with <code>const</code></h2>
-<pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-rust"><span class="hljs-keyword">fn</span> <span class="hljs-title function_">main</span>() {
-    
-    <span class="hljs-keyword">const</span> THREE_HOURS_IN_SECONDS: <span class="hljs-type">u32</span> = <span class="hljs-number">60</span> * <span class="hljs-number">60</span> * <span class="hljs-number">3</span>;
-
-    {
-        <span class="hljs-built_in">println!</span>(<span class="hljs-string">&quot;before being shadowed: {}&quot;</span>, THREE_HOURS_IN_SECONDS);
-        <span class="hljs-keyword">const</span> THREE_HOURS_IN_SECONDS: <span class="hljs-type">u32</span> = <span class="hljs-number">60u32</span> * <span class="hljs-number">60u32</span> * <span class="hljs-number">4u32</span>;
-        <span class="hljs-built_in">println!</span>(<span class="hljs-string">&quot;shadowed in inner block: {}&quot;</span>, THREE_HOURS_IN_SECONDS);
-    }
-
-}
-</code></pre>
-<details>
-<summary>What happens and why?</summary>
-<ul>
-<li><code>const</code> constants are calculated at compile time, so first instance <code>THREE_HOURS_IN_SECONDS</code> = 10800, however in the block it is recalculated as 14400.</li>
-<li>Constants are constant they will never change at runtime and should be defined only once!</li>
-</ul>
-</details></section>
 <script>!function(){"use strict";const t={h1:{proto:()=>HTMLHeadingElement,attrs:{role:"heading","aria-level":"1"},style:"display: block; font-size: 2em; margin-block-start: 0.67em; margin-block-end: 0.67em; margin-inline-start: 0px; margin-inline-end: 0px; font-weight: bold;"},h2:{proto:()=>HTMLHeadingElement,attrs:{role:"heading","aria-level":"2"},style:"display: block; font-size: 1.5em; margin-block-start: 0.83em; margin-block-end: 0.83em; margin-inline-start: 0px; margin-inline-end: 0px; font-weight: bold;"},h3:{proto:()=>HTMLHeadingElement,attrs:{role:"heading","aria-level":"3"},style:"display: block; font-size: 1.17em; margin-block-start: 1em; margin-block-end: 1em; margin-inline-start: 0px; margin-inline-end: 0px; font-weight: bold;"},h4:{proto:()=>HTMLHeadingElement,attrs:{role:"heading","aria-level":"4"},style:"display: block; margin-block-start: 1.33em; margin-block-end: 1.33em; margin-inline-start: 0px; margin-inline-end: 0px; font-weight: bold;"},h5:{proto:()=>HTMLHeadingElement,attrs:{role:"heading","aria-level":"5"},style:"display: block; font-size: 0.83em; margin-block-start: 1.67em; margin-block-end: 1.67em; margin-inline-start: 0px; margin-inline-end: 0px; font-weight: bold;"},h6:{proto:()=>HTMLHeadingElement,attrs:{role:"heading","aria-level":"6"},style:"display: block; font-size: 0.67em; margin-block-start: 2.33em; margin-block-end: 2.33em; margin-inline-start: 0px; margin-inline-end: 0px; font-weight: bold;"},span:{proto:()=>HTMLSpanElement},pre:{proto:()=>HTMLElement,style:"display: block; font-family: monospace; white-space: pre; margin: 1em 0; --marp-auto-scaling-white-space: pre;"}},e="data-marp-auto-scaling-wrapper",i="data-marp-auto-scaling-svg",n="data-marp-auto-scaling-container";class s extends HTMLElement{container;containerSize;containerObserver;svg;svgComputedStyle;svgPreserveAspectRatio="xMinYMid meet";wrapper;wrapperSize;wrapperObserver;constructor(){super();const t=t=>([e])=>{const{width:i,height:n}=e.contentRect;this[t]={width:i,height:n},this.updateSVGRect()};this.attachShadow({mode:"open"}),this.containerObserver=new ResizeObserver(t("containerSize")),this.wrapperObserver=new ResizeObserver(((...e)=>{t("wrapperSize")(...e),this.flushSvgDisplay()}))}static get observedAttributes(){return["data-downscale-only"]}connectedCallback(){this.shadowRoot.innerHTML=`\n<style>\n  svg[${i}] { display: block; width: 100%; height: auto; vertical-align: top; }\n  span[${n}] { display: table; white-space: var(--marp-auto-scaling-white-space, nowrap); width: max-content; }\n</style>\n<div ${e}>\n  <svg part="svg" ${i}>\n    <foreignObject><span ${n}><slot></slot></span></foreignObject>\n  </svg>\n</div>\n    `.split(/\n\s*/).join(""),this.wrapper=this.shadowRoot.querySelector(`div[${e}]`)??void 0;const t=this.svg;this.svg=this.wrapper?.querySelector(`svg[${i}]`)??void 0,this.svg!==t&&(this.svgComputedStyle=this.svg?window.getComputedStyle(this.svg):void 0),this.container=this.svg?.querySelector(`span[${n}]`)??void 0,this.observe()}disconnectedCallback(){this.svg=void 0,this.svgComputedStyle=void 0,this.wrapper=void 0,this.container=void 0,this.observe()}attributeChangedCallback(){this.observe()}flushSvgDisplay(){const{svg:t}=this;t&&(t.style.display="inline",requestAnimationFrame((()=>{t.style.display=""})))}observe(){this.containerObserver.disconnect(),this.wrapperObserver.disconnect(),this.wrapper&&this.wrapperObserver.observe(this.wrapper),this.container&&this.containerObserver.observe(this.container),this.svgComputedStyle&&this.observeSVGStyle(this.svgComputedStyle)}observeSVGStyle(t){const e=()=>{const i=(()=>{const e=t.getPropertyValue("--preserve-aspect-ratio");if(e)return e.trim();return`x${(({textAlign:t,direction:e})=>{if(t.endsWith("left"))return"Min";if(t.endsWith("right"))return"Max";if("start"===t||"end"===t){let i="rtl"===e;return"end"===t&&(i=!i),i?"Max":"Min"}return"Mid"})(t)}YMid meet`})();i!==this.svgPreserveAspectRatio&&(this.svgPreserveAspectRatio=i,this.updateSVGRect()),t===this.svgComputedStyle&&requestAnimationFrame(e)};e()}updateSVGRect(){let t=Math.ceil(this.containerSize?.width??0);const e=Math.ceil(this.containerSize?.height??0);void 0!==this.dataset.downscaleOnly&&(t=Math.max(t,this.wrapperSize?.width??0));const i=this.svg?.querySelector(":scope > foreignObject");if(i?.setAttribute("width",`${t}`),i?.setAttribute("height",`${e}`),this.svg&&(this.svg.setAttribute("viewBox",`0 0 ${t} ${e}`),this.svg.setAttribute("preserveAspectRatio",this.svgPreserveAspectRatio),this.svg.style.height=t<=0||e<=0?"0":""),this.container){const t=this.svgPreserveAspectRatio.toLowerCase();this.container.style.marginLeft=t.startsWith("xmid")||t.startsWith("xmax")?"auto":"0",this.container.style.marginRight=t.startsWith("xmi")?"auto":"0"}}}const r=(t,{attrs:e={},style:i})=>class extends t{constructor(...t){super(...t);for(const[t,i]of Object.entries(e))this.hasAttribute(t)||this.setAttribute(t,i);this._shadow()}static get observedAttributes(){return["data-auto-scaling"]}connectedCallback(){this._update()}attributeChangedCallback(){this._update()}_shadow(){if(!this.shadowRoot)try{this.attachShadow({mode:"open"})}catch(t){if(!(t instanceof Error&&"NotSupportedError"===t.name))throw t}return this.shadowRoot}_update(){const t=this._shadow();if(t){const e=i?`<style>:host { ${i} }</style>`:"";let n="<slot></slot>";const{autoScaling:s}=this.dataset;if(void 0!==s){n=`<marp-auto-scaling exportparts="svg:auto-scaling" ${"downscale-only"===s?"data-downscale-only":""}>${n}</marp-auto-scaling>`}t.innerHTML=e+n}}};let o;const a=Symbol();let l;const c="marpitSVGPolyfill:setZoomFactor,",d=Symbol(),h=Symbol();const g=()=>{const t="Apple Computer, Inc."===navigator.vendor,e=t?[u]:[],i={then:e=>(t?(async()=>{if(void 0===l){const t=document.createElement("canvas");t.width=10,t.height=10;const e=t.getContext("2d"),i=new Image(10,10),n=new Promise((t=>{i.addEventListener("load",(()=>t()))}));i.crossOrigin="anonymous",i.src="data:image/svg+xml;charset=utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2210%22%20height%3D%2210%22%20viewBox%3D%220%200%201%201%22%3E%3CforeignObject%20width%3D%221%22%20height%3D%221%22%20requiredExtensions%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxhtml%22%3E%3Cdiv%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxhtml%22%20style%3D%22width%3A%201px%3B%20height%3A%201px%3B%20background%3A%20red%3B%20position%3A%20relative%22%3E%3C%2Fdiv%3E%3C%2FforeignObject%3E%3C%2Fsvg%3E",await n,e.drawImage(i,0,0),l=e.getImageData(5,5,1,1).data[3]<128}return l})().then((t=>{null==e||e(t?[u]:[])})):null==e||e([]),i)};return Object.assign(e,i)};let p,m;function u(t){const e="object"==typeof t&&t.target||document,i="object"==typeof t?t.zoom:t;window[h]||(Object.defineProperty(window,h,{configurable:!0,value:!0}),document.body.style.zoom=1.0001,document.body.offsetHeight,document.body.style.zoom=1,window.addEventListener("message",(({data:t,origin:e})=>{if(e===window.origin)try{if(t&&"string"==typeof t&&t.startsWith(c)){const[,e]=t.split(","),i=Number.parseFloat(e);Number.isNaN(i)||(m=i)}}catch(t){console.error(t)}})));let n=!1;Array.from(e.querySelectorAll("svg[data-marpit-svg]"),(t=>{var e,s,r,o;t.style.transform||(t.style.transform="translateZ(0)");const a=i||m||t.currentScale||1;p!==a&&(p=a,n=a);const l=t.getBoundingClientRect(),{length:c}=t.children;for(let i=0;i<c;i+=1){const n=t.children[i];if(n.getScreenCTM){const t=n.getScreenCTM();if(t){const i=null!==(s=null===(e=n.x)||void 0===e?void 0:e.baseVal.value)&&void 0!==s?s:0,c=null!==(o=null===(r=n.y)||void 0===r?void 0:r.baseVal.value)&&void 0!==o?o:0,d=n.children.length;for(let e=0;e<d;e+=1){const s=n.children[e];if("SECTION"===s.tagName){const{style:e}=s;e.transformOrigin||(e.transformOrigin=`${-i}px ${-c}px`),e.transform=`scale(${a}) matrix(${t.a}, ${t.b}, ${t.c}, ${t.d}, ${t.e-l.left}, ${t.f-l.top}) translateZ(0.0001px)`;break}}}}}})),!1!==n&&Array.from(e.querySelectorAll("iframe"),(({contentWindow:t})=>{null==t||t.postMessage(`${c}${n}`,"null"===window.origin?"*":window.origin)}))}function v({once:t=!1,target:e=document}={}){const i=function(t=document){if(t[d])return t[d];let e=!0;const i=()=>{e=!1,delete t[d]};Object.defineProperty(t,d,{configurable:!0,value:i});let n=[],s=!1;(async()=>{try{n=await g()}finally{s=!0}})();const r=()=>{for(const e of n)e({target:t});s&&0===n.length||e&&window.requestAnimationFrame(r)};return r(),i}(e);return t?(i(),()=>{}):i}p=1,m=void 0;const w=Symbol(),b=(e=document)=>{if("undefined"==typeof window)throw new Error("Marp Core's browser script is valid only in browser context.");if(((e=document)=>{const i=window[a];i||customElements.define("marp-auto-scaling",s);for(const n of Object.keys(t)){const s=`marp-${n}`,a=t[n].proto();(o??(o=!!document.createElement("div",{is:"marp-auto-scaling"}).outerHTML.startsWith("<div is"),o))&&a!==HTMLElement?i||customElements.define(s,r(a,{style:t[n].style}),{extends:n}):(i||customElements.define(s,r(HTMLElement,t[n])),e.querySelectorAll(`${n}[is="${s}"]`).forEach((t=>{t.outerHTML=t.outerHTML.replace(new RegExp(`^<${n}`,"i"),`<${s}`).replace(new RegExp(`</${n}>$`,"i"),`</${s}>`)})))}window[a]=!0})(e),e[w])return e[w];const i=v({target:e}),n=()=>{i(),delete e[w]},l=Object.assign(n,{cleanup:n,update:()=>b(e)});return Object.defineProperty(e,w,{configurable:!0,value:l}),l},y=document.currentScript;b(y?y.getRootNode():document)}();
-</script></foreignObject></svg></div><script>/*!! License: https://unpkg.com/@marp-team/marp-cli@3.4.0/lib/bespoke.js.LICENSE.txt */
+</script></foreignObject></svg></div><div class="bespoke-marp-note" data-index="3" tabindex="0"><p>- Microprocessor without Interlocked Pipelined Stages (MIPS) RISC design
+-</p></div><div class="bespoke-marp-note" data-index="7" tabindex="0"><p>ARM - Advanced RISC Machines
+visit RISE RISC Software Ecosystem -&gt; https://riseproject.dev/</p></div><script>/*!! License: https://unpkg.com/@marp-team/marp-cli@3.4.0/lib/bespoke.js.LICENSE.txt */
 !function(){"use strict";function e(e){return e&&e.__esModule&&Object.prototype.hasOwnProperty.call(e,"default")?e.default:e}"undefined"!=typeof globalThis?globalThis:"undefined"!=typeof window?window:"undefined"!=typeof global?global:"undefined"!=typeof self&&self;var t={from:function(e,t){var n,r=1===(e.parent||e).nodeType?e.parent||e:document.querySelector(e.parent||e),o=[].filter.call("string"==typeof e.slides?r.querySelectorAll(e.slides):e.slides||r.children,(function(e){return"SCRIPT"!==e.nodeName})),i={},a=function(e,t){return(t=t||{}).index=o.indexOf(e),t.slide=e,t},s=function(e,t){i[e]=(i[e]||[]).filter((function(e){return e!==t}))},l=function(e,t){return(i[e]||[]).reduce((function(e,n){return e&&!1!==n(t)}),!0)},d=function(e,t){o[e]&&(n&&l("deactivate",a(n,t)),n=o[e],l("activate",a(n,t)))},c=function(e,t){var r=o.indexOf(n)+e;l(e>0?"next":"prev",a(n,t))&&d(r,t)},u={off:s,on:function(e,t){return(i[e]||(i[e]=[])).push(t),s.bind(null,e,t)},fire:l,slide:function(e,t){if(!arguments.length)return o.indexOf(n);l("slide",a(o[e],t))&&d(e,t)},next:c.bind(null,1),prev:c.bind(null,-1),parent:r,slides:o,destroy:function(e){l("destroy",a(n,e)),i={}}};return(t||[]).forEach((function(e){e(u)})),n||d(0),u}},n=e(t);const r=document.body,o=(...e)=>history.replaceState(...e),i="",a="presenter",s="next",l=["",a,s],d="bespoke-marp-",c=`data-${d}`,u=(e,{protocol:t,host:n,pathname:r,hash:o}=location)=>{const i=e.toString();return`${t}//${n}${r}${i?"?":""}${i}${o}`},f=()=>r.dataset.bespokeView,m=e=>new URLSearchParams(location.search).get(e),g=(e,t={})=>{var n;const r={location,setter:o,...t},i=new URLSearchParams(r.location.search);for(const t of Object.keys(e)){const n=e[t];"string"==typeof n?i.set(t,n):i.delete(t)}try{r.setter({...null!==(n=window.history.state)&&void 0!==n?n:{}},"",u(i,r.location))}catch(e){console.error(e)}},p=(()=>{const e="bespoke-marp";try{return localStorage.setItem(e,e),localStorage.removeItem(e),!0}catch{return!1}})(),v=e=>{try{return localStorage.getItem(e)}catch{return null}},h=(e,t)=>{try{return localStorage.setItem(e,t),!0}catch{return!1}},y=e=>{try{return localStorage.removeItem(e),!0}catch{return!1}},b=(e,t)=>{const n="aria-hidden";t?e.setAttribute(n,"true"):e.removeAttribute(n)},w=e=>{e.parent.classList.add(`${d}parent`),e.slides.forEach((e=>e.classList.add(`${d}slide`))),e.on("activate",(t=>{const n=`${d}active`,r=t.slide,o=r.classList,i=!o.contains(n);if(e.slides.forEach((e=>{e.classList.remove(n),b(e,!0)})),o.add(n),b(r,!1),i){const e=`${n}-ready`;o.add(e),document.body.clientHeight,o.remove(e)}}))},x=e=>{let t=0,n=0;Object.defineProperty(e,"fragments",{enumerable:!0,value:e.slides.map((e=>[null,...e.querySelectorAll("[data-marpit-fragment]")]))});const r=r=>void 0!==e.fragments[t][n+r],o=(r,o)=>{t=r,n=o,e.fragments.forEach(((e,t)=>{e.forEach(((e,n)=>{if(null==e)return;const i=t<r||t===r&&n<=o;e.setAttribute(`${c}fragment`,(i?"":"in")+"active");const a=`${c}current-fragment`;t===r&&n===o?e.setAttribute(a,"current"):e.removeAttribute(a)}))})),e.fragmentIndex=o;const i={slide:e.slides[r],index:r,fragments:e.fragments[r],fragmentIndex:o};e.fire("fragment",i)};e.on("next",(({fragment:i=!0})=>{if(i){if(r(1))return o(t,n+1),!1;const i=t+1;e.fragments[i]&&o(i,0)}else{const r=e.fragments[t].length;if(n+1<r)return o(t,r-1),!1;const i=e.fragments[t+1];i&&o(t+1,i.length-1)}})),e.on("prev",(({fragment:i=!0})=>{if(r(-1)&&i)return o(t,n-1),!1;const a=t-1;e.fragments[a]&&o(a,e.fragments[a].length-1)})),e.on("slide",(({index:t,fragment:n})=>{let r=0;if(void 0!==n){const o=e.fragments[t];if(o){const{length:e}=o;r=-1===n?e-1:Math.min(Math.max(n,0),e-1)}}o(t,r)})),o(0,0)},k=document,$=()=>!(!k.fullscreenEnabled&&!k.webkitFullscreenEnabled),E=()=>!(!k.fullscreenElement&&!k.webkitFullscreenElement),L=e=>{e.fullscreen=()=>{$()&&(async()=>{return E()?null===(e=k.exitFullscreen||k.webkitExitFullscreen)||void 0===e?void 0:e.call(k):((e=k.body)=>{var t;return null===(t=e.requestFullscreen||e.webkitRequestFullscreen)||void 0===t?void 0:t.call(e)})();var e})()},document.addEventListener("keydown",(t=>{"f"!==t.key&&"F11"!==t.key||t.altKey||t.ctrlKey||t.metaKey||!$()||(e.fullscreen(),t.preventDefault())}))},S=`${d}inactive`,P=(e=2e3)=>({parent:t,fire:n})=>{const r=t.classList,o=e=>n(`marp-${e?"":"in"}active`);let i;const a=()=>{i&&clearTimeout(i),i=setTimeout((()=>{r.add(S),o()}),e),r.contains(S)&&(r.remove(S),o(!0))};for(const e of["mousedown","mousemove","touchend"])document.addEventListener(e,a);setTimeout(a,0)},T=["AUDIO","BUTTON","INPUT","SELECT","TEXTAREA","VIDEO"],_=e=>{e.parent.addEventListener("keydown",(e=>{if(!e.target)return;const t=e.target;(T.includes(t.nodeName)||"true"===t.contentEditable)&&e.stopPropagation()}))},I=e=>{window.addEventListener("load",(()=>{for(const t of e.slides){const e=t.querySelector("marp-auto-scaling, [data-auto-scaling], [data-marp-fitting]");t.setAttribute(`${c}load`,e?"":"hideable")}}))},M=({interval:e=250}={})=>t=>{document.addEventListener("keydown",(e=>{if(" "===e.key&&e.shiftKey)t.prev();else if("ArrowLeft"===e.key||"ArrowUp"===e.key||"PageUp"===e.key)t.prev({fragment:!e.shiftKey});else if(" "!==e.key||e.shiftKey)if("ArrowRight"===e.key||"ArrowDown"===e.key||"PageDown"===e.key)t.next({fragment:!e.shiftKey});else if("End"===e.key)t.slide(t.slides.length-1,{fragment:-1});else{if("Home"!==e.key)return;t.slide(0)}else t.next();e.preventDefault()}));let n,r,o=0;t.parent.addEventListener("wheel",(i=>{let a=!1;const s=(e,t)=>{e&&(a=a||((e,t)=>((e,t)=>{const n="X"===t?"Width":"Height";return e[`client${n}`]<e[`scroll${n}`]})(e,t)&&((e,t)=>{const{overflow:n}=e,r=e[`overflow${t}`];return"auto"===n||"scroll"===n||"auto"===r||"scroll"===r})(getComputedStyle(e),t))(e,t)),(null==e?void 0:e.parentElement)&&s(e.parentElement,t)};if(0!==i.deltaX&&s(i.target,"X"),0!==i.deltaY&&s(i.target,"Y"),a)return;i.preventDefault();const l=Math.sqrt(i.deltaX**2+i.deltaY**2);if(void 0!==i.wheelDelta){if(void 0===i.webkitForce&&Math.abs(i.wheelDelta)<40)return;if(i.deltaMode===i.DOM_DELTA_PIXEL&&l<4)return}else if(i.deltaMode===i.DOM_DELTA_PIXEL&&l<12)return;r&&clearTimeout(r),r=setTimeout((()=>{n=0}),e);const d=Date.now()-o<e,c=l<=n;if(n=l,d||c)return;let u;(i.deltaX>0||i.deltaY>0)&&(u="next"),(i.deltaX<0||i.deltaY<0)&&(u="prev"),u&&(t[u](),o=Date.now())}))},O=(e=`.${d}osc`)=>{const t=document.querySelector(e);if(!t)return()=>{};const n=(e,n)=>{t.querySelectorAll(`[${c}osc=${JSON.stringify(e)}]`).forEach(n)};return $()||n("fullscreen",(e=>e.style.display="none")),p||n("presenter",(e=>{e.disabled=!0,e.title="Presenter view is disabled due to restricted localStorage."})),e=>{t.addEventListener("click",(t=>{if(t.target instanceof HTMLElement){const{bespokeMarpOsc:n}=t.target.dataset;n&&t.target.blur();const r={fragment:!t.shiftKey};"next"===n?e.next(r):"prev"===n?e.prev(r):"fullscreen"===n?null==e||e.fullscreen():"presenter"===n&&e.openPresenterView()}})),e.parent.appendChild(t),e.on("activate",(({index:t})=>{n("page",(n=>n.textContent=`Page ${t+1} of ${e.slides.length}`))})),e.on("fragment",(({index:t,fragments:r,fragmentIndex:o})=>{n("prev",(e=>e.disabled=0===t&&0===o)),n("next",(n=>n.disabled=t===e.slides.length-1&&o===r.length-1))})),e.on("marp-active",(()=>b(t,!1))),e.on("marp-inactive",(()=>b(t,!0))),$()&&(e=>{for(const t of["","webkit"])k.addEventListener(t+"fullscreenchange",e)})((()=>n("fullscreen",(e=>e.classList.toggle("exit",$()&&E())))))}},A=e=>{window.addEventListener("message",(t=>{if(t.origin!==window.origin)return;const[n,r]=t.data.split(":");if("navigate"===n){const[t,n]=r.split(",");let o=Number.parseInt(t,10),i=Number.parseInt(n,10)+1;i>=e.fragments[o].length&&(o+=1,i=0),e.slide(o,{fragment:i})}}))};var C,D,N,B,q,K,j={exports:{}};j.exports=(C=["area","base","br","col","command","embed","hr","img","input","keygen","link","meta","param","source","track","wbr"],D=function(e){return String(e).replace(/[&<>"']/g,(function(e){return"&"+N[e]+";"}))},N={"&":"amp","<":"lt",">":"gt",'"':"quot","'":"apos"},B="dangerouslySetInnerHTML",q={className:"class",htmlFor:"for"},K={},function(e,t){var n=[],r="";t=t||{};for(var o=arguments.length;o-- >2;)n.push(arguments[o]);if("function"==typeof e)return t.children=n.reverse(),e(t);if(e){if(r+="<"+e,t)for(var i in t)!1!==t[i]&&null!=t[i]&&i!==B&&(r+=" "+(q[i]?q[i]:D(i))+'="'+D(t[i])+'"');r+=">"}if(-1===C.indexOf(e)){if(t[B])r+=t[B].__html;else for(;n.length;){var a=n.pop();if(a)if(a.pop)for(var s=a.length;s--;)n.push(a[s]);else r+=!0===K[a]?a:D(a)}r+=e?"</"+e+">":""}return K[r]=!0,r});var F=e(j.exports);const V=({children:e})=>F(null,null,...e),U=`${d}presenter-`,X={container:`${U}container`,dragbar:`${U}dragbar-container`,next:`${U}next`,nextContainer:`${U}next-container`,noteContainer:`${U}note-container`,noteWrapper:`${U}note-wrapper`,noteButtons:`${U}note-buttons`,infoContainer:`${U}info-container`,infoPage:`${U}info-page`,infoPageText:`${U}info-page-text`,infoPagePrev:`${U}info-page-prev`,infoPageNext:`${U}info-page-next`,noteButtonsBigger:`${U}note-bigger`,noteButtonsSmaller:`${U}note-smaller`,infoTime:`${U}info-time`,infoTimer:`${U}info-timer`},H=e=>{const{title:t}=document;document.title="[Presenter view]"+(t?` - ${t}`:"");const n={},r=e=>(n[e]=n[e]||document.querySelector(`.${e}`),n[e]);document.body.appendChild((e=>{const t=document.createElement("div");return t.className=X.container,t.appendChild(e),t.insertAdjacentHTML("beforeend",F(V,null,F("div",{class:X.nextContainer},F("iframe",{class:X.next,src:"?view=next"})),F("div",{class:X.dragbar}),F("div",{class:X.noteContainer},F("div",{class:X.noteWrapper}),F("div",{class:X.noteButtons},F("button",{class:X.noteButtonsSmaller,tabindex:"-1",title:"Smaller notes font size"},"Smaller notes font size"),F("button",{class:X.noteButtonsBigger,tabindex:"-1",title:"Bigger notes font size"},"Bigger notes font size"))),F("div",{class:X.infoContainer},F("div",{class:X.infoPage},F("button",{class:X.infoPagePrev,tabindex:"-1",title:"Previous"},"Previous"),F("span",{class:X.infoPageText}),F("button",{class:X.infoPageNext,tabindex:"-1",title:"Next"},"Next")),F("time",{class:X.infoTime,title:"Current time"}),F("time",{class:X.infoTimer,title:"Timer"})))),t})(e.parent)),(e=>{let t=!1;r(X.dragbar).addEventListener("mousedown",(()=>{t=!0,r(X.dragbar).classList.add("active")})),window.addEventListener("mouseup",(()=>{t=!1,r(X.dragbar).classList.remove("active")})),window.addEventListener("mousemove",(e=>{if(!t)return;const n=e.clientX/document.documentElement.clientWidth*100;r(X.container).style.setProperty("--bespoke-marp-presenter-split-ratio",`${Math.max(0,Math.min(100,n))}%`)})),r(X.nextContainer).addEventListener("click",(()=>e.next()));const n=r(X.next),o=(i=n,(e,t)=>{var n;return null===(n=i.contentWindow)||void 0===n?void 0:n.postMessage(`navigate:${e},${t}`,"null"===window.origin?"*":window.origin)});var i;n.addEventListener("load",(()=>{r(X.nextContainer).classList.add("active"),o(e.slide(),e.fragmentIndex),e.on("fragment",(({index:e,fragmentIndex:t})=>o(e,t)))}));const a=document.querySelectorAll(".bespoke-marp-note");a.forEach((e=>{e.addEventListener("keydown",(e=>e.stopPropagation())),r(X.noteWrapper).appendChild(e)})),e.on("activate",(()=>a.forEach((t=>t.classList.toggle("active",t.dataset.index==e.slide())))));let s=0;const l=e=>{s=Math.max(-5,s+e),r(X.noteContainer).style.setProperty("--bespoke-marp-note-font-scale",(1.2**s).toFixed(4))},d=()=>l(1),c=()=>l(-1),u=r(X.noteButtonsBigger),f=r(X.noteButtonsSmaller);u.addEventListener("click",(()=>{u.blur(),d()})),f.addEventListener("click",(()=>{f.blur(),c()})),document.addEventListener("keydown",(e=>{"+"===e.key&&d(),"-"===e.key&&c()}),!0),e.on("activate",(({index:t})=>{r(X.infoPageText).textContent=`${t+1} / ${e.slides.length}`}));const m=r(X.infoPagePrev),g=r(X.infoPageNext);m.addEventListener("click",(t=>{m.blur(),e.prev({fragment:!t.shiftKey})})),g.addEventListener("click",(t=>{g.blur(),e.next({fragment:!t.shiftKey})})),e.on("fragment",(({index:t,fragments:n,fragmentIndex:r})=>{m.disabled=0===t&&0===r,g.disabled=t===e.slides.length-1&&r===n.length-1}));let p=new Date;const v=()=>{const e=new Date,t=e=>`${Math.floor(e)}`.padStart(2,"0"),n=e.getTime()-p.getTime(),o=t(n/1e3%60),i=t(n/1e3/60%60),a=t(n/36e5%24);r(X.infoTime).textContent=e.toLocaleTimeString(),r(X.infoTimer).textContent=`${a}:${i}:${o}`};v(),setInterval(v,250),r(X.infoTimer).addEventListener("click",(()=>{p=new Date}))})(e)},R=e=>{if(!(e=>e.syncKey&&"string"==typeof e.syncKey)(e))throw new Error("The current instance of Bespoke.js is invalid for Marp bespoke presenter plugin.");Object.defineProperties(e,{openPresenterView:{enumerable:!0,value:W},presenterUrl:{enumerable:!0,get:J}}),p&&document.addEventListener("keydown",(t=>{"p"!==t.key||t.altKey||t.ctrlKey||t.metaKey||(t.preventDefault(),e.openPresenterView())}))};function W(){const{max:e,floor:t}=Math,n=e(t(.85*window.innerWidth),640),r=e(t(.85*window.innerHeight),360);return window.open(this.presenterUrl,U+this.syncKey,`width=${n},height=${r},menubar=no,toolbar=no`)}function J(){const e=new URLSearchParams(location.search);return e.set("view","presenter"),e.set("sync",this.syncKey),u(e)}const Y=e=>{const t=f();return t===s&&e.appendChild(document.createElement("span")),{[i]:R,[a]:H,[s]:A}[t]},z=e=>{e.on("activate",(t=>{document.querySelectorAll(".bespoke-progress-parent > .bespoke-progress-bar").forEach((n=>{n.style.flexBasis=100*t.index/(e.slides.length-1)+"%"}))}))},G=e=>{const t=Number.parseInt(e,10);return Number.isNaN(t)?null:t},Q=(e={})=>{const t={history:!0,...e};return e=>{let n=!0;const r=e=>{const t=n;try{return n=!0,e()}finally{n=t}},o=(t={fragment:!0})=>{let n=t.fragment?G(m("f")||""):null;((t,n)=>{const{min:r,max:o}=Math,{fragments:i,slides:a}=e,s=o(0,r(t,a.length-1)),l=o(0,r(n||0,i[s].length-1));s===e.slide()&&l===e.fragmentIndex||e.slide(s,{fragment:l})})((()=>{var t,r;if(location.hash){const[o]=location.hash.slice(1).split(":~:");if(/^\d+$/.test(o))return(null!==(t=G(o))&&void 0!==t?t:1)-1;const i=document.getElementById(o)||document.querySelector(`a[name="${CSS.escape(o)}"]`);if(i){const{length:t}=e.slides;for(let o=0;o<t;o+=1)if(e.slides[o].contains(i)){const t=null===(r=e.fragments)||void 0===r?void 0:r[o],a=i.closest("[data-marpit-fragment]");if(t&&a){const e=t.indexOf(a);e>=0&&(n=e)}return o}}}return 0})(),n)};e.on("fragment",(({index:e,fragmentIndex:r})=>{n||g({f:0===r||r.toString()},{location:{...location,hash:`#${e+1}`},setter:(...e)=>t.history?history.pushState(...e):history.replaceState(...e)})})),setTimeout((()=>{o(),window.addEventListener("hashchange",(()=>r((()=>{o({fragment:!1}),g({f:void 0})})))),window.addEventListener("popstate",(()=>{n||r((()=>o()))})),n=!1}),0)}},Z=(e={})=>{var t;const n=e.key||(null===(t=window.history.state)||void 0===t?void 0:t.marpBespokeSyncKey)||Math.random().toString(36).slice(2),r=`bespoke-marp-sync-${n}`;var i;i={marpBespokeSyncKey:n},g({},{setter:(e,...t)=>o({...e,...i},...t)});const a=()=>{const e=v(r);return e?JSON.parse(e):Object.create(null)},s=e=>{const t=a(),n={...t,...e(t)};return h(r,JSON.stringify(n)),n},l=()=>{window.removeEventListener("pageshow",l),s((e=>({reference:(e.reference||0)+1})))};return e=>{l(),Object.defineProperty(e,"syncKey",{value:n,enumerable:!0});let t=!0;setTimeout((()=>{e.on("fragment",(e=>{t&&s((()=>({index:e.index,fragmentIndex:e.fragmentIndex})))}))}),0),window.addEventListener("storage",(n=>{if(n.key===r&&n.oldValue&&n.newValue){const r=JSON.parse(n.oldValue),o=JSON.parse(n.newValue);if(r.index!==o.index||r.fragmentIndex!==o.fragmentIndex)try{t=!1,e.slide(o.index,{fragment:o.fragmentIndex,forSync:!0})}finally{t=!0}}}));const o=()=>{const{reference:e}=a();void 0===e||e<=1?y(r):s((()=>({reference:e-1})))};window.addEventListener("pagehide",(e=>{e.persisted&&window.addEventListener("pageshow",l),o()})),e.on("destroy",o)}},{PI:ee,abs:te,sqrt:ne,atan2:re}=Math,oe={passive:!0},ie=({slope:e=-.7,swipeThreshold:t=30}={})=>n=>{let r;const o=n.parent,i=e=>{const t=o.getBoundingClientRect();return{x:e.pageX-(t.left+t.right)/2,y:e.pageY-(t.top+t.bottom)/2}};o.addEventListener("touchstart",(({touches:e})=>{r=1===e.length?i(e[0]):void 0}),oe),o.addEventListener("touchmove",(e=>{if(r)if(1===e.touches.length){e.preventDefault();const t=i(e.touches[0]),n=t.x-r.x,o=t.y-r.y;r.delta=ne(te(n)**2+te(o)**2),r.radian=re(n,o)}else r=void 0})),o.addEventListener("touchend",(o=>{if(r){if(r.delta&&r.delta>=t&&r.radian){const t=(r.radian-e+ee)%(2*ee)-ee;n[t<0?"next":"prev"](),o.stopPropagation()}r=void 0}}),oe)},ae=new Map;ae.clear(),ae.set("none",{backward:{both:void 0,incoming:void 0,outgoing:void 0},forward:{both:void 0,incoming:void 0,outgoing:void 0}});const se={both:"",outgoing:"outgoing-",incoming:"incoming-"},le={forward:"",backward:"-backward"},de=e=>`--marp-bespoke-transition-animation-${e}`,ce=e=>`--marp-transition-${e}`,ue=de("name"),fe=de("duration"),me=e=>new Promise((t=>{const n={},r=document.createElement("div"),o=e=>{r.remove(),t(e)};r.addEventListener("animationstart",(()=>o(n))),Object.assign(r.style,{animationName:e,animationDuration:"1s",animationFillMode:"both",animationPlayState:"paused",position:"absolute",pointerEvents:"none"}),document.body.appendChild(r);const i=getComputedStyle(r).getPropertyValue(ce("duration"));i&&(n.defaultDuration=i),((e,t)=>{requestAnimationFrame((()=>{e.style.animationPlayState="running",requestAnimationFrame((()=>t(void 0)))}))})(r,o)})),ge=async e=>ae.has(e)?ae.get(e):(e=>{const t={},n=[];for(const[r,o]of Object.entries(se))for(const[i,a]of Object.entries(le)){const s=`marp-${o}transition${a}-${e}`;n.push(me(s).then((e=>{t[i]=t[i]||{},t[i][r]=e?{...e,name:s}:void 0})))}return Promise.all(n).then((()=>t))})(e).then((t=>(ae.set(e,t),t))),pe=e=>Object.values(e).flatMap(Object.values).every((e=>!e)),ve=(e,{type:t,backward:n})=>{const r=e[n?"backward":"forward"],o=(()=>{const e=r[t],n=e=>({[ue]:e.name});if(e)return n(e);if(r.both){const e=n(r.both);return"incoming"===t&&(e[de("direction")]="reverse"),e}})();return!o&&n?ve(e,{type:t,backward:!1}):o||{[ue]:"__bespoke_marp_transition_no_animation__"}},he=e=>{if(e)try{const t=JSON.parse(e);if((e=>{if("object"!=typeof e)return!1;const t=e;return"string"==typeof t.name&&(void 0===t.duration||"string"==typeof t.duration)})(t))return t}catch{}},ye="_tSId",be="_tA",we="bespoke-marp-transition-warming-up",xe=window.matchMedia("(prefers-reduced-motion: reduce)"),ke="__bespoke_marp_transition_reduced_outgoing__",$e="__bespoke_marp_transition_reduced_incoming__",Ee={forward:{both:void 0,incoming:{name:$e},outgoing:{name:ke}},backward:{both:void 0,incoming:{name:$e},outgoing:{name:ke}}},Le=e=>{if(!document.startViewTransition)return;const t=t=>(void 0!==t&&(e._tD=t),e._tD);let n;t(!1),((...e)=>{const t=[...new Set(e).values()];return Promise.all(t.map((e=>ge(e)))).then()})(...Array.from(document.querySelectorAll("section[data-transition], section[data-transition-back]")).flatMap((e=>[e.dataset.transition,e.dataset.transitionBack].flatMap((e=>{const t=he(e);return[null==t?void 0:t.name,(null==t?void 0:t.builtinFallback)?`__builtin__${t.name}`:void 0]})).filter((e=>!!e))))).then((()=>{document.querySelectorAll("style").forEach((e=>{e.innerHTML=e.innerHTML.replace(/--marp-transition-duration:[^;}]*[;}]/g,(e=>e.slice(0,-1)+"!important"+e.slice(-1)))}))}));const r=(n,{back:r,cond:o})=>i=>{var a;const s=t();if(s)return!!i[be]||!("object"!=typeof s||(s.skipTransition(),!i.forSync));if(!o(i))return!0;const l=e.slides[e.slide()],d=()=>{var e;return null!==(e=i.back)&&void 0!==e?e:r},c="data-transition"+(d()?"-back":""),u=l.querySelector(`section[${c}]`);if(!u)return!0;const f=he(null!==(a=u.getAttribute(c))&&void 0!==a?a:void 0);return!f||((async(e,{builtinFallback:t=!0}={})=>{let n=await ge(e);if(pe(n)){if(!t)return;return n=await ge(`__builtin__${e}`),pe(n)?void 0:n}return n})(f.name,{builtinFallback:f.builtinFallback}).then((e=>{if(!e){t(!0);try{n(i)}finally{t(!1)}return}let r=e;xe.matches&&(console.warn("Use a constant animation to transition because preferring reduced motion by viewer has detected."),r=Ee);const o=document.getElementById(ye);o&&o.remove();const a=document.createElement("style");a.id=ye,document.head.appendChild(a),((e,t)=>{const n=[`:root{${ce("direction")}:${t.backward?-1:1};}`,":root:has(.bespoke-marp-inactive){cursor:none;}"],r=t=>{var n,o,i;const a=(null===(n=e[t].both)||void 0===n?void 0:n.defaultDuration)||(null===(o=e[t].outgoing)||void 0===o?void 0:o.defaultDuration)||(null===(i=e[t].incoming)||void 0===i?void 0:i.defaultDuration);return"forward"===t?a:a||r("forward")},o=t.duration||r(t.backward?"backward":"forward");void 0!==o&&n.push(`::view-transition-group(*){${fe}:${o};}`);const i=e=>Object.entries(e).map((([e,t])=>`${e}:${t};`)).join("");return n.push(`::view-transition-old(root){${i(ve(e,{...t,type:"outgoing"}))}}`,`::view-transition-new(root){${i(ve(e,{...t,type:"incoming"}))}}`),n})(r,{backward:d(),duration:f.duration}).forEach((e=>{var t;return null===(t=a.sheet)||void 0===t?void 0:t.insertRule(e)}));const s=document.documentElement.classList;s.add(we);let l=!1;const c=()=>{l||(n(i),l=!0,s.remove(we))},u=()=>{t(!1),a.remove(),s.remove(we)};try{t(!0);const e=document.startViewTransition(c);t(e),e.finished.finally(u)}catch(e){console.error(e),c(),u()}})),!1)};e.on("prev",r((t=>e.prev({...t,[be]:!0})),{back:!0,cond:e=>{var t;return e.index>0&&!((null===(t=e.fragment)||void 0===t||t)&&n.fragmentIndex>0)}})),e.on("next",r((t=>e.next({...t,[be]:!0})),{cond:t=>t.index+1<e.slides.length&&!(n.fragmentIndex+1<n.fragments.length)})),setTimeout((()=>{e.on("slide",r((t=>e.slide(t.index,{...t,[be]:!0})),{cond:t=>{const n=e.slide();return t.index!==n&&(t.back=t.index<n,!0)}}))}),0),e.on("fragment",(e=>{n=e}))};let Se;const Pe=()=>(void 0===Se&&(Se="wakeLock"in navigator&&navigator.wakeLock),Se),Te=async()=>{const e=Pe();if(e)try{return await e.request("screen")}catch(e){console.warn(e)}return null},_e=async()=>{if(!Pe())return;let e;const t=()=>{e&&"visible"===document.visibilityState&&Te()};for(const e of["visibilitychange","fullscreenchange"])document.addEventListener(e,t);return e=await Te(),e};((e=document.getElementById(":$p"))=>{(()=>{const e=m("view");r.dataset.bespokeView=e===s||e===a?e:""})();const t=(e=>{const t=m(e);return g({[e]:void 0}),t})("sync")||void 0;n.from(e,((...e)=>{const t=l.findIndex((e=>f()===e));return e.map((([e,n])=>e[t]&&n)).filter((e=>e))})([[1,1,0],Z({key:t})],[[1,1,1],Y(e)],[[1,1,0],_],[[1,1,1],w],[[1,0,0],P()],[[1,1,1],I],[[1,1,1],Q({history:!1})],[[1,1,0],M()],[[1,1,0],L],[[1,0,0],z],[[1,1,0],ie()],[[1,0,0],O()],[[1,0,0],Le],[[1,1,1],x],[[1,1,0],_e]))})()}();</script></body></html>
