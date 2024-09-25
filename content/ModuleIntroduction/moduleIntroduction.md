@@ -73,12 +73,9 @@ Concepts will be introduced in lectures. There is a strong emphasis on taught pr
 ## Assessments 
 Remember this is a 30 credit module!
 
-1. Project 
+1. Portfolio 
    1. A computer engineering project assessed by a pre-recorded video and Viva.
    2. GitHub repository and Team project
    3. Dates: Officially released first week of term 2.
-   4. Weighting: 60%
-   5. Previous Submissions [2015 to 2019](https://www.youtube.com/channel/UCUCG3PqKw9yKWqGBTlN1Kuw/videos), [2020-2021](https://www.youtube.com/watch?v=TzM0bBgHse8), [2021-2022](https://www.youtube.com/watch?v=HJBah1AWvD8) and [2022-2023](https://www.youtube.com/watch?v=4kElpZ-1YdI)
-2. Exam
-   1. 2 hour Unseen closed book exam.
-   2. Weighting: 40%
+   4. Weighting: 100%
+   5. Previous Submissions [2015 to 2019](https://www.youtube.com/channel/UCUCG3PqKw9yKWqGBTlN1Kuw/videos), [2020-2021](https://www.youtube.com/watch?v=TzM0bBgHse8), [2021-2022](https://www.youtube.com/watch?v=HJBah1AWvD8), [2022-2023](https://www.youtube.com/watch?v=4kElpZ-1YdI), [2024-2025 Team 0](https://youtu.be/lD17i18koeo) and [2024-2025 Team 1](https://youtu.be/2bO4xLcN6Lk)
