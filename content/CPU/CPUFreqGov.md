@@ -74,57 +74,57 @@ $T = \frac{1}{f}$
 
 1. So how fast is the Intel i5-1135G7 @ 4.2GHz?
 
-<details>
-<summary>Answer</summary>
+    <details>
+    <summary>Answer</summary>
 
-<div style="font-size: 25px">
+    <div style="font-size: 25px">
 
-$$
-\begin{equation*}
-    238.1ps \leftarrow 2.381 \cdot 10^{-10} = \frac{1}{4.2 \cdot 10^9} \equiv \frac{1}{4.2GHz}
-\end{equation*}
-$$
+    $$
+    \begin{equation*}
+        238.1ps \leftarrow 2.381 \cdot 10^{-10} = \frac{1}{4.2 \cdot 10^9} \equiv \frac{1}{4.2GHz}
+    \end{equation*}
+    $$
 
-</div>
+    </div>
 
-</details>
+    </details>
 
 
 2. So how fast is the Intel i9-14900kf @ 9.1GHz?
 
-<details>
-<summary>Answer</summary>
+    <details>
+    <summary>Answer</summary>
 
 
-<div style="font-size: 25px">
+    <div style="font-size: 25px">
 
-$$
-\begin{equation*}
-    109.9ps \leftarrow 1.09 \cdot 10^{-10} = \frac{1}{9.1\cdot 10^9} \equiv \frac{1}{9.1GHz}
-\end{equation*}
-$$
+    $$
+    \begin{equation*}
+        109.9ps \leftarrow 1.09 \cdot 10^{-10} = \frac{1}{9.1\cdot 10^9} \equiv \frac{1}{9.1GHz}
+    \end{equation*}
+    $$
 
-</div>
+    </div>
 
-</details>
+    </details>
 
 3. or ARM Cortex-A72 @ 1.5GHz
 
-<details>
-<summary>Answer</summary>
+    <details>
+    <summary>Answer</summary>
 
 
-<div style="font-size: 25px">
+    <div style="font-size: 25px">
 
-$$
-\begin{equation*}
-    666.7ps \leftarrow 6.6667 \cdot 10^{-10} = \frac{1}{1.5 \cdot 10^9} \equiv \frac{1}{1.5GHz}
-\end{equation*}
-$$
+    $$
+    \begin{equation*}
+        666.7ps \leftarrow 6.6667 \cdot 10^{-10} = \frac{1}{1.5 \cdot 10^9} \equiv \frac{1}{1.5GHz}
+    \end{equation*}
+    $$
 
-</div>
+    </div>
 
-</details>
+    </details>
 
 
 ---
@@ -217,12 +217,16 @@ CPU has a fixed clock cycle time C = **1/clock rate**:
 
 CPU execution time is the product of the above three parameters as follows:
 
+<div style="font-size:22px">
+
 $$CPU_T = \frac{Instructions}{Program} \cdot \frac{Cycles}{Instruction}\cdot\frac{Seconds}{Cycle}$$
 
 <p>
 </p>
 
 $$T = I \cdot CPI \cdot C$$
+
+</div>
 
 <!--
 T = Exection Time per program in seconds
@@ -253,7 +257,7 @@ $$178ns = 100 \cdot 2.5 \cdot \Bigl(\frac{1}{1.4 \cdot 10^9}\Bigr)$$
 </div>
 
 ---
-
+<!--
 ## Comparing Computer Performance Using Execution Time
 
 
@@ -301,6 +305,7 @@ $$2.5 faster \equiv \frac{3}{1.2}$$
 
 </div>
 
+
 ---
 
 ## CPU Execution Time For a Bash Script
@@ -308,6 +313,7 @@ $$2.5 faster \equiv \frac{3}{1.2}$$
 
 
 ---
+-->
 
 ## Factors Affecting the CPU Performance
 
@@ -435,6 +441,8 @@ the entire policy.
 
 ## Policies in `sysfs` 1/8
 
+<div style="font-size:25px" >
+
 **affected_cpus**
 - List of online CPUs belonging to this policy (i.e. sharing the hardware performance scaling interface represented by the policyX policy object).
 
@@ -443,9 +451,14 @@ the entire policy.
  -The existence of the limit may be a result of some (often unintentional) BIOS settings, restrictions coming from a service processor or another BIOS/HW-based mechanisms.
 - This does not cover ACPI thermal limitations which can be discovered through  a generic thermal driver.
 - This attribute is not present if the scaling driver in use does not support it.
+
+</div>
+
 ---
 
 ## Policies in `sysfs` 2/8
+
+<div style="font-size:25px" >
 
 **cpuinfo_cur_freq**
 - Current frequency of the CPUs belonging to this policy as obtained from the hardware (in KHz)
@@ -456,6 +469,8 @@ the entire policy.
 
 **cpuinfo_min_freq**
 - Minimum possible operating frequency the CPUs belonging to this policy can run at (in kHz).
+
+</div>
 
 --- 
 
@@ -490,6 +505,8 @@ the entire policy.
 
 ## Policies in `sysfs` 6/8
 
+<div style="font-size=25px">
+
 **scaling_driver**
 -  The scaling driver currently in use.
 
@@ -497,9 +514,13 @@ the entire policy.
 - The scaling governor currently attached to this policy or (if the intel_pstate scaling driver is in use) the scaling algorithm provided by the driver that is currently applied to this policy.
 - This attribute is read-write and writing to it will cause a new scaling governor to be attached to this policy or a new scaling algorithm provided by the scaling driver to be applied to it (in the intel_pstate case), as indicated by the string written to this attribute (which must be one of the names listed by the scaling_available_governors attribute described above).
 
+</div>
+
 ----
 
 ## Policies in `sysfs` 7/8
+
+<div style="font-size:25px">
 
 **scaling_max_freq**
 - Maximum frequency the CPUs belonging to this policy are allowed to be running at (in kHz).
@@ -508,6 +529,8 @@ the entire policy.
 **scaling_min_freq**
 - Minimum frequency the CPUs belonging to this policy are allowed to be running at (in kHz).
 - This attribute is read-write and writing a string representing a non-negative  integer to it will cause a new limit to be set (it must not be higher than the value of the scaling_max_freq attribute).
+
+</div>
 
 ---
 
@@ -525,13 +548,15 @@ the entire policy.
 
 - **Scaling governors** are attached to policy objects and different policy objects can be handled by different scaling governors at the same time (although that may lead to suboptimal results in some cases).
 
--  The **scaling governor** for a given policy object can be changed at any time with the help of the **scaling_governor** policy attribute in **sysfs**.
+- The **scaling governor** for a given policy object can be changed at any time with the help of the **scaling_governor** policy attribute in **sysfs**.
 
 - Some governors expose **sysfs** attributes to control or fine-tune the scaling algorithms implemented by them. 
 
 ---
 
 ## Generic Scaling Governors  1/4
+
+<div style="font-size:25px">
 
 **performance**
 - When attached to a policy object, this governor causes the **highest frequency**, within the **scaling_max_freq** policy limit, to be requested for that policy.
@@ -541,9 +566,13 @@ the entire policy.
 - When attached to a policy object, this governor causes the **lowest frequency**, within the **scaling_min_freq** policy limit, to be requested for that policy.
 - The request is made once at that time the governor for the policy is set to **powersave** and whenever the **scaling_max_freq** or **scaling_min_freq** policy limits **change** after that.
 
+</div>
+
 ---
 
 ## Generic Scaling Governors 2/4
+
+<div style="font-size:25px">
 
 **userspace**
 - This governor does not do anything by itself. Instead, it allows **user space** to set the **CPU frequency** for the  policy it is attached to by writing to the **scaling_setspeed** attribute of that policy.
@@ -552,6 +581,8 @@ the entire policy.
 - This governor uses **CPU utilisation** data available from the **CPU scheduler**. It generally is regarded as a  part of the CPU scheduler, so it can access the scheduler’s **internal data structures directly**.
 
 - It runs entirely in scheduler context, although in some cases it may need to invoke the scaling driver  **asynchronously** when it decides that the CPU frequency should be changed for a given policy (that depends  on whether or not the driver is capable of changing the CPU frequency from scheduler context).
+
+</div>
 
 ----
 
