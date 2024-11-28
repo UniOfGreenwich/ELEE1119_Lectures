@@ -21,6 +21,12 @@ style: |
       border: none!important;
       vertical-align: middle;
     }
+    section::after {
+    content: attr(data-marpit-pagination) '/' attr(data-marpit-pagination-total);
+    }
+    @import url('../../css/alerts.css');
+footer: ELEE1119 | Advanced Computer Engineering
+auto-scaling: false
 size: 16:9
 paginate: true
 _paginate: false
@@ -53,8 +59,6 @@ fn fibonacci(n: u32) -> u32 {
 }
 ```
 
-
-
 ![bg right:30% 90% vertical ](./figures/rust_logo.png)
 ![bg right:30% 50% vertical](./figures/rust_mascot.png)
 
@@ -62,7 +66,7 @@ fn fibonacci(n: u32) -> u32 {
 
 ## Rust features
 
-<div style="font-size:26px" >
+<div style="font-size:24px" >
 
 - **Type safe**: The compiler assures that no operation will be applied to a variable of a wrong type.
 
@@ -82,10 +86,17 @@ fn fibonacci(n: u32) -> u32 {
 
 ## Unique features of Rust
 
+<table style="border-collapse: collapse; border: none; table-layout: fixed; width: 100%;" >
+<tr style="border: none;">
+<td style="border: none; width:30%;">
+
 - Collection of Features called **Rust Module System**
   - Crates
   - Modules
   - Paths
+
+</td>
+<td style="border: none; width:33%;">
 
 ```
 my_library  // crate
@@ -105,9 +116,17 @@ my_library  // crate
 crate::utils::math::add // path
 ```
 
+</td>
+</tr>
+</table>
+
 ---
 
 ## Crate
+
+<table style="border-collapse: collapse; border: none; table-layout: fixed; width: 100%;" >
+<tr style="border: none;">
+<td style="border: none; width:30%;">
 
  - **Crates:** 
    - A crate is a compilation unit. It's the smallest piece of code the Rust compiler can run. 
@@ -115,50 +134,70 @@ crate::utils::math::add // path
    - Only crates are compiled as reusable units. 
    - A crate contains a hierarchy of Rust modules with an implicit, unnamed top-level module.
 
-  ```
-  my_library  // crate
-  ├── src
-  │   ├── lib.rs
-  │   ├── models
-  ...
-  ```
+</td>
+<td style="border: none; width:20%;">
+
+```
+my_library  // crate
+├── src
+│   ├── lib.rs
+│   ├── models
+...
+```
+
+</td>
+</tr>
+</table>
 
 ---
 
 ##  Modules
+
+<table style="border-collapse: collapse; border: none; table-layout: fixed; width: 100%;" >
+<tr style="border: none;">
+<td style="border: none; width:30%;">
 
 - **Modules:**
   - Used to split code into logical units. 
   - A module is a collection of items such as `functions`, `structs`, `traits`, `implementation blocks`, and even other modules. 
   - Help manage visibility between different parts of the code, allowing you to specify which items are public (accessible outside the module) and which are private (accessible only within the module)
 
-<div style="font-size:22px">
+</td>
+<td style="border: none; width:20%;">
 
-  ```
-  my_library  // crate
-  ├── src
-  │   ├── lib.rs
-  │   ├── models
-  │   │   ├── mod.rs // module
-  ...
-  ```
+```
+my_library  // crate
+├── src
+│   ├── lib.rs
+│   ├── models
+│   │   ├── mod.rs // module
+...
+```
 
-</div>
+```rust
+// models/mod.rs
+mod user;
+mod product;
+```
 
-  ```rust
-  // models/mod.rs
-  mod user;
-  mod product;
-  ```
+</td>
+</tr>
+</table>
+
 ---
 
 ## Paths
+
+<table style="border-collapse: collapse; border: none; table-layout: fixed; width: 100%;" >
+<tr style="border: none;">
+<td style="border: none; width:30%;">
 
 -  Are used to refer to items in modules. 
 -  They allow you to name items and bring them into scope with the use keyword.
 -  For example, if you have an `Asparagus` type in the `garden` `vegetables` module, you would refer to it as `crate::garden::vegetables::Asparagus`
 
-<div style="font-size:22px">
+</td>
+<td style="border: none; width:20%;">
 
 ```
 my_library  // crate
@@ -179,7 +218,9 @@ my_library  // crate
 use crate::utils::math::add;
 ```
 
-</div>
+</td>
+</tr>
+</table>
 
 ---
 
@@ -192,7 +233,7 @@ use crate::utils::math::add;
 
 ## Some crates we will use: 
 
-<div style="font-size:25px">
+<div style="font-size:23px">
 
 - [`std`](https://doc.rust-lang.org/std/) - The Rust standard library. In the Rust exercises, you'll notice the following modules:
   - `std::collections` - Definitions for collection types, such as HashMap.
@@ -213,6 +254,8 @@ use crate::utils::math::add;
 
 ## Create and manage projects with Cargo
 
+<div style="font-size:23px">
+
 While it's possible to use the Rust compiler (`rustc`) directly to build crates, most projects use the Rust build tool and dependency manager called `Cargo`.
 
 `Cargo` does lots of things for you, including:
@@ -225,7 +268,10 @@ While it's possible to use the Rust compiler (`rustc`) directly to build crates,
   - Build documentation for a project with the `cargo doc` command.
   - Publish a library to crates.io with the `cargo publish` command.
   - Add dependent crates to a project by adding the crate name to the `Cargo.toml` file.
-  
+
+
+</div>
+
 --- 
 
 ## Rust Naming Conventions 1
@@ -268,7 +314,9 @@ Basic Rust naming conventions are described in [RFC 430](https://github.com/rust
 
 ## Rust Syntax
 
-<div style="font-size:22px">
+<table style="border-collapse: collapse; border: none; table-layout: fixed; width: 100%;" >
+<tr style="border: none;">
+<td style="border: none; width:40%;">
 
 ```rust
 fn main(){
@@ -293,13 +341,18 @@ fn main(){
 }
 ```
 
+</td>
+<td style="border: none; width:20%;">
+
 ```
 An integer: 1
 A boolean: true
 Meet the unit value: ()
 ```
 
-</div>
+</td>
+</tr>
+</table>
 
 ---
 
@@ -331,12 +384,13 @@ fn main() {
 
 ## Scope and Shadowing
 
+<div style="font-size:24px">
+
 Variable bindings have a scope, and are constrained to live in a block. A block is a collection of statements enclosed by braces `{}`.
 
-<details>
-<summary>Example 1</summary>
+</div>
 
-<div style="font-size:22px">
+<div style="font-size:23px">
 
 ```rust
 fn main() {
@@ -362,10 +416,9 @@ fn main() {
 
 </div>
 
-</details>
+---
 
-<details>
-<summary>Example 2</summary>
+## Scope and Shadowing
 
 <div style="font-size:22px">
 
@@ -391,19 +444,17 @@ fn main() {
 
 </div>
 
-</details>
-
 ---
 
 ## Freezing
 
 When data is bound by the same name immutably, it also *freezes*. Frozen data can't be modified until the immutable binding goes out of scope:
 
+<div style="font-size:24px">
 
 ```rust
 fn main() {
     let mut _mutable_integer = 7i32;
-
     {
         // Shadowing by immutable `_mutable_integer`
         let _mutable_integer = _mutable_integer;
@@ -414,29 +465,31 @@ fn main() {
 
         // `_mutable_integer` goes out of scope
     }
-
     // Ok! `_mutable_integer` is not frozen in this scope
     _mutable_integer = 3;
 }
 ```
 
+</div>
+
 ---
 
 ## Freezing with `const`
 
+<div style="font-size:24px">
+
 ```rust
 fn main() {
-    
     const THREE_HOURS_IN_SECONDS: u32 = 60 * 60 * 3;
-
     {
         println!("before being shadowed: {}", THREE_HOURS_IN_SECONDS);
         const THREE_HOURS_IN_SECONDS: u32 = 60u32 * 60u32 * 4u32;
         println!("shadowed in inner block: {}", THREE_HOURS_IN_SECONDS);
     }
-
 }
 ```
+
+</div>
 
 <details>
 <summary>What happens and why?</summary>
@@ -445,3 +498,6 @@ fn main() {
 - Constants are constant they will never change at runtime and should be defined only once!
 
 </details>
+
+> [!NOTE] 
+> This alert uses [!NOTE]
