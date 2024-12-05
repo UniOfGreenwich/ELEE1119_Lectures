@@ -34,11 +34,14 @@ marp: true
 math: true
 ---
 
+<!-- _footer: "[Download as a PDF](https://github.com/UniOfGreenwich/ELEE1149-Lectures/raw/gh-pages/content/Introduction_to_Rust/Introduction_to_Rust.pdf)" -->
+
+
 # Introduction to Rust
 
-    Course Code: ELEE1119
+    Module Code: ELEE1119
 
-    Course Name: Advanced Computer Engineering
+    Module Name: Advanced Computer Engineering
 
     Credits: 30
 

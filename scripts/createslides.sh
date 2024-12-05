@@ -49,7 +49,8 @@ style: |
     gap {
       gap: var(--gap, 4px);
     }
-    content: attr(data-marpit-pagination) '/' attr(data-marpit-pagination-total);
+    section::after {
+      content: attr(data-marpit-pagination) '/' attr(data-marpit-pagination-total);
     }
 footer: $modulecode  | $modulename
 size: 16:9
@@ -58,6 +59,8 @@ _paginate: false
 marp: true
 math: true
 ---
+
+<!-- _footer: "[Download as a PDF](https://github.com/UniOfGreenwich/${modulecode}-Lectures/raw/gh-pages/content/${LECTURE_FILENAME}/${LECTURE_FILENAME}.pdf)" -->
 
 # ${LECTURE_FILENAME}
 

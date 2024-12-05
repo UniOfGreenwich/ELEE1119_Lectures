@@ -16,7 +16,11 @@ style: |
     table, th,tr, td {
          border: none!important; 
           vertical-align: middle;
-      }
+      }    section::after {
+    section::after {
+      content: attr(data-marpit-pagination) '/' attr(data-marpit-pagination-total);
+    }
+footer: ELEE1149  | Advanced Computer Engineering
 size: 16:9
 paginate: true
 _paginate: false
@@ -24,11 +28,14 @@ marp: true
 math: true
 ---
 
+<!-- _footer: "[Download as a PDF](https://github.com/UniOfGreenwich/ELEE1149-Lectures/raw/gh-pages/content/ModuleIntroduction/moduleIntroduction.pdf)" -->
+
+
 # Introduction to the Module
 
-    Course Code: ELEE1119 
+    Module Code: ELEE1119 
     
-    Course Name: Advanced Computer Engineering
+    Module Name: Advanced Computer Engineering
 
     Credits: 30
 
